@@ -53,7 +53,7 @@ def get_authors(authors, first_author = False):
     if first_author == False:
         output = ", ".join(str(author) for author in authors)
     else:
-        output = authors[0]
+        output = str(authors[0])
     return output
 def sort_papers(papers):
     output = dict()
