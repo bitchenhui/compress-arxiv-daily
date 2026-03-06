@@ -348,7 +348,7 @@ def update_paper_links(filename):
                 logging.info(f'Skipping code link update for paper_id = {paper_id} (PapersWithCode API deprecated)')
 
         with open(filename, "w") as f:
-            json.dump(json_data, f)
+            json.dump(json_data, f, ensure_ascii=False)
 
 def update_json_file(filename, data_dict):
     '''
