@@ -40,13 +40,18 @@ jobs:
           pip install requests
           pip install pyyaml
 
-      - name: Update config with Feishu webhook
+      - name: Prepare config
         run: |
-          # Add Feishu webhook to config if secret exists
-          if [ -n "${{ secrets.FEISHU_WEBHOOK }}" ]; then
-            echo "feishu_webhook: ${{ secrets.FEISHU_WEBHOOK }}" >> config.yaml
+          # Read current config and check if feishu_webhook already exists
+          if grep -q "feishu_webhook:" config.yaml; then
+            echo "feishu_webhook already exists in config"
           else
-            echo "feishu_webhook: ''" >> config.yaml
+            # Add feishu_webhook from secret if available
+            if [ -n "${{ secrets.FEISHU_WEBHOOK }}" ]; then
+              echo "feishu_webhook: \"${{ secrets.FEISHU_WEBHOOK }}\"" >> config.yaml
+            else
+              echo "feishu_webhook: ''" >> config.yaml
+            fi
           fi
 
       - name: Run daily arxiv
