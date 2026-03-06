@@ -62,6 +62,47 @@ def sort_papers(papers):
         output[key] = papers[key]
     return output
 
+def check_relevance(title: str, abstract: str, filters: list, topic: str) -> bool:
+    """
+    Check if paper is relevant based on keywords in title and abstract
+    @param title: paper title
+    @param abstract: paper abstract
+    @param filters: list of keywords to match
+    @param topic: the topic/category name for topic-specific logic
+    @return: True if relevant
+    """
+    text = (title + " " + abstract).lower()
+    title_lower = title.lower()
+    
+    # For Video Codec, require stricter matching
+    if topic == "Video Codec":
+        # Must have video/coding related terms in title or abstract
+        video_terms = ["video", "codec", "coding", "compression", "encoder", "decoder", "bitrate", "hevc", "h.264", "h.265", "av1", "vvc", "mpeg"]
+        has_video = any(term in text for term in video_terms)
+        has_coding = any(term in text for term in ["codec", "coding", "compression", "encoder", "decoder"])
+        # Must match at least 2 of the specific codec keywords
+        codec_keywords = [k.lower() for k in filters if len(k) > 2]
+        keyword_matches = sum(1 for k in codec_keywords if k in text)
+        return has_video and (has_coding or keyword_matches >= 2)
+    
+    # For other topics, require at least 2 keyword matches or title match
+    match_count = 0
+    for keyword in filters:
+        keyword_lower = keyword.lower()
+        # For multi-word keywords, check if any significant word appears
+        if ' ' in keyword_lower:
+            parts = keyword_lower.split()
+            for part in parts:
+                if len(part) > 3 and part in text:
+                    match_count += 1
+        else:
+            if len(keyword_lower) > 2 and keyword_lower in text:
+                match_count += 1
+    
+    # Check title for any keyword
+    title_match = any(k.lower() in title_lower for k in filters)
+    return match_count >= 2 or title_match
+
 def get_paper_citations(arxiv_id: str) -> int:
     """
     Get citation count from Semantic Scholar API
@@ -82,10 +123,18 @@ def get_paper_citations(arxiv_id: str) -> int:
         logging.warning(f"Failed to get citations for {arxiv_id}: {e}")
         return 0
 
-def search_arxiv_with_retry(query: str, max_results: int = 10, max_retries: int = 3):
+def search_arxiv_with_retry(query: str, max_results: int = 10, max_retries: int = 3, date_from: str = None, date_to: str = None):
     """
     Search arXiv with retry logic for rate limiting
+    @param date_from: search from date (YYYYMMDD)
+    @param date_to: search to date (YYYYMMDD)
     """
+    # Build date filter if provided
+    date_filter = ""
+    if date_from and date_to:
+        date_filter = f"submittedDate:[{date_from} TO {date_to}]"
+        query = f"({query}) AND {date_filter}" if query else date_filter
+    
     for attempt in range(max_retries):
         try:
             search_engine = arxiv.Search(
@@ -246,10 +295,13 @@ def generate_feishu_message(data_collector: list, date_str: str) -> str:
 
     return message
 
-def get_daily_papers(topic, query: str, max_results: int = 10):
+def get_daily_papers(topic, query: str, max_results: int = 10, date_from: str = None, date_to: str = None, filters: list = None):
     """
     @param topic: str
     @param query: str
+    @param date_from: search from date (YYYYMMDD)
+    @param date_to: search to date (YYYYMMDD)
+    @param filters: list of keywords for relevance filtering
     @return paper_with_code: dict
     """
     # Wait before search to avoid rate limit
@@ -258,10 +310,16 @@ def get_daily_papers(topic, query: str, max_results: int = 10):
     content = dict()
     content_to_web = dict()
 
-    # Use retry logic
-    results = search_arxiv_with_retry(query, max_results=max_results)
+    # Use retry logic with date filter
+    results = search_arxiv_with_retry(query, max_results=max_results, date_from=date_from, date_to=date_to)
 
     for result in results:
+        # Check relevance if filters provided
+        if filters:
+            abstract = result.summary.replace("\n", " ")
+            if not check_relevance(result.title, abstract, filters, topic):
+                logging.info(f"Skipping irrelevant paper: {result.title[:50]}...")
+                continue
         paper_id = result.get_short_id()
         paper_title = result.title
         paper_url = result.entry_id
@@ -441,54 +499,49 @@ def json_to_md(filename, md_filename,
             f.write("  </ol>\n")
             f.write("</details>\n\n")
 
+        # Collect all papers into one list
+        all_papers = []
         for keyword in data.keys():
             day_content = data[keyword]
             if not day_content:
                 continue
-            # the head of each part
-            f.write(f"## {keyword}\n\n")
-
-            if use_title == True:
-                if to_web == False:
-                    f.write("|Publish Date|Title|Authors|Tag|PDF|\n" + "|---|---|---|---|---|\n")
-                else:
-                    f.write("| Publish Date | Title | Authors | Tag | PDF |\n")
-                    f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
-
             # sort papers by date
             day_content = sort_papers(day_content)
-
             for _, v in day_content.items():
-                if v is not None:
-                    # Handle both old string format and new dict format
-                    if isinstance(v, dict):
-                        # New dict format with category
-                        # Get paper URL
-                        paper_url = v.get('url', '')
-                        # Extract arxiv_id from URL
-                        arxiv_id = paper_url.split('/')[-1] if paper_url else ''
-                        pdf_url = paper_url.replace('abs', 'pdf')
-                        # PDF column: [arxiv_id](pdf_url)
-                        pdf_col = f"[{arxiv_id}]({pdf_url})"
-                        row = "|**{}**|**{}**|{} et.al.|{}|{}|\n".format(
-                            v.get('update_time', ''),
-                            v.get('title', ''),
-                            v.get('first_author', ''),
-                            keyword,
-                            pdf_col
-                        )
-                        f.write(pretty_math(row))
-                    else:
-                        # Old string format
-                        f.write(pretty_math(v))
+                if v is not None and isinstance(v, dict):
+                    all_papers.append((keyword, v))
+        
+        # Sort all papers by date (newest first)
+        all_papers.sort(key=lambda x: x[1].get('update_time', ''), reverse=True)
+        
+        # Write combined table header (no ## sections)
+        if use_title == True:
+            if to_web == False:
+                f.write("|Publish Date|Title|Authors|Tag|PDF|\n" + "|---|---|---|---|---|\n")
+            else:
+                f.write("| Publish Date | Title | Authors | Tag | PDF |\n")
+                f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
+        
+        # Write all papers in one table
+        for keyword, v in all_papers:
+            paper_url = v.get('url', '')
+            arxiv_id = paper_url.split('/')[-1] if paper_url else ''
+            pdf_url = paper_url.replace('abs', 'pdf')
+            pdf_col = f"[{arxiv_id}]({pdf_url})"
+            row = "|**{}**|**{}**|{} et.al.|{}|{}|\n".format(
+                v.get('update_time', ''),
+                v.get('title', ''),
+                v.get('first_author', ''),
+                keyword,
+                pdf_col
+            )
+            f.write(pretty_math(row))
 
-            f.write(f"\n")
-
-            # Add: back to top
-            if use_b2t:
-                top_info = f"#Updated on {DateNow}"
-                top_info = top_info.replace(' ', '-').replace('.', '')
-                f.write(f"<p align=right>(<a href={top_info.lower()}>back to top</a>)</p>\n\n")
+        # Add: back to top
+        if use_b2t:
+            top_info = f"#Updated on {DateNow}"
+            top_info = top_info.replace(' ', '-').replace('.', '')
+            f.write(f"<p align=right>(<a href={top_info.lower()}>back to top</a>)</p>\n\n")
 
         if show_badge == True:
             # we don't like long string, break it!
@@ -516,24 +569,34 @@ def demo(**config):
     data_collector_web = []
 
     keywords = config['kv']
-    max_results = config['max_results']
+    max_results = config.get('max_results', 100)
     publish_readme = config['publish_readme']
     publish_gitpage = config['publish_gitpage']
     publish_wechat = config['publish_wechat']
     show_badge = config['show_badge']
-
-    if True:
-        logging.info(f"GET daily papers begin")
-        for topic, keyword in keywords.items():
-            logging.info(f"Keyword: {topic}")
-            data, data_web = get_daily_papers(topic, query=keyword,
-                                              max_results=max_results)
-            data_collector.append(data)
-            data_collector_web.append(data_web)
-            print("\n")
-            # Wait between each keyword to avoid rate limit
-            time.sleep(5)
-        logging.info(f"GET daily papers end")
+    
+    # Calculate yesterday's date for filtering (YYYYMMDD format)
+    yesterday = datetime.date.today() - datetime.timedelta(days=1)
+    date_from = yesterday.strftime('%Y%m%d')
+    date_to = yesterday.strftime('%Y%m%d')
+    logging.info(f"Searching papers from {date_from} to {date_to}")
+    
+    logging.info(f"GET daily papers begin")
+    for topic, keyword in keywords.items():
+        # Get filters from config for relevance check
+        topic_filters = config.get('keywords', {}).get(topic, {}).get('filters', [])
+        logging.info(f"Keyword: {topic}")
+        data, data_web = get_daily_papers(topic, query=keyword,
+                                          max_results=max_results,
+                                          date_from=date_from,
+                                          date_to=date_to,
+                                          filters=topic_filters)
+        data_collector.append(data)
+        data_collector_web.append(data_web)
+        print("\n")
+        # Wait between each keyword to avoid rate limit
+        time.sleep(5)
+    logging.info(f"GET daily papers end")
 
     # 1. update README.md file
     if publish_readme:
