@@ -63,7 +63,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Github Action Automatic Update Compress Arxiv Papers"
-          files: README.md docs/compress-arxiv-daily.json docs/compress-arxiv-daily-web.json docs/index.md docs/compress-arxiv-daily-wechat.json docs/wechat.md docs/compress-arxiv-history.json
+          files: README.md docs/compress-arxiv-daily.json docs/compress-arxiv-daily-web.json docs/index.md docs/compress-arxiv-daily-wechat.json docs/compress-arxiv-history.json
           rebase: 'true'
           name: ${{ env.GITHUB_USER_NAME }}
           email: ${{ env.GITHUB_USER_EMAIL }}
