@@ -1,4 +1,4 @@
-## Updated on 2026.03.02
+## Updated on 2026.03.06
 > Usage instructions: [here](./docs/README.md#usage)
 
 <details>
@@ -10,6 +10,12 @@
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
     <li><a href=#image-matching>Image Matching</a></li>
     <li><a href=#nerf>NeRF</a></li>
+    <li><a href=#video-codec>Video Codec</a></li>
+    <li><a href=#image-compression>Image Compression</a></li>
+    <li><a href=#neural-compression>Neural Compression</a></li>
+    <li><a href=#3d-visual-coding>3D Visual Coding</a></li>
+    <li><a href=#codec-optimization>Codec Optimization</a></li>
+    <li><a href=#perceptual-coding>Perceptual Coding</a></li>
   </ol>
 </details>
 
@@ -1331,7 +1337,7 @@
 |**2021-10-03**|**Quadrotor Control on $SU(2)\times R^3$ with SLAM Integration**|Marcus Greiff et.al.|[2110.01099](http://arxiv.org/abs/2110.01099)|null|
 |**2021-10-02**|**Online Incremental Non-Gaussian Inference for SLAM Using Normalizing Flows**|Qiangqiang Huang et.al.|[2110.00876](http://arxiv.org/abs/2110.00876)|**[link](https://github.com/marineroboticsgroup/nf-isam)**|
 
-<p align=right>(<a href=#updated-on-20260302>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
 
 ## SFM
 
@@ -2326,7 +2332,7 @@
 |**2021-08-29**|**Solving Viewing Graph Optimization for Simultaneous Position and Rotation Registration**|Seyed-Mahdi Nasiri et.al.|[2108.12876](http://arxiv.org/abs/2108.12876)|null|
 |**2021-08-23**|**Burst Imaging for Light-Constrained Structure-From-Motion**|Ahalya Ravendran et.al.|[2108.09895](http://arxiv.org/abs/2108.09895)|null|
 
-<p align=right>(<a href=#updated-on-20260302>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
 
 ## Visual Localization
 
@@ -5242,7 +5248,7 @@
 |**2021-09-09**|**CrowdDriven: A New Challenging Dataset for Outdoor Visual Localization**|Ara Jafarzadeh et.al.|[2109.04527](http://arxiv.org/abs/2109.04527)|null|
 |**2021-09-09**|**Keeping an Eye on Things: Deep Learned Features for Long-Term Visual Localization**|Mona Gridseth et.al.|[2109.04041](http://arxiv.org/abs/2109.04041)|**[link](https://github.com/utiasasrl/deep_learned_visual_features)**|
 
-<p align=right>(<a href=#updated-on-20260302>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
 
 ## Keypoint Detection
 
@@ -5787,7 +5793,7 @@
 |**2021-08-31**|**A Novel Dataset for Keypoint Detection of quadruped Animals from Images**|Prianka Banik et.al.|[2108.13958](http://arxiv.org/abs/2108.13958)|**[link](https://github.com/prinik/awa-pose)**|
 |**2021-08-27**|**A Matching Algorithm based on Image Attribute Transfer and Local Features for Underwater Acoustic and Optical Images**|Xiaoteng Zhou et.al.|[2108.12151](http://arxiv.org/abs/2108.12151)|null|
 
-<p align=right>(<a href=#updated-on-20260302>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
 
 ## Image Matching
 
@@ -7155,7 +7161,7 @@
 |**2021-08-27**|**Matching Underwater Sonar Images by the Learned Descriptor Based on Style Transfer Method**|Xiaoteng Zhou et.al.|[2108.12072](http://arxiv.org/abs/2108.12072)|null|
 |**2021-08-26**|**Efficient Joint Object Matching via Linear Programming**|Antonio De Rosa et.al.|[2108.11911](http://arxiv.org/abs/2108.11911)|null|
 
-<p align=right>(<a href=#updated-on-20260302>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
 
 ## NeRF
 
@@ -8993,14 +8999,86 @@
 |**2022-07-29**|**Neural Density-Distance Fields**|Itsuki Ueda et.al.|[2207.14455](http://arxiv.org/abs/2207.14455)|**[link](https://github.com/ueda0319/neddf)**|
 |**2022-07-27**|**Is Attention All NeRF Needs?**|Mukund Varma T et.al.|[2207.13298](http://arxiv.org/abs/2207.13298)|null|
 
-<p align=right>(<a href=#updated-on-20260302>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
 
-[contributors-shield]: https://img.shields.io/github/contributors/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge
-[contributors-url]: https://github.com/Vincentqyw/cv-arxiv-daily/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge
-[forks-url]: https://github.com/Vincentqyw/cv-arxiv-daily/network/members
-[stars-shield]: https://img.shields.io/github/stars/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge
-[stars-url]: https://github.com/Vincentqyw/cv-arxiv-daily/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge
-[issues-url]: https://github.com/Vincentqyw/cv-arxiv-daily/issues
+## Video Codec
+
+|Publish Date|Title|Authors|PDF|Code|
+|---|---|---|---|---|
+|**2026-03-04**|**mlx-vis: GPU-Accelerated Dimensionality Reduction and Visualization on Apple Silicon**|Han Xiao et.al.|[cs.LG](http://arxiv.org/abs/2603.04035)|[](http://arxiv.org/pdf/2603.04035)|null|
+|**2026-03-02**|**A Relationship between the Molecular Parity-Violation Energy and the Electronic Chirality Measure**|Juan J. Aucar et.al.|[physics.chem-ph](http://arxiv.org/abs/2603.01885)|[](http://arxiv.org/pdf/2603.01885)|null|
+|**2026-03-01**|**Anisotropic flows of light-flavor and charmed hadrons in Pb+Pb collisions at LHC energy**|Yan-ting Feng et.al.|[hep-ph](http://arxiv.org/abs/2603.00915)|[](http://arxiv.org/pdf/2603.00915)|null|
+|**2026-02-26**|**PackUV: Packed Gaussian UV Maps for 4D Volumetric Video**|Aashish Rai et.al.|[cs.CV](http://arxiv.org/abs/2602.23040)|[](http://arxiv.org/pdf/2602.23040)|null|
+|**2026-02-24**|**On Optimizing Image Codecs for VMAF NEG: Analysis, Issues, and a Robust Loss Proposal**|Florian Fingscheidt et.al.|[eess.IV](http://arxiv.org/abs/2602.21336)|[](http://arxiv.org/pdf/2602.21336)|null|
+
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
+
+## Image Compression
+
+|Publish Date|Title|Authors|PDF|Code|
+|---|---|---|---|---|
+|**2026-03-05**|**Adaptive Sampling for Storage of Progressive Images on DNA**|Xavier Pic et.al.|[eess.IV](http://arxiv.org/abs/2603.05220)|[](http://arxiv.org/pdf/2603.05220)|null|
+|**2026-03-05**|**When Denoising Becomes Unsigning: Theoretical and Empirical Analysis of Watermark Fragility Under Diffusion-Based Image Editing**|Fai Gu et.al.|[cs.CR](http://arxiv.org/abs/2603.04696)|[](http://arxiv.org/pdf/2603.04696)|null|
+|**2026-03-04**|**A Cell-Average Non-Separable Progressive Multivariate WENO Method for Image Processing Applications**|Inmaculada Garcés et.al.|[math.NA](http://arxiv.org/abs/2603.04633)|[](http://arxiv.org/pdf/2603.04633)|null|
+|**2026-03-04**|**TextBoost: Boosting Scene Text Fidelity in Ultra-low Bitrate Image Compression**|Bingxin Wang et.al.|[cs.CV](http://arxiv.org/abs/2603.04115)|[](http://arxiv.org/pdf/2603.04115)|null|
+|**2026-03-04**|**Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression**|Haotian Zhang et.al.|[cs.CV](http://arxiv.org/abs/2603.03615)|[](http://arxiv.org/pdf/2603.03615)|null|
+
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
+
+## Neural Compression
+
+|Publish Date|Title|Authors|PDF|Code|
+|---|---|---|---|---|
+|**2026-03-04**|**Training-Free Rate-Distortion-Perception Traversal With Diffusion**|Yuhan Wang et.al.|[cs.IT](http://arxiv.org/abs/2603.04005)|[](http://arxiv.org/pdf/2603.04005)|null|
+|**2026-02-28**|**COMBAT: Conditional World Models for Behavioral Agent Training**|Anmol Agarwal et.al.|[cs.CV](http://arxiv.org/abs/2603.00825)|[](http://arxiv.org/pdf/2603.00825)|null|
+|**2026-02-23**|**N4MC: Neural 4D Mesh Compression**|Guodong Chen et.al.|[cs.CV](http://arxiv.org/abs/2602.20312)|[](http://arxiv.org/pdf/2602.20312)|null|
+|**2026-02-24**|**Nacrith: Neural Lossless Compression via Ensemble Context Modeling and High-Precision CDF Coding**|Roberto Tacconelli et.al.|[cs.IT](http://arxiv.org/abs/2602.19626)|[](http://arxiv.org/pdf/2602.19626)|null|
+|**2026-02-17**|**Avey-B**|Devang Acharya et.al.|[cs.CL](http://arxiv.org/abs/2602.15814)|[](http://arxiv.org/pdf/2602.15814)|null|
+
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
+
+## 3D Visual Coding
+
+|Publish Date|Title|Authors|PDF|Code|
+|---|---|---|---|---|
+|**2026-03-04**|**Point Cloud Feature Coding for Object Detection over an Error-Prone Cloud-Edge Collaborative System**|Chongzhen Tian et.al.|[eess.IV](http://arxiv.org/abs/2603.03890)|[](http://arxiv.org/pdf/2603.03890)|null|
+|**2026-02-25**|**HybridINR-PCGC: Hybrid Lossless Point Cloud Geometry Compression Bridging Pretrained Model and Implicit Neural Representation**|Wenjie Huang et.al.|[cs.CV](http://arxiv.org/abs/2602.21662)|[](http://arxiv.org/pdf/2602.21662)|null|
+|**2026-02-09**|**Overview and Comparison of AVS Point Cloud Compression Standard**|Wei Gao et.al.|[cs.CV](http://arxiv.org/abs/2602.08613)|[](http://arxiv.org/pdf/2602.08613)|null|
+|**2026-01-08**|**Discrete Fourier Transform-based Point Cloud Compression for Efficient SLAM in Featureless Terrain**|Riku Suzuki et.al.|[cs.RO](http://arxiv.org/abs/2601.04551)|[](http://arxiv.org/pdf/2601.04551)|null|
+|**2025-12-27**|**MEGA-PCC: A Mamba-based Efficient Approach for Joint Geometry and Attribute Point Cloud Compression**|Kai-Hsiang Hsieh et.al.|[eess.IV](http://arxiv.org/abs/2512.22463)|[](http://arxiv.org/pdf/2512.22463)|null|
+
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
+
+## Codec Optimization
+
+|Publish Date|Title|Authors|PDF|Code|
+|---|---|---|---|---|
+|**2026-03-05**|**Latent-Mark: An Audio Watermark Robust to Neural Resynthesis**|Yen-Shan Chen et.al.|[cs.SD](http://arxiv.org/abs/2603.05310)|[](http://arxiv.org/pdf/2603.05310)|null|
+|**2026-03-04**|**Autonomous Aerial Non-Destructive Testing: Ultrasound Inspection with a Commercial Quadrotor in an Unstructured Environment**|Ruben Veenstra et.al.|[cs.RO](http://arxiv.org/abs/2603.04642)|[](http://arxiv.org/pdf/2603.04642)|null|
+|**2026-03-04**|**EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR**|Zhenyu Li et.al.|[cs.CV](http://arxiv.org/abs/2603.04090)|[](http://arxiv.org/pdf/2603.04090)|null|
+|**2026-03-04**|**Architecture and evaluation protocol for transformer-based visual object tracking in UAV applications**|Augustin Borne et.al.|[cs.CV](http://arxiv.org/abs/2603.03904)|[](http://arxiv.org/pdf/2603.03904)|null|
+|**2026-03-02**|**Improving the Estimation of Ship Length via ISAR**|John R. Bennett et.al.|[eess.SP](http://arxiv.org/abs/2603.02183)|[](http://arxiv.org/pdf/2603.02183)|null|
+
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
+
+## Perceptual Coding
+
+|Publish Date|Title|Authors|PDF|Code|
+|---|---|---|---|---|
+|**2026-03-05**|**FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning**|Weijie Lyu et.al.|[cs.CV](http://arxiv.org/abs/2603.05506)|[](http://arxiv.org/pdf/2603.05506)|null|
+|**2026-03-05**|**Towards 3D Scene Understanding of Gas Plumes in LWIR Hyperspectral Images Using Neural Radiance Fields**|Scout Jarman et.al.|[cs.CV](http://arxiv.org/abs/2603.05473)|[](http://arxiv.org/pdf/2603.05473)|null|
+|**2026-03-05**|**Frequency-Aware Error-Bounded Caching for Accelerating Diffusion Transformers**|Guandong Li et.al.|[cs.CV](http://arxiv.org/abs/2603.05315)|[](http://arxiv.org/pdf/2603.05315)|null|
+|**2026-03-05**|**Limited-Angle CT Reconstruction Using Multi-Volume Latent Consistency Model**|Hinako Isogai et.al.|[eess.IV](http://arxiv.org/abs/2603.05183)|[](http://arxiv.org/pdf/2603.05183)|null|
+|**2026-03-05**|**How far have we gone in Generative Image Restoration? A study on its capability, limitations and evaluation practices**|Xiang Yin et.al.|[cs.CV](http://arxiv.org/abs/2603.05010)|[](http://arxiv.org/pdf/2603.05010)|null|
+
+<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
+
+[contributors-shield]: https://img.shields.io/github/contributors/bitchenhui/compress-arxiv-daily.svg?style=for-the-badge
+[contributors-url]: https://github.com/bitchenhui/compress-arxiv-daily/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/bitchenhui/compress-arxiv-daily.svg?style=for-the-badge
+[forks-url]: https://github.com/bitchenhui/compress-arxiv-daily/network/members
+[stars-shield]: https://img.shields.io/github/stars/bitchenhui/compress-arxiv-daily.svg?style=for-the-badge
+[stars-url]: https://github.com/bitchenhui/compress-arxiv-daily/stargazers
+[issues-shield]: https://img.shields.io/github/issues/bitchenhui/compress-arxiv-daily.svg?style=for-the-badge
+[issues-url]: https://github.com/bitchenhui/compress-arxiv-daily/issues
 
