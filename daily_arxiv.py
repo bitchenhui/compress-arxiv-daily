@@ -13,7 +13,6 @@ logging.basicConfig(format='[%(asctime)s %(levelname)s] %(message)s',
                     datefmt='%m/%d/%Y %H:%M:%S',
                     level=logging.INFO)
 
-github_url = "https://api.github.com/search/repositories"
 arxiv_url = "http://arxiv.org/"
 semantic_scholar_url = "https://api.semanticscholar.org/graph/v1/paper/arXiv:"
 
@@ -62,24 +61,6 @@ def sort_papers(papers):
     for key in keys:
         output[key] = papers[key]
     return output
-
-def get_code_link(qword:str) -> str:
-    """
-    @param qword: query string, eg. arxiv ids and paper titles
-    @return paper_code in github: string, if not found, return None
-    """
-    query = f"{qword}"
-    params = {
-        "q": query,
-        "sort": "stars",
-        "order": "desc"
-    }
-    r = requests.get(github_url, params=params)
-    results = r.json()
-    code_link = None
-    if results["total_count"] > 0:
-        code_link = results["items"][0]["html_url"]
-    return code_link
 
 def get_paper_citations(arxiv_id: str) -> int:
     """
@@ -308,7 +289,8 @@ def get_daily_papers(topic, query: str, max_results: int = 10):
             "first_author": paper_first_author,
             "authors": paper_authors,
             "category": primary_category,
-            "url": paper_url
+            "url": paper_url,
+            "code_url": ""
         }
 
         content_to_web[paper_key] = "- {}, **{}**, {} et.al., [{}]({})".format(
@@ -468,10 +450,10 @@ def json_to_md(filename, md_filename,
 
             if use_title == True:
                 if to_web == False:
-                    f.write("|Publish Date|Title|Authors|Tag|PDF|Code|\n" + "|---|---|---|---|---|---|\n")
+                    f.write("|Publish Date|Title|Authors|Tag|PDF|\n" + "|---|---|---|---|---|\n")
                 else:
-                    f.write("| Publish Date | Title | Authors | Tag | PDF | Code |\n")
-                    f.write("|:---------|:-----------------------|:---------|:------|:------|:------|\n")
+                    f.write("| Publish Date | Title | Authors | Tag | PDF |\n")
+                    f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
 
             # sort papers by date
             day_content = sort_papers(day_content)
@@ -481,26 +463,19 @@ def json_to_md(filename, md_filename,
                     # Handle both old string format and new dict format
                     if isinstance(v, dict):
                         # New dict format with category
-                        # Get paper URL and code link
+                        # Get paper URL
                         paper_url = v.get('url', '')
-                        code_url = v.get('code_url', '')
                         # Extract arxiv_id from URL
                         arxiv_id = paper_url.split('/')[-1] if paper_url else ''
                         pdf_url = paper_url.replace('abs', 'pdf')
                         # PDF column: [arxiv_id](pdf_url)
                         pdf_col = f"[{arxiv_id}]({pdf_url})"
-                        # Code column: [repo](code_url) if found, else null
-                        if code_url:
-                            code_col = f"[repo]({code_url})"
-                        else:
-                            code_col = "null"
-                        row = "|**{}**|**{}**|{} et.al.|{}|{}|{}|\n".format(
+                        row = "|**{}**|**{}**|{} et.al.|{}|{}|\n".format(
                             v.get('update_time', ''),
                             v.get('title', ''),
                             v.get('first_author', ''),
                             keyword,
-                            pdf_col,
-                            code_col
+                            pdf_col
                         )
                         f.write(pretty_math(row))
                     else:
@@ -547,9 +522,7 @@ def demo(**config):
     publish_wechat = config['publish_wechat']
     show_badge = config['show_badge']
 
-    b_update = config['update_paper_links']
-    logging.info(f'Update Paper Link = {b_update}')
-    if config['update_paper_links'] == False:
+    if True:
         logging.info(f"GET daily papers begin")
         for topic, keyword in keywords.items():
             logging.info(f"Keyword: {topic}")
@@ -566,10 +539,7 @@ def demo(**config):
     if publish_readme:
         json_file = config['json_readme_path']
         md_file = config['md_readme_path']
-        if config['update_paper_links']:
-            update_paper_links(json_file)
-        else:
-            update_json_file(json_file, data_collector)
+        update_json_file(json_file, data_collector)
         json_to_md(json_file, md_file, task='Update Readme', \
                     show_badge=show_badge)
 
@@ -577,10 +547,7 @@ def demo(**config):
     if publish_gitpage:
         json_file = config['json_gitpage_path']
         md_file = config['md_gitpage_path']
-        if config['update_paper_links']:
-            update_paper_links(json_file)
-        else:
-            update_json_file(json_file, data_collector)
+        update_json_file(json_file, data_collector)
         json_to_md(json_file, md_file, task='Update GitPage', \
                     to_web=True, show_badge=show_badge, \
                     use_tc=False, use_b2t=False)
@@ -621,11 +588,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--config_path', type=str, default='config.yaml',
                         help='configuration file path')
-    parser.add_argument('--update_paper_links', default=False,
-                        action="store_true", help='whether to update paper links etc.')
     parser.add_argument('--update_history', default=False,
                         action="store_true", help='whether to update history papers with high citations')
     args = parser.parse_args()
     config = load_config(args.config_path)
-    config = {**config, 'update_paper_links': args.update_paper_links, 'update_history': args.update_history}
+    config = {**config, 'update_history': args.update_history}
     demo(**config)
