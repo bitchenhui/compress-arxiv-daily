@@ -239,12 +239,25 @@ def generate_feishu_message(data_collector: list, date_str: str) -> str:
                 continue
             message += f"### {topic}\n"
             # Sort by date (newest first)
-            sorted_papers = sorted(papers.items(), key=lambda x: x[1].get('update_time', ''), reverse=True)
+            # Handle both dict and string formats
+            try:
+                sorted_papers = sorted(papers.items(), key=lambda x: x[1].get('update_time', '') if isinstance(x[1], dict) else '', reverse=True)
+            except:
+                sorted_papers = list(papers.items())[:10]
+
             for paper_id, paper_info in sorted_papers[:10]:  # Top 10 per category
-                title = paper_info.get('title', '')[:60]
-                authors = paper_info.get('first_author', '')
-                category = paper_info.get('category', 'cs.CV')
-                url = paper_info.get('url', '')
+                # Handle dict format
+                if isinstance(paper_info, dict):
+                    title = paper_info.get('title', '')[:60]
+                    authors = paper_info.get('first_author', '')
+                    category = paper_info.get('category', 'cs.CV')
+                    url = paper_info.get('url', '')
+                else:
+                    # Fallback for string format
+                    title = str(paper_info)[:60]
+                    authors = ''
+                    category = 'cs.CV'
+                    url = ''
                 message += f"• {title}\n"
                 message += f"  作者: {authors} et.al. | 分类: {category}\n"
                 message += f"  链接: {url}\n\n"
@@ -374,7 +387,7 @@ def update_json_file(filename, data_dict):
                 json_data[keyword] = papers
 
     with open(filename, "w") as f:
-        json.dump(json_data, f)
+        json.dump(json_data, f, ensure_ascii=False)
 
 def json_to_md(filename, md_filename,
                task='',
@@ -589,23 +602,7 @@ def demo(**config):
     feishu_webhook = config.get('feishu_webhook', '')
     if feishu_webhook and data_collector:
         date_now = datetime.date.today().strftime('%Y-%m-%d')
-        feishu_data = []
-        for data in data_collector:
-            for topic, papers in data.items():
-                if not papers:
-                    continue
-                paper_dict = {}
-                for paper_id, paper_str in papers.items():
-                    parts = paper_str.split('|')
-                    if len(parts) >= 4:
-                        paper_dict[paper_id] = {
-                            'title': parts[2].strip() if len(parts) > 2 else '',
-                            'update_time': parts[1].strip() if len(parts) > 1 else '',
-                        }
-                if paper_dict:
-                    feishu_data.append({topic: paper_dict})
-
-        message = generate_feishu_message(feishu_data, date_now)
+        message = generate_feishu_message(data_collector, date_now)
         send_to_feishun(feishu_webhook, message)
 
 if __name__ == "__main__":
