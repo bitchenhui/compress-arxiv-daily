@@ -27,14 +27,12 @@ feishu_webhook: "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxx-xxxx-xxxx
 # keywords to search
 keywords:
     "Video Codec":
-        filters: ["Video Coding", "Video Compression", "Video Codec", "HEVC", "H.265", "H.264", "AV1", "VVC", "ECM","JVET", "EVC", "LCEVC", "AVS3", "AVS2"]
-    "Image Compression":
-        filters: ["Image Compression", "JPEG", "JPEG2000", "Image Coding", "Learned Image Compression"]
-    "Neural Compression":
-        filters: ["Neural Compression", "Deep Compression", "Learned Video Coding", "Neural Image Compression", "Transformer-based Compression", "End-to-end Video Compression", "End-to-end Image Compression"]
-    "3D Visual Coding":
-        filters: ["Point Cloud Compression", "3D Video Coding", "multi-view coding", "VR/AR compression"]
-    "Codec Optimization":
-        filters: ["Codec Optimization", "Rate Control", "RD Optimization", "Bitrate Adaptation", "Low-latency Coding", "Real-time Coding", "Complexity Reduction", "Energy-efficient Coding", "Motion Estimation", "Motion Compensation"]
-    "Perceptual Coding":
-        filters: ["Perceptual Coding", "Subjective Quality", "Visual Quality", "SSIM", "PSNR"]
+        filters: ["H.264", "AVC", "MPEG-4 Part 10", "H.265", "HEVC","H.266", "VVC", "MPEG-I Part 3", "JVET", "VTM", "AV1", "AOMedia Video 1", "AVS", "AVS2", "AVS3", "China AVS", "inter prediction", "intra prediction", "motion estimation", "mode decision", "DCT", "integer transform", "DST", "transform skip", "CABAC", "CAVLC", "arithmetic coding", "context modeling", "deblocking filter", "SAO", "ALF", "sample adaptive offset", "rate distortion optimization", "RDOQ", "λ optimization", "rate control", "bit allocation", "R-λ model", "R-Q model", "low bitrate coding", "ultra low bitrate", "screen content coding", "SCC", "mixed content", "text coding",  "SVC", "scalable video coding", "temporal scalability", "spatial scalability"]
+    "Neural Compression": 
+        filters: ["neural video codec", "deep learning video coding", "AI video codec", "CNN-based video coding", "convolutional neural network video", "RNN video coding", "LSTM video", "generative video coding", "video prediction coding", "end-to-end image coding", "learned image compression", "neural image codec", "end-to-end video coding", "deep video compression", "neural video", "Deep Contextual Video Compression"]
+    "MLLM":
+        filters: ["LLM Video Coding", "Semantic Video Coding", "Semantic Communication", "Diffusion Video Coding", "large model video compression", "transformer video codec", "multimodal video coding", "generative video compression"]
+    "Video Quality":
+        filters: ["video quality assessment", "SSIM", "VMAF", "PSNR", "perceptual quality", "VQA", "IQA"]
+    "3D Compression":
+        filters: ["MVC", "multi-view video coding", "MVD", "multiview plus depth", "3D video coding", "stereoscopic video", "auto-stereoscopic", "VR video coding", "360 video", "omnidirectional video", "spherical video", "point cloud coding", "V-PCC", "G-PCC", "geometry coding", "panoramic video", "equirectangular", "cubemap", "VR streaming", "spherical video coding", "tile-based streaming", "viewport-adaptive", "Gaussian splatting", "3D Gaussian", "dynamic Gaussians", "mesh coding", "3D mesh", "progressive mesh"]

@@ -468,10 +468,10 @@ def json_to_md(filename, md_filename,
 
             if use_title == True:
                 if to_web == False:
-                    f.write("|Publish Date|Title|Authors|PDF|Code|\n" + "|---|---|---|---|---|\n")
+                    f.write("|Publish Date|Title|Authors|Tag|PDF|Code|\n" + "|---|---|---|---|---|---|\n")
                 else:
-                    f.write("| Publish Date | Title | Authors | PDF | Code |\n")
-                    f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
+                    f.write("| Publish Date | Title | Authors | Tag | PDF | Code |\n")
+                    f.write("|:---------|:-----------------------|:---------|:------|:------|:------|\n")
 
             # sort papers by date
             day_content = sort_papers(day_content)
@@ -481,14 +481,26 @@ def json_to_md(filename, md_filename,
                     # Handle both old string format and new dict format
                     if isinstance(v, dict):
                         # New dict format with category
-                        row = "|**{}**|**{}**|{} et.al.|[{}]({})|[{}]({})|null|\n".format(
+                        # Get paper URL and code link
+                        paper_url = v.get('url', '')
+                        code_url = v.get('code_url', '')
+                        # Extract arxiv_id from URL
+                        arxiv_id = paper_url.split('/')[-1] if paper_url else ''
+                        pdf_url = paper_url.replace('abs', 'pdf')
+                        # PDF column: [arxiv_id](pdf_url)
+                        pdf_col = f"[{arxiv_id}]({pdf_url})"
+                        # Code column: [repo](code_url) if found, else null
+                        if code_url:
+                            code_col = f"[repo]({code_url})"
+                        else:
+                            code_col = "null"
+                        row = "|**{}**|**{}**|{} et.al.|{}|{}|{}|\n".format(
                             v.get('update_time', ''),
                             v.get('title', ''),
                             v.get('first_author', ''),
-                            v.get('category', ''),
-                            v.get('url', ''),
-                            v.get('arxiv_id', ''),
-                            v.get('url', '').replace('abs', 'pdf')
+                            keyword,
+                            pdf_col,
+                            code_col
                         )
                         f.write(pretty_math(row))
                     else:
