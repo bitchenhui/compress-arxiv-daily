@@ -14,6 +14,7 @@ logging.basicConfig(format='[%(asctime)s %(levelname)s] %(message)s',
 
 github_url = "https://api.github.com/search/repositories"
 arxiv_url = "http://arxiv.org/"
+semantic_scholar_url = "https://api.semanticscholar.org/graph/v1/paper/arXiv:"
 
 def load_config(config_file:str) -> dict:
     '''
@@ -83,20 +84,160 @@ def get_code_link(qword:str) -> str:
         code_link = results["items"][0]["html_url"]
     return code_link
 
+def get_paper_citations(arxiv_id: str) -> int:
+    """
+    Get citation count from Semantic Scholar API
+    @param arxiv_id: str, e.g., "2108.09112"
+    @return: citation count
+    """
+    try:
+        # Remove version number if present
+        arxiv_id = re.sub(r'v\d+$', '', arxiv_id)
+        url = f"{semantic_scholar_url}{arxiv_id}?fields=citationCount"
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            return data.get('citationCount', 0)
+        else:
+            return 0
+    except Exception as e:
+        logging.warning(f"Failed to get citations for {arxiv_id}: {e}")
+        return 0
+
+def get_history_papers(topic, query: str, min_citations: int = 500, max_results: int = 50):
+    """
+    Get historical papers with high citations
+    @param topic: str
+    @param query: str
+    @param min_citations: int, minimum citations threshold
+    @param max_results: int
+    @return: dict of papers with citations > threshold
+    """
+    content = dict()
+    search_engine = arxiv.Search(
+        query=query,
+        max_results=max_results,
+        sort_by=arxiv.SortCriterion.Relevance
+    )
+
+    for result in search_engine.results():
+        paper_id = result.get_short_id()
+        # Remove version number
+        ver_pos = paper_id.find('v')
+        if ver_pos != -1:
+            paper_key = paper_id[0:ver_pos]
+        else:
+            paper_key = paper_id
+
+        # Get citation count
+        citation_count = get_paper_citations(paper_key)
+        logging.info(f"Paper {paper_key}: {result.title[:50]}... citations={citation_count}")
+
+        if citation_count >= min_citations:
+            paper_url = arxiv_url + 'abs/' + paper_key
+            paper_first_author = get_authors(result.authors, first_author=True)
+
+            content[paper_key] = {
+                "title": result.title,
+                "authors": get_authors(result.authors),
+                "first_author": paper_first_author,
+                "url": paper_url,
+                "citations": citation_count,
+                "published": result.published.date().isoformat()
+            }
+            logging.info(f"  -> Added to history (citations: {citation_count})")
+
+    return {topic: content}
+
+def update_history_json(filename: str, data_dict: dict):
+    """
+    Update history JSON file with new papers (merge, avoid duplicates)
+    """
+    with open(filename, "r") as f:
+        content = f.read()
+        if not content:
+            existing_data = {}
+        else:
+            existing_data = json.loads(content)
+
+    # Merge new data
+    for data in data_dict:
+        for keyword in data.keys():
+            papers = data[keyword]
+            if keyword not in existing_data:
+                existing_data[keyword] = {}
+            # Merge: keep the one with higher citations if duplicate
+            for paper_id, paper_info in papers.items():
+                if paper_id in existing_data[keyword]:
+                    existing_citations = existing_data[keyword][paper_id].get('citations', 0)
+                    if paper_info['citations'] > existing_citations:
+                        existing_data[keyword][paper_id] = paper_info
+                else:
+                    existing_data[keyword][paper_id] = paper_info
+
+    with open(filename, "w") as f:
+        json.dump(existing_data, f, indent=2, ensure_ascii=False)
+
+    logging.info(f"History updated: {filename}")
+
+def send_to_feishun(webhook_url: str, content: str):
+    """
+    Send message to Feishu webhook
+    """
+    try:
+        headers = {"Content-Type": "application/json"}
+        data = {"msg_type": "text", "content": {"text": content}}
+        response = requests.post(webhook_url, headers=headers, json=data, timeout=10)
+        if response.status_code == 200:
+            logging.info("Feishu message sent successfully")
+        else:
+            logging.warning(f"Failed to send Feishu message: {response.status_code}")
+    except Exception as e:
+        logging.warning(f"Failed to send Feishu message: {e}")
+
+def generate_feishu_message(data_collector: list, date_str: str) -> str:
+    """
+    Generate Feishu message from daily papers (标题, 作者, 分类, 链接)
+    """
+    message = f"📄 Compress ArXiv Daily - {date_str}\n\n"
+
+    for data in data_collector:
+        for topic, papers in data.items():
+            if not papers:
+                continue
+            message += f"### {topic}\n"
+            # Sort by date (newest first)
+            sorted_papers = sorted(papers.items(), key=lambda x: x[1].get('update_time', ''), reverse=True)
+            for paper_id, paper_info in sorted_papers[:10]:  # Top 10 per category
+                title = paper_info.get('title', '')[:60]
+                authors = paper_info.get('first_author', '')
+                category = paper_info.get('category', 'cs.CV')
+                url = paper_info.get('url', '')
+                message += f"• {title}\n"
+                message += f"  作者: {authors} et.al. | 分类: {category}\n"
+                message += f"  链接: {url}\n\n"
+            message += "\n"
+
+    return message
+
 def get_daily_papers(topic,query="slam", max_results=2):
     """
     @param topic: str
     @param query: str
     @return paper_with_code: dict
     """
+    import time
     # output
     content = dict()
     content_to_web = dict()
     search_engine = arxiv.Search(
         query = query,
         max_results = max_results,
-        sort_by = arxiv.SortCriterion.SubmittedDate
+        sort_by=arxiv.SortCriterion.SubmittedDate
     )
+
+    # Rate limit: wait before API call to avoid 429
+    time.sleep(10)
 
     for result in search_engine.results():
 
@@ -123,10 +264,18 @@ def get_daily_papers(topic,query="slam", max_results=2):
 
         # Since PapersWithCode API is deprecated, we no longer fetch code links
         # Papers will be listed without code links
-        content[paper_key] = "|**{}**|**{}**|{} et.al.|[{}]({})|null|\n".format(
-               update_time,paper_title,paper_first_author,paper_key,paper_url)
-        content_to_web[paper_key] = "- {}, **{}**, {} et.al., Paper: [{}]({})".format(
-               update_time,paper_title,paper_first_author,paper_url,paper_url)
+        # Store as dict to include category
+        content[paper_key] = {
+            "update_time": str(update_time),
+            "title": paper_title,
+            "first_author": paper_first_author,
+            "authors": paper_authors,
+            "category": primary_category,
+            "url": paper_url
+        }
+
+        content_to_web[paper_key] = "- {}, **{}**, {} et.al., [{}]({})".format(
+               update_time,paper_title,paper_first_author,primary_category,paper_url)
 
         # TODO: select useful comments
         comments = None
@@ -302,7 +451,22 @@ def json_to_md(filename,md_filename,
 
             for _,v in day_content.items():
                 if v is not None:
-                    f.write(pretty_math(v)) # make latex pretty
+                    # Handle both old string format and new dict format
+                    if isinstance(v, dict):
+                        # New dict format with category
+                        row = "|**{}**|**{}**|{} et.al.|[{}]({})|[{}]({})|null|\n".format(
+                            v.get('update_time', ''),
+                            v.get('title', ''),
+                            v.get('first_author', ''),
+                            v.get('category', ''),
+                            v.get('url', ''),
+                            v.get('arxiv_id', ''),
+                            v.get('url', '').replace('abs', 'pdf')
+                        )
+                        f.write(pretty_math(row))
+                    else:
+                        # Old string format
+                        f.write(pretty_math(v))
 
             f.write(f"\n")
 
@@ -315,21 +479,21 @@ def json_to_md(filename,md_filename,
         if show_badge == True:
             # we don't like long string, break it!
             f.write((f"[contributors-shield]: https://img.shields.io/github/"
-                     f"contributors/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge\n"))
-            f.write((f"[contributors-url]: https://github.com/Vincentqyw/"
-                     f"cv-arxiv-daily/graphs/contributors\n"))
-            f.write((f"[forks-shield]: https://img.shields.io/github/forks/Vincentqyw/"
-                     f"cv-arxiv-daily.svg?style=for-the-badge\n"))
-            f.write((f"[forks-url]: https://github.com/Vincentqyw/"
-                     f"cv-arxiv-daily/network/members\n"))
-            f.write((f"[stars-shield]: https://img.shields.io/github/stars/Vincentqyw/"
-                     f"cv-arxiv-daily.svg?style=for-the-badge\n"))
-            f.write((f"[stars-url]: https://github.com/Vincentqyw/"
-                     f"cv-arxiv-daily/stargazers\n"))
-            f.write((f"[issues-shield]: https://img.shields.io/github/issues/Vincentqyw/"
-                     f"cv-arxiv-daily.svg?style=for-the-badge\n"))
-            f.write((f"[issues-url]: https://github.com/Vincentqyw/"
-                     f"cv-arxiv-daily/issues\n\n"))
+                     f"contributors/dch/compress-arxiv-daily.svg?style=for-the-badge\n"))
+            f.write((f"[contributors-url]: https://github.com/dch/"
+                     f"compress-arxiv-daily/graphs/contributors\n"))
+            f.write((f"[forks-shield]: https://img.shields.io/github/forks/dch/"
+                     f"compress-arxiv-daily.svg?style=for-the-badge\n"))
+            f.write((f"[forks-url]: https://github.com/dch/"
+                     f"compress-arxiv-daily/network/members\n"))
+            f.write((f"[stars-shield]: https://img.shields.io/github/stars/dch/"
+                     f"compress-arxiv-daily.svg?style=for-the-badge\n"))
+            f.write((f"[stars-url]: https://github.com/dch/"
+                     f"compress-arxiv-daily/stargazers\n"))
+            f.write((f"[issues-shield]: https://img.shields.io/github/issues/dch/"
+                     f"compress-arxiv-daily.svg?style=for-the-badge\n"))
+            f.write((f"[issues-url]: https://github.com/dch/"
+                     f"compress-arxiv-daily/issues\n\n"))
 
     logging.info(f"{task} finished")
 
@@ -397,13 +561,54 @@ def demo(**config):
         json_to_md(json_file, md_file, task ='Update Wechat', \
             to_web=False, use_title= False, show_badge = show_badge)
 
+    # 4. Update history papers (high citation > 500)
+    if config.get('update_history', False):
+        logging.info(f"GET history papers (citations > 500) begin")
+        history_file = config.get('json_history_path', './docs/compress-arxiv-history.json')
+        history_collector = []
+        for topic, keyword in keywords.items():
+            logging.info(f"History Keyword: {topic}")
+            history_data = get_history_papers(topic, query=keyword, min_citations=500, max_results=30)
+            history_collector.append(history_data)
+        update_history_json(history_file, history_collector)
+        logging.info(f"GET history papers end")
+
+    # 5. Send to Feishu
+    feishu_webhook = config.get('feishu_webhook', '')
+    if feishu_webhook and data_collector:
+        date_now = datetime.date.today().strftime('%Y-%m-%d')
+        # Convert daily papers to new format for Feishu
+        feishu_data = []
+        for data in data_collector:
+            for topic, papers in data.items():
+                if not papers:
+                    continue
+                # Convert to dict with update_time
+                paper_dict = {}
+                for paper_id, paper_str in papers.items():
+                    # Parse the paper string to get info
+                    # Format: |date|title|author|id|url|
+                    parts = paper_str.split('|')
+                    if len(parts) >= 4:
+                        paper_dict[paper_id] = {
+                            'title': parts[2].strip() if len(parts) > 2 else '',
+                            'update_time': parts[1].strip() if len(parts) > 1 else '',
+                        }
+                if paper_dict:
+                    feishu_data.append({topic: paper_dict})
+
+        message = generate_feishu_message(feishu_data, date_now)
+        send_to_feishun(feishu_webhook, message)
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--config_path',type=str, default='config.yaml',
                             help='configuration file path')
     parser.add_argument('--update_paper_links', default=False,
                         action="store_true",help='whether to update paper links etc.')
+    parser.add_argument('--update_history', default=False,
+                        action="store_true",help='whether to update history papers with high citations')
     args = parser.parse_args()
     config = load_config(args.config_path)
-    config = {**config, 'update_paper_links':args.update_paper_links}
+    config = {**config, 'update_paper_links':args.update_paper_links, 'update_history':args.update_history}
     demo(**config)

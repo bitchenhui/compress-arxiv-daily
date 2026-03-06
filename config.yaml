@@ -1,39 +1,40 @@
 # TODO: add papers by configuration file
 base_url: "https://arxiv.paperswithcode.com/api/v0/papers/"
-user_name: "Vincentqyw"
-repo_name: "cv-arxiv-daily"
+user_name: "bitchenhui"
+repo_name: "compress-arxiv-daily"
 show_authors: True
 show_links: True
 show_badge: True
-max_results: 10
+max_results: 5
 
 publish_readme: True
 publish_gitpage: True
 publish_wechat: False
 
 # file paths
-json_readme_path: './docs/cv-arxiv-daily.json'
-json_gitpage_path: './docs/cv-arxiv-daily-web.json'
-json_wechat_path: './docs/cv-arxiv-daily-wechat.json'
+json_readme_path: './docs/compress-arxiv-daily.json'
+json_gitpage_path: './docs/compress-arxiv-daily-web.json'
+json_wechat_path: './docs/compress-arxiv-daily-wechat.json'
+json_history_path: './docs/compress-arxiv-history.json'
 
 md_readme_path: 'README.md'
 md_gitpage_path: './docs/index.md'
 md_wechat_path: './docs/wechat.md'
 
+# Feishu webhook (optional) - 请替换为你的飞书机器人webhook地址
+feishu_webhook: "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+
 # keywords to search
 keywords:
-    "SLAM": 
-        filters: ["SLAM", "Visual Odometry"]
-    "SFM":
-        filters: ["SFM", "Structure from Motion"]
-    "Visual Localization":
-        filters: ["Visual Localization","Camera Localization",
-                  "Camera Re-localisation","Loop Closure Detection",
-                  "visual place recognition","image retrieval"]
-    "Keypoint Detection":
-        filters: ["Keypoint Detection", "Feature Descriptor"]
-    "Image Matching":
-        filters: ["Image Matching", "Keypoint Matching", 
-                  "Line Segment Detection", "Local Feature Matching"]
-    "NeRF":
-        filters: ["NeRF"]
+    "Video Codec":
+        filters: ["Video Coding", "Video Compression", "Video Codec", "HEVC", "H.265", "H.264", "AV1", "VVC", "ECM","JVET", "EVC", "LCEVC", "AVS3", "AVS2"]
+    "Image Compression":
+        filters: ["Image Compression", "JPEG", "JPEG2000", "Image Coding", "Learned Image Compression"]
+    "Neural Compression":
+        filters: ["Neural Compression", "Deep Compression", "Learned Video Coding", "Neural Image Compression", "Transformer-based Compression", "End-to-end Video Compression", "End-to-end Image Compression"]
+    "3D Visual Coding":
+        filters: ["Point Cloud Compression", "3D Video Coding", "multi-view coding", "VR/AR compression"]
+    "Codec Optimization":
+        filters: ["Codec Optimization", "Rate Control", "RD Optimization", "Bitrate Adaptation", "Low-latency Coding", "Real-time Coding", "Complexity Reduction", "Energy-efficient Coding", "Motion Estimation", "Motion Compensation"]
+    "Perceptual Coding":
+        filters: ["Perceptual Coding", "Subjective Quality", "Visual Quality", "SSIM", "PSNR"]
