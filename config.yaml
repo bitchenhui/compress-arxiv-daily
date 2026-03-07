@@ -5,7 +5,7 @@ repo_name: "compress-arxiv-daily"
 show_authors: True
 show_links: True
 show_badge: True
-max_results: 5
+max_results: 10000
 
 publish_readme: True
 publish_gitpage: True
@@ -22,7 +22,7 @@ md_gitpage_path: './docs/index.md'
 md_wechat_path: './docs/wechat.md'
 
 # Feishu webhook (optional) - 请替换为你的飞书机器人webhook地址
-feishu_webhook: "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+feishu_webhook: "https://open.feishu.cn/open-apis/bot/v2/hook/82390df1-c0fc-4b38-840f-792abe38baf6"
 
 # keywords to search
 keywords:

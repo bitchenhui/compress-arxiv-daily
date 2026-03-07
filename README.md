@@ -1,4 +1,4 @@
-## Updated on 2026.03.06
+## Updated on 2026.03.07
 > Usage instructions: [here](./docs/README.md#usage)
 
 <details>
@@ -19,11 +19,12 @@
 |**2026-03-05**|**Frequency-Aware Error-Bounded Caching for Accelerating Diffusion Transformers**|Guandong Li et.al.|Video Quality|[2603.05315](http://arxiv.org/pdf/2603.05315)|
 |**2026-03-05**|**Wiki-R1: Incentivizing Multimodal Reasoning for Knowledge-based VQA via Data and Sampling Curriculum**|Shan Ning et.al.|Video Quality|[2603.05256](http://arxiv.org/pdf/2603.05256)|
 |**2026-03-05**|**How far have we gone in Generative Image Restoration? A study on its capability, limitations and evaluation practices**|Xiang Yin et.al.|Video Quality|[2603.05010](http://arxiv.org/pdf/2603.05010)|
+|**2026-03-05**|**BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement**|Zishu Yao et.al.|Video Quality|[2603.04975](http://arxiv.org/pdf/2603.04975)|
 |**2026-03-05**|**SSR-GS: Separating Specular Reflection in Gaussian Splatting for Glossy Surface Reconstruction**|Ningjing Fan et.al.|3D Compression|[2603.05152](http://arxiv.org/pdf/2603.05152)|
 |**2026-03-05**|**GaussTwin: Unified Simulation and Correction with Gaussian Splatting for Robotic Digital Twins**|Yichen Cai et.al.|3D Compression|[2603.05108](http://arxiv.org/pdf/2603.05108)|
 |**2026-03-05**|**GloSplat: Joint Pose-Appearance Optimization for Faster and More Accurate 3D Reconstruction**|Tianyu Xiong et.al.|3D Compression|[2603.04847](http://arxiv.org/pdf/2603.04847)|
 |**2026-03-05**|**DSA-SRGS: Super-Resolution Gaussian Splatting for Dynamic Sparse-View DSA Reconstruction**|Shiyu Zhang et.al.|3D Compression|[2603.04770](http://arxiv.org/pdf/2603.04770)|
-<p align=right>(<a href=#updated-on-20260306>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260307>back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/bitchenhui/compress-arxiv-daily.svg?style=for-the-badge
 [contributors-url]: https://github.com/bitchenhui/compress-arxiv-daily/graphs/contributors
