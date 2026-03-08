@@ -674,9 +674,10 @@ def demo(**config):
 
     feishu_webhook = config.get('feishu_webhook', '')
     if feishu_webhook:
-        if data_collector:
-            date_now = datetime.date.today().strftime('%Y-%m-%d')
-            table_data = generate_feishu_table(data_collector, date_now)
+        date_now = datetime.date.today().strftime('%Y-%m-%d')
+        table_data = generate_feishu_table(data_collector, date_now)
+        # Check if table_data has actual paper rows (len > 1 means has data)
+        if len(table_data) > 1:
             send_to_feishun(feishu_webhook, table_data)
         else:
             # No new papers today
