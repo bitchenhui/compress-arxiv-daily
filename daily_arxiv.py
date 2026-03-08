@@ -228,7 +228,7 @@ def update_history_json(filename: str, data_dict: dict):
 
 def send_to_feishun(webhook_url: str, table_data: list):
     """
-    Send message to Feishu webhook using rich text (post) message with formatted list
+    Send message to Feishu webhook using interactive card with elegant formatting
     """
     try:
         headers = {"Content-Type": "application/json"}
@@ -237,42 +237,76 @@ def send_to_feishun(webhook_url: str, table_data: list):
             logging.warning("No table data to send")
             return
 
-        # Build content - title is in the "title" field, only build body here
-        content_elements = []
+        # Get date from first paper for the header
+        first_date = str(table_data[1][0]) if len(table_data) > 1 else ""
+        paper_count = len(table_data) - 1
 
-        # Process data rows
-        for i, row in enumerate(table_data[1:], 1):
-            # row format: [Publish Date, Title, Authors, Tag, PDF]
+        # Build elements for the card
+        elements = []
+
+        # Add header info
+        elements.append({
+            "tag": "div",
+            "text": {
+                "tag": "lark_md",
+                "content": f"📅 **{first_date}**  |  📚 **{paper_count}** 篇论文"
+            }
+        })
+
+        # Process data rows - group by tag for better organization
+        current_tag = None
+        tag_index = {}  # Track current index within each tag
+        for row in table_data[1:]:
             date = str(row[0])
             title = str(row[1])
             authors = str(row[2])
             tag = str(row[3])
             pdf_url = str(row[4])
-            
-            # Format: 【序号】📅日期 🏷️标签
-            #         📖标题
-            #         ✍️作者
-            #         🔗链接
-            entry = f"【{i}】📅 {date}  🏷️ {tag}\n" \
-                    f"📖 {title}\n" \
-                    f"✍️ {authors}\n" \
-                    f"🔗 {pdf_url}\n"
-            
-            content_elements.append({
-                "tag": "text",
-                "text": entry
+
+            # Initialize tag index if needed
+            if tag not in tag_index:
+                tag_index[tag] = 0
+            tag_index[tag] += 1
+
+            # Add tag header if tag changes (compact - no extra spacing)
+            if tag != current_tag:
+                elements.append({
+                    "tag": "div",
+                    "text": {
+                        "tag": "lark_md",
+                        "content": f"**🏷️ {tag}**"
+                    }
+                })
+                current_tag = tag
+
+            # Full title (no truncation)
+            display_title = title
+
+            # Paper entry - compact format
+            entry = f"**{tag_index[tag]}.** [{display_title}]({pdf_url})  ✍️ {authors}  📅 {date}"
+
+            elements.append({
+                "tag": "div",
+                "text": {
+                    "tag": "lark_md",
+                    "content": entry
+                }
             })
 
-        # Use post message type - title will be shown separately
+        # Use interactive card with wide screen mode
         data = {
-            "msg_type": "post",
-            "content": {
-                "post": {
-                    "zh_cn": {
-                        "title": "📄 Compress ArXiv Daily",
-                        "content": [content_elements]
-                    }
-                }
+            "msg_type": "interactive",
+            "card": {
+                "config": {
+                    "wide_screen_mode": True
+                },
+                "header": {
+                    "title": {
+                        "content": "📄 Compress ArXiv Daily"
+                    },
+                    "template": "blue"
+                },
+                "elements": elements
             }
         }
 
