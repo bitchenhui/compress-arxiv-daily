@@ -226,6 +226,45 @@ def update_history_json(filename: str, data_dict: dict):
 
     logging.info(f"History updated: {filename}")
 
+def send_no_papers_message(webhook_url: str):
+    """
+    Send message when there are no new papers
+    """
+    try:
+        headers = {"Content-Type": "application/json"}
+        data = {
+            "msg_type": "interactive",
+            "card": {
+                "config": {
+                    "wide_screen_mode": True
+                },
+                "header": {
+                    "title": {
+                        "content": "📄 Compress ArXiv Daily"
+                    },
+                    "template": "blue"
+                },
+                "elements": [
+                    {
+                        "tag": "div",
+                        "text": {
+                            "tag": "lark_md",
+                            "content": "**今天没有增量论文！！！**"
+                        }
+                    }
+                ]
+            }
+        }
+        response = requests.post(webhook_url, headers=headers, json=data, timeout=10)
+        logging.info(f"Feishu response status: {response.status_code}")
+        if response.status_code == 200:
+            logging.info("Feishu 'no papers' message sent successfully")
+        else:
+            logging.warning(f"Failed to send Feishu message: {response.status_code}")
+    except Exception as e:
+        logging.warning(f"Failed to send Feishu message: {e}")
+
+
 def send_to_feishun(webhook_url: str, table_data: list):
     """
     Send message to Feishu webhook using interactive card with elegant formatting
@@ -634,10 +673,14 @@ def demo(**config):
         json_to_md(json_file, md_file, task='Update Wechat', to_web=False, use_title=False, show_badge=show_badge)
 
     feishu_webhook = config.get('feishu_webhook', '')
-    if feishu_webhook and data_collector:
-        date_now = datetime.date.today().strftime('%Y-%m-%d')
-        table_data = generate_feishu_table(data_collector, date_now)
-        send_to_feishun(feishu_webhook, table_data)
+    if feishu_webhook:
+        if data_collector:
+            date_now = datetime.date.today().strftime('%Y-%m-%d')
+            table_data = generate_feishu_table(data_collector, date_now)
+            send_to_feishun(feishu_webhook, table_data)
+        else:
+            # No new papers today
+            send_no_papers_message(feishu_webhook)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
