@@ -1,4 +1,4 @@
-## Updated on 2026.03.07
+## Updated on 2026.03.08
 > Usage instructions: [here](./docs/README.md#usage)
 
 <details>
@@ -24,7 +24,7 @@
 |**2026-03-05**|**GaussTwin: Unified Simulation and Correction with Gaussian Splatting for Robotic Digital Twins**|Yichen Cai et.al.|3D Compression|[2603.05108](http://arxiv.org/pdf/2603.05108)|
 |**2026-03-05**|**GloSplat: Joint Pose-Appearance Optimization for Faster and More Accurate 3D Reconstruction**|Tianyu Xiong et.al.|3D Compression|[2603.04847](http://arxiv.org/pdf/2603.04847)|
 |**2026-03-05**|**DSA-SRGS: Super-Resolution Gaussian Splatting for Dynamic Sparse-View DSA Reconstruction**|Shiyu Zhang et.al.|3D Compression|[2603.04770](http://arxiv.org/pdf/2603.04770)|
-<p align=right>(<a href=#updated-on-20260307>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260308>back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/bitchenhui/compress-arxiv-daily.svg?style=for-the-badge
 [contributors-url]: https://github.com/bitchenhui/compress-arxiv-daily/graphs/contributors

@@ -228,34 +228,51 @@ def update_history_json(filename: str, data_dict: dict):
 
 def send_to_feishun(webhook_url: str, table_data: list):
     """
-    Send message to Feishu webhook using interactive card with native table
+    Send message to Feishu webhook using rich text (post) message with formatted list
     """
     try:
         headers = {"Content-Type": "application/json"}
 
-        # Build markdown table
-        markdown_lines = ["| " + " | ".join(table_data[0]) + " |"]
-        markdown_lines.append("|" + "|".join(["---"] * len(table_data[0])) + "|")
-        for row in table_data[1:]:
-            markdown_lines.append("| " + " | ".join(str(cell) for cell in row) + " |")
-        markdown_content = "\n".join(markdown_lines)
+        if not table_data or len(table_data) < 2:
+            logging.warning("No table data to send")
+            return
 
-        # Use interactive card with markdown element
+        # Build content - title is in the "title" field, only build body here
+        content_elements = []
+
+        # Process data rows
+        for i, row in enumerate(table_data[1:], 1):
+            # row format: [Publish Date, Title, Authors, Tag, PDF]
+            date = str(row[0])
+            title = str(row[1])
+            authors = str(row[2])
+            tag = str(row[3])
+            pdf_url = str(row[4])
+            
+            # Format: 【序号】📅日期 🏷️标签
+            #         📖标题
+            #         ✍️作者
+            #         🔗链接
+            entry = f"【{i}】📅 {date}  🏷️ {tag}\n" \
+                    f"📖 {title}\n" \
+                    f"✍️ {authors}\n" \
+                    f"🔗 {pdf_url}\n"
+            
+            content_elements.append({
+                "tag": "text",
+                "text": entry
+            })
+
+        # Use post message type - title will be shown separately
         data = {
-            "msg_type": "interactive",
-            "card": {
-                "header": {
-                    "title": {
-                        "content": "📄 Compress ArXiv Daily"
-                    },
-                    "template": "blue"
-                },
-                "elements": [
-                    {
-                        "tag": "markdown",
-                        "content": markdown_content
+            "msg_type": "post",
+            "content": {
+                "post": {
+                    "zh_cn": {
+                        "title": "📄 Compress ArXiv Daily",
+                        "content": [content_elements]
                     }
-                ]
+                }
             }
         }
 
@@ -310,10 +327,7 @@ def generate_feishu_table(data_collector: list, date_str: str):
 
         pdf_url = url.replace('abs', 'pdf') if url else ''
 
-        # Truncate title
-        if len(title) > 40:
-            title = title[:40] + "..."
-
+        # Full title (no truncation)
         table_data.append([date, title, f"{authors} et.al.", tag, pdf_url])
 
     return table_data
