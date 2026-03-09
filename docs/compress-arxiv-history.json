@@ -1,1 +1,2172 @@
-{}
+{
+  "3D Compression": {
+    "2311.17245": {
+      "title": "LightGaussian: Unbounded 3D Gaussian Compression with 15x Reduction and 200+ FPS",
+      "authors": "Zhiwen Fan, Kevin Wang, Kairun Wen, Zehao Zhu, Dejia Xu, Zhangyang Wang",
+      "first_author": "Zhiwen Fan",
+      "url": "http://arxiv.org/abs/2311.17245",
+      "citations": 456,
+      "published": "2023-11-28"
+    },
+    "2311.13681": {
+      "title": "Compact 3D Gaussian Representation for Radiance Field",
+      "authors": "Joo Chan Lee, Daniel Rho, Xiangyu Sun, Jong Hwan Ko, Eunbyung Park",
+      "first_author": "Joo Chan Lee",
+      "url": "http://arxiv.org/abs/2311.13681",
+      "citations": 385,
+      "published": "2023-11-22"
+    },
+    "2312.00732": {
+      "title": "Gaussian Grouping: Segment and Edit Anything in 3D Scenes",
+      "authors": "Mingqiao Ye, Martin Danelljan, Fisher Yu, Lei Ke",
+      "first_author": "Mingqiao Ye",
+      "url": "http://arxiv.org/abs/2312.00732",
+      "citations": 357,
+      "published": "2023-12-01"
+    },
+    "2011.03799": {
+      "title": "Multiscale Point Cloud Geometry Compression",
+      "authors": "Jianqiang Wang, Dandan Ding, Zhu Li, Zhan Ma",
+      "first_author": "Jianqiang Wang",
+      "url": "http://arxiv.org/abs/2011.03799",
+      "citations": 237,
+      "published": "2020-11-07"
+    },
+    "2401.02436": {
+      "title": "Compressed 3D Gaussian Splatting for Accelerated Novel View Synthesis",
+      "authors": "Simon Niedermayr, Josef Stumpfegger, Rüdiger Westermann",
+      "first_author": "Simon Niedermayr",
+      "url": "http://arxiv.org/abs/2401.02436",
+      "citations": 236,
+      "published": "2023-11-17"
+    },
+    "2403.14530": {
+      "title": "HAC: Hash-grid Assisted Context for 3D Gaussian Splatting Compression",
+      "authors": "Yihang Chen, Qianyi Wu, Weiyao Lin, Mehrtash Harandi, Jianfei Cai",
+      "first_author": "Yihang Chen",
+      "url": "http://arxiv.org/abs/2403.14530",
+      "citations": 200,
+      "published": "2024-03-21"
+    },
+    "2005.07178": {
+      "title": "OctSqueeze: Octree-Structured Entropy Model for LiDAR Compression",
+      "authors": "Lila Huang, Shenlong Wang, Kelvin Wong, Jerry Liu, Raquel Urtasun",
+      "first_author": "Lila Huang",
+      "url": "http://arxiv.org/abs/2005.07178",
+      "citations": 194,
+      "published": "2020-05-14"
+    },
+    "2011.12688": {
+      "title": "Reduced Reference Perceptual Quality Model and Application to Rate Control for 3D Point Cloud Compression",
+      "authors": "Qi Liu, Hui Yuan, Raouf Hamzaoui, Honglei Su, Junhui Hou, Huan Yang",
+      "first_author": "Qi Liu",
+      "url": "http://arxiv.org/abs/2011.12688",
+      "citations": 185,
+      "published": "2020-11-25"
+    },
+    "2105.02158": {
+      "title": "VoxelContext-Net: An Octree based Framework for Point Cloud Compression",
+      "authors": "Zizheng Que, Guo Lu, Dong Xu",
+      "first_author": "Zizheng Que",
+      "url": "http://arxiv.org/abs/2105.02158",
+      "citations": 171,
+      "published": "2021-05-05"
+    },
+    "2107.04004": {
+      "title": "3D Neural Scene Representations for Visuomotor Control",
+      "authors": "Yunzhu Li, Shuang Li, Vincent Sitzmann, Pulkit Agrawal, Antonio Torralba",
+      "first_author": "Yunzhu Li",
+      "url": "http://arxiv.org/abs/2107.04004",
+      "citations": 156,
+      "published": "2021-07-08"
+    },
+    "2002.03370": {
+      "title": "A Unified End-to-End Framework for Efficient Deep Image Compression",
+      "authors": "Jiaheng Liu, Guo Lu, Zhihao Hu, Dong Xu",
+      "first_author": "Jiaheng Liu",
+      "url": "http://arxiv.org/abs/2002.03370",
+      "citations": 127,
+      "published": "2020-02-09"
+    },
+    "2301.08247": {
+      "title": "Multiview Compressive Coding for 3D Reconstruction",
+      "authors": "Chao-Yuan Wu, Justin Johnson, Jitendra Malik, Christoph Feichtenhofer, Georgia Gkioxari",
+      "first_author": "Chao-Yuan Wu",
+      "url": "http://arxiv.org/abs/2301.08247",
+      "citations": 94,
+      "published": "2023-01-19"
+    },
+    "2004.00329": {
+      "title": "Compressed Volumetric Heatmaps for Multi-Person 3D Pose Estimation",
+      "authors": "Matteo Fabbri, Fabio Lanzi, Simone Calderara, Stefano Alletto, Rita Cucchiara",
+      "first_author": "Matteo Fabbri",
+      "url": "http://arxiv.org/abs/2004.00329",
+      "citations": 86,
+      "published": "2020-04-01"
+    },
+    "2407.09510": {
+      "title": "3DGS.zip: A survey on 3D Gaussian Splatting Compression Methods",
+      "authors": "Milena T. Bagdasarian, Paul Knoll, Yi-Hsin Li, Florian Barthel, Anna Hilsmann, Peter Eisert, Wieland Morgenstern",
+      "first_author": "Milena T. Bagdasarian",
+      "url": "http://arxiv.org/abs/2407.09510",
+      "citations": 57,
+      "published": "2024-06-17"
+    },
+    "2207.12554": {
+      "title": "Inter-Frame Compression for Dynamic Point Cloud Geometry Coding",
+      "authors": "Anique Akhtar, Zhu Li, Geert Van der Auwera",
+      "first_author": "Anique Akhtar",
+      "url": "http://arxiv.org/abs/2207.12554",
+      "citations": 54,
+      "published": "2022-07-25"
+    },
+    "2002.04439": {
+      "title": "Folding-based compression of point cloud attributes",
+      "authors": "Maurice Quach, Giuseppe Valenzise, Frederic Dufaux",
+      "first_author": "Maurice Quach",
+      "url": "http://arxiv.org/abs/2002.04439",
+      "citations": 54,
+      "published": "2020-02-11"
+    },
+    "2008.06972": {
+      "title": "Real-Time Spatio-Temporal LiDAR Point Cloud Compression",
+      "authors": "Yu Feng, Shaoshan Liu, Yuhao Zhu",
+      "first_author": "Yu Feng",
+      "url": "http://arxiv.org/abs/2008.06972",
+      "citations": 52,
+      "published": "2020-08-16"
+    }
+  },
+  "MLLM": {
+    "2306.13394": {
+      "title": "MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models",
+      "authors": "Chaoyou Fu, Peixian Chen, Yunhang Shen, Yulei Qin, Mengdan Zhang, Xu Lin, Jinrui Yang, Xiawu Zheng, Ke Li, Xing Sun, Yunsheng Wu, Rongrong Ji, Caifeng Shan, Ran He",
+      "first_author": "Chaoyou Fu",
+      "url": "http://arxiv.org/abs/2306.13394",
+      "citations": 1344,
+      "published": "2023-06-23"
+    },
+    "2306.13549": {
+      "title": "A Survey on Multimodal Large Language Models",
+      "authors": "Shukang Yin, Chaoyou Fu, Sirui Zhao, Ke Li, Xing Sun, Tong Xu, Enhong Chen",
+      "first_author": "Shukang Yin",
+      "url": "http://arxiv.org/abs/2306.13549",
+      "citations": 1124,
+      "published": "2023-06-23"
+    },
+    "2408.01800": {
+      "title": "MiniCPM-V: A GPT-4V Level MLLM on Your Phone",
+      "authors": "Yuan Yao, Tianyu Yu, Ao Zhang, Chongyi Wang, Junbo Cui, Hongji Zhu, Tianchi Cai, Haoyu Li, Weilin Zhao, Zhihui He, Qianyu Chen, Huarong Zhou, Zhensheng Zou, Haoye Zhang, Shengding Hu, Zhi Zheng, Jie Zhou, Jie Cai, Xu Han, Guoyang Zeng, Dahai Li, Zhiyuan Liu, Maosong Sun",
+      "first_author": "Yuan Yao",
+      "url": "http://arxiv.org/abs/2408.01800",
+      "citations": 967,
+      "published": "2024-08-03"
+    },
+    "2312.14135": {
+      "title": "V*: Guided Visual Search as a Core Mechanism in Multimodal LLMs",
+      "authors": "Penghao Wu, Saining Xie",
+      "first_author": "Penghao Wu",
+      "url": "http://arxiv.org/abs/2312.14135",
+      "citations": 375,
+      "published": "2023-12-21"
+    },
+    "2312.00849": {
+      "title": "RLHF-V: Towards Trustworthy MLLMs via Behavior Alignment from Fine-grained Correctional Human Feedback",
+      "authors": "Tianyu Yu, Yuan Yao, Haoye Zhang, Taiwen He, Yifeng Han, Ganqu Cui, Jinyi Hu, Zhiyuan Liu, Hai-Tao Zheng, Maosong Sun, Tat-Seng Chua",
+      "first_author": "Tianyu Yu",
+      "url": "http://arxiv.org/abs/2312.00849",
+      "citations": 374,
+      "published": "2023-12-01"
+    },
+    "2402.04788": {
+      "title": "MLLM-as-a-Judge: Assessing Multimodal LLM-as-a-Judge with Vision-Language Benchmark",
+      "authors": "Dongping Chen, Ruoxi Chen, Shilin Zhang, Yinuo Liu, Yaochen Wang, Huichi Zhou, Qihui Zhang, Yao Wan, Pan Zhou, Lichao Sun",
+      "first_author": "Dongping Chen",
+      "url": "http://arxiv.org/abs/2402.04788",
+      "citations": 294,
+      "published": "2024-02-07"
+    },
+    "2503.21776": {
+      "title": "Video-R1: Reinforcing Video Reasoning in MLLMs",
+      "authors": "Kaituo Feng, Kaixiong Gong, Bohao Li, Zonghao Guo, Yibing Wang, Tianshuo Peng, Junfei Wu, Xiaoying Zhang, Benyou Wang, Xiangyu Yue",
+      "first_author": "Kaituo Feng",
+      "url": "http://arxiv.org/abs/2503.21776",
+      "citations": 277,
+      "published": "2025-03-27"
+    },
+    "2401.16822": {
+      "title": "EarthGPT: A Universal Multi-modal Large Language Model for Multi-sensor Image Comprehension in Remote Sensing Domain",
+      "authors": "Wei Zhang, Miaoxin Cai, Tong Zhang, Yin Zhuang, Xuerui Mao",
+      "first_author": "Wei Zhang",
+      "url": "http://arxiv.org/abs/2401.16822",
+      "citations": 242,
+      "published": "2024-01-30"
+    },
+    "2309.17102": {
+      "title": "Guiding Instruction-based Image Editing via Multimodal Large Language Models",
+      "authors": "Tsu-Jui Fu, Wenze Hu, Xianzhi Du, William Yang Wang, Yinfei Yang, Zhe Gan",
+      "first_author": "Tsu-Jui Fu",
+      "url": "http://arxiv.org/abs/2309.17102",
+      "citations": 160,
+      "published": "2023-09-29"
+    },
+    "2406.19280": {
+      "title": "HuatuoGPT-Vision, Towards Injecting Medical Visual Knowledge into Multimodal LLMs at Scale",
+      "authors": "Junying Chen, Chi Gui, Ruyi Ouyang, Anningzhe Gao, Shunian Chen, Guiming Hardy Chen, Xidong Wang, Ruifei Zhang, Zhenyang Cai, Ke Ji, Guangjun Yu, Xiang Wan, Benyou Wang",
+      "first_author": "Junying Chen",
+      "url": "http://arxiv.org/abs/2406.19280",
+      "citations": 156,
+      "published": "2024-06-27"
+    },
+    "2401.06805": {
+      "title": "Exploring the Reasoning Abilities of Multimodal Large Language Models (MLLMs): A Comprehensive Survey on Emerging Trends in Multimodal Reasoning",
+      "authors": "Yiqi Wang, Wentao Chen, Xiaotian Han, Xudong Lin, Haiteng Zhao, Yongfei Liu, Bohan Zhai, Jianbo Yuan, Quanzeng You, Hongxia Yang",
+      "first_author": "Yiqi Wang",
+      "url": "http://arxiv.org/abs/2401.06805",
+      "citations": 154,
+      "published": "2024-01-10"
+    },
+    "2504.06256": {
+      "title": "Transfer between Modalities with MetaQueries",
+      "authors": "Xichen Pan, Satya Narayan Shukla, Aashu Singh, Zhuokai Zhao, Shlok Kumar Mishra, Jialiang Wang, Zhiyang Xu, Jiuhai Chen, Kunpeng Li, Felix Juefei-Xu, Ji Hou, Saining Xie",
+      "first_author": "Xichen Pan",
+      "url": "http://arxiv.org/abs/2504.06256",
+      "citations": 150,
+      "published": "2025-04-08"
+    },
+    "2501.01957": {
+      "title": "VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction",
+      "authors": "Chaoyou Fu, Haojia Lin, Xiong Wang, Yi-Fan Zhang, Yunhang Shen, Xiaoyu Liu, Haoyu Cao, Zuwei Long, Heting Gao, Ke Li, Long Ma, Xiawu Zheng, Rongrong Ji, Xing Sun, Caifeng Shan, Ran He",
+      "first_author": "Chaoyou Fu",
+      "url": "http://arxiv.org/abs/2501.01957",
+      "citations": 148,
+      "published": "2025-01-03"
+    },
+    "2409.12961": {
+      "title": "Oryx MLLM: On-Demand Spatial-Temporal Understanding at Arbitrary Resolution",
+      "authors": "Zuyan Liu, Yuhao Dong, Ziwei Liu, Winston Hu, Jiwen Lu, Yongming Rao",
+      "first_author": "Zuyan Liu",
+      "url": "http://arxiv.org/abs/2409.12961",
+      "citations": 142,
+      "published": "2024-09-19"
+    },
+    "2402.02544": {
+      "title": "LHRS-Bot: Empowering Remote Sensing with VGI-Enhanced Large Multimodal Language Model",
+      "authors": "Dilxat Muhtar, Zhenshi Li, Feng Gu, Xueliang Zhang, Pengfeng Xiao",
+      "first_author": "Dilxat Muhtar",
+      "url": "http://arxiv.org/abs/2402.02544",
+      "citations": 138,
+      "published": "2024-02-04"
+    },
+    "2310.05126": {
+      "title": "UReader: Universal OCR-free Visually-situated Language Understanding with Multimodal Large Language Model",
+      "authors": "Jiabo Ye, Anwen Hu, Haiyang Xu, Qinghao Ye, Ming Yan, Guohai Xu, Chenliang Li, Junfeng Tian, Qi Qian, Ji Zhang, Qin Jin, Liang He, Xin Alex Lin, Fei Huang",
+      "first_author": "Jiabo Ye",
+      "url": "http://arxiv.org/abs/2310.05126",
+      "citations": 136,
+      "published": "2023-10-08"
+    },
+    "2501.12386": {
+      "title": "InternVideo2.5: Empowering Video MLLMs with Long and Rich Context Modeling",
+      "authors": "Yi Wang, Xinhao Li, Ziang Yan, Yinan He, Jiashuo Yu, Xiangyu Zeng, Chenting Wang, Changlian Ma, Haian Huang, Jianfei Gao, Min Dou, Kai Chen, Wenhai Wang, Yu Qiao, Yali Wang, Limin Wang",
+      "first_author": "Yi Wang",
+      "url": "http://arxiv.org/abs/2501.12386",
+      "citations": 135,
+      "published": "2025-01-21"
+    },
+    "2406.08394": {
+      "title": "VisionLLM v2: An End-to-End Generalist Multimodal Large Language Model for Hundreds of Vision-Language Tasks",
+      "authors": "Jiannan Wu, Muyan Zhong, Sen Xing, Zeqiang Lai, Zhaoyang Liu, Zhe Chen, Wenhai Wang, Xizhou Zhu, Lewei Lu, Tong Lu, Ping Luo, Yu Qiao, Jifeng Dai",
+      "first_author": "Jiannan Wu",
+      "url": "http://arxiv.org/abs/2406.08394",
+      "citations": 135,
+      "published": "2024-06-12"
+    },
+    "2405.20797": {
+      "title": "Ovis: Structural Embedding Alignment for Multimodal Large Language Model",
+      "authors": "Shiyin Lu, Yang Li, Qing-Guo Chen, Zhao Xu, Weihua Luo, Kaifu Zhang, Han-Jia Ye",
+      "first_author": "Shiyin Lu",
+      "url": "http://arxiv.org/abs/2405.20797",
+      "citations": 134,
+      "published": "2024-05-31"
+    },
+    "2402.11530": {
+      "title": "Efficient Multimodal Learning from Data-centric Perspective",
+      "authors": "Muyang He, Yexin Liu, Boya Wu, Jianhao Yuan, Yueze Wang, Tiejun Huang, Bo Zhao",
+      "first_author": "Muyang He",
+      "url": "http://arxiv.org/abs/2402.11530",
+      "citations": 132,
+      "published": "2024-02-18"
+    },
+    "2309.10313": {
+      "title": "Investigating the Catastrophic Forgetting in Multimodal Large Language Models",
+      "authors": "Yuexiang Zhai, Shengbang Tong, Xiao Li, Mu Cai, Qing Qu, Yong Jae Lee, Yi Ma",
+      "first_author": "Yuexiang Zhai",
+      "url": "http://arxiv.org/abs/2309.10313",
+      "citations": 126,
+      "published": "2023-09-19"
+    },
+    "2312.06968": {
+      "title": "Hallucination Augmented Contrastive Learning for Multimodal Large Language Model",
+      "authors": "Chaoya Jiang, Haiyang Xu, Mengfan Dong, Jiaxing Chen, Wei Ye, Ming Yan, Qinghao Ye, Ji Zhang, Fei Huang, Shikun Zhang",
+      "first_author": "Chaoya Jiang",
+      "url": "http://arxiv.org/abs/2312.06968",
+      "citations": 126,
+      "published": "2023-12-12"
+    },
+    "2408.15998": {
+      "title": "Eagle: Exploring The Design Space for Multimodal LLMs with Mixture of Encoders",
+      "authors": "Min Shi, Fuxiao Liu, Shihao Wang, Shijia Liao, Subhashree Radhakrishnan, Yilin Zhao, De-An Huang, Hongxu Yin, Karan Sapra, Yaser Yacoob, Humphrey Shi, Bryan Catanzaro, Andrew Tao, Jan Kautz, Zhiding Yu, Guilin Liu",
+      "first_author": "Min Shi",
+      "url": "http://arxiv.org/abs/2408.15998",
+      "citations": 119,
+      "published": "2024-08-28"
+    },
+    "2404.16790": {
+      "title": "SEED-Bench-2-Plus: Benchmarking Multimodal Large Language Models with Text-Rich Visual Comprehension",
+      "authors": "Bohao Li, Yuying Ge, Yi Chen, Yixiao Ge, Ruimao Zhang, Ying Shan",
+      "first_author": "Bohao Li",
+      "url": "http://arxiv.org/abs/2404.16790",
+      "citations": 117,
+      "published": "2024-04-25"
+    },
+    "2404.00578": {
+      "title": "M3D: Advancing 3D Medical Image Analysis with Multi-Modal Large Language Models",
+      "authors": "Fan Bai, Yuxin Du, Tiejun Huang, Max Q. -H. Meng, Bo Zhao",
+      "first_author": "Fan Bai",
+      "url": "http://arxiv.org/abs/2404.00578",
+      "citations": 115,
+      "published": "2024-03-31"
+    },
+    "2403.14520": {
+      "title": "Cobra: Extending Mamba to Multi-Modal Large Language Model for Efficient Inference",
+      "authors": "Han Zhao, Min Zhang, Wei Zhao, Pengxiang Ding, Siteng Huang, Donglin Wang",
+      "first_author": "Han Zhao",
+      "url": "http://arxiv.org/abs/2403.14520",
+      "citations": 115,
+      "published": "2024-03-21"
+    },
+    "2401.02906": {
+      "title": "MLLM-Protector: Ensuring MLLM's Safety without Hurting Performance",
+      "authors": "Renjie Pi, Tianyang Han, Jianshu Zhang, Yueqi Xie, Rui Pan, Qing Lian, Hanze Dong, Jipeng Zhang, Tong Zhang",
+      "first_author": "Renjie Pi",
+      "url": "http://arxiv.org/abs/2401.02906",
+      "citations": 114,
+      "published": "2024-01-05"
+    },
+    "2403.09572": {
+      "title": "Eyes Closed, Safety On: Protecting Multimodal LLMs via Image-to-Text Transformation",
+      "authors": "Yunhao Gou, Kai Chen, Zhili Liu, Lanqing Hong, Hang Xu, Zhenguo Li, Dit-Yan Yeung, James T. Kwok, Yu Zhang",
+      "first_author": "Yunhao Gou",
+      "url": "http://arxiv.org/abs/2403.09572",
+      "citations": 112,
+      "published": "2024-03-14"
+    },
+    "2412.18319": {
+      "title": "Mulberry: Empowering MLLM with o1-like Reasoning and Reflection via Collective Monte Carlo Tree Search",
+      "authors": "Huanjin Yao, Jiaxing Huang, Wenhao Wu, Jingyi Zhang, Yibo Wang, Shunyu Liu, Yingjie Wang, Yuxin Song, Haocheng Feng, Li Shen, Dacheng Tao",
+      "first_author": "Huanjin Yao",
+      "url": "http://arxiv.org/abs/2412.18319",
+      "citations": 111,
+      "published": "2024-12-24"
+    },
+    "2403.09513": {
+      "title": "AdaShield: Safeguarding Multimodal Large Language Models from Structure-based Attack via Adaptive Shield Prompting",
+      "authors": "Yu Wang, Xiaogeng Liu, Yu Li, Muhao Chen, Chaowei Xiao",
+      "first_author": "Yu Wang",
+      "url": "http://arxiv.org/abs/2403.09513",
+      "citations": 109,
+      "published": "2024-03-14"
+    },
+    "2501.05444": {
+      "title": "Can MLLMs Reason in Multimodality? EMMA: An Enhanced MultiModal ReAsoning Benchmark",
+      "authors": "Yunzhuo Hao, Jiawei Gu, Huichen Will Wang, Linjie Li, Zhengyuan Yang, Lijuan Wang, Yu Cheng",
+      "first_author": "Yunzhuo Hao",
+      "url": "http://arxiv.org/abs/2501.05444",
+      "citations": 106,
+      "published": "2025-01-09"
+    },
+    "2403.03003": {
+      "title": "Feast Your Eyes: Mixture-of-Resolution Adaptation for Multimodal Large Language Models",
+      "authors": "Gen Luo, Yiyi Zhou, Yuxin Zhang, Xiawu Zheng, Xiaoshuai Sun, Rongrong Ji",
+      "first_author": "Gen Luo",
+      "url": "http://arxiv.org/abs/2403.03003",
+      "citations": 104,
+      "published": "2024-03-05"
+    },
+    "2305.01278": {
+      "title": "VPGTrans: Transfer Visual Prompt Generator across LLMs",
+      "authors": "Ao Zhang, Hao Fei, Yuan Yao, Wei Ji, Li Li, Zhiyuan Liu, Tat-Seng Chua",
+      "first_author": "Ao Zhang",
+      "url": "http://arxiv.org/abs/2305.01278",
+      "citations": 103,
+      "published": "2023-05-02"
+    },
+    "2502.17422": {
+      "title": "MLLMs Know Where to Look: Training-free Perception of Small Visual Details with Multimodal LLMs",
+      "authors": "Jiarui Zhang, Mahyar Khayatkhoei, Prateek Chhikara, Filip Ilievski",
+      "first_author": "Jiarui Zhang",
+      "url": "http://arxiv.org/abs/2502.17422",
+      "citations": 99,
+      "published": "2025-02-24"
+    },
+    "2401.10529": {
+      "title": "Mementos: A Comprehensive Benchmark for Multimodal Large Language Model Reasoning over Image Sequences",
+      "authors": "Xiyao Wang, Yuhang Zhou, Xiaoyu Liu, Hongjin Lu, Yuancheng Xu, Feihong He, Jaehong Yoon, Taixi Lu, Gedas Bertasius, Mohit Bansal, Huaxiu Yao, Furong Huang",
+      "first_author": "Xiyao Wang",
+      "url": "http://arxiv.org/abs/2401.10529",
+      "citations": 98,
+      "published": "2024-01-19"
+    },
+    "2408.01319": {
+      "title": "A Comprehensive Review of Multimodal Large Language Models: Performance and Challenges Across Different Tasks",
+      "authors": "Jiaqi Wang, Hanqi Jiang, Yiheng Liu, Chong Ma, Xu Zhang, Yi Pan, Mengyuan Liu, Peiran Gu, Sichen Xia, Wenjun Li, Yutong Zhang, Zihao Wu, Zhengliang Liu, Tianyang Zhong, Bao Ge, Tuo Zhang, Ning Qiang, Xintao Hu, Xi Jiang, Xin Zhang, Wei Zhang, Dinggang Shen, Tianming Liu, Shu Zhang",
+      "first_author": "Jiaqi Wang",
+      "url": "http://arxiv.org/abs/2408.01319",
+      "citations": 97,
+      "published": "2024-08-02"
+    },
+    "2411.02571": {
+      "title": "MM-Embed: Universal Multimodal Retrieval with Multimodal LLMs",
+      "authors": "Sheng-Chieh Lin, Chankyu Lee, Mohammad Shoeybi, Jimmy Lin, Bryan Catanzaro, Wei Ping",
+      "first_author": "Sheng-Chieh Lin",
+      "url": "http://arxiv.org/abs/2411.02571",
+      "citations": 97,
+      "published": "2024-11-04"
+    },
+    "2403.20271": {
+      "title": "Draw-and-Understand: Leveraging Visual Prompts to Enable MLLMs to Comprehend What You Want",
+      "authors": "Weifeng Lin, Xinyu Wei, Ruichuan An, Peng Gao, Bocheng Zou, Yulin Luo, Siyuan Huang, Shanghang Zhang, Hongsheng Li",
+      "first_author": "Weifeng Lin",
+      "url": "http://arxiv.org/abs/2403.20271",
+      "citations": 93,
+      "published": "2024-03-29"
+    },
+    "2408.15556": {
+      "title": "Divide, Conquer and Combine: A Training-Free Framework for High-Resolution Image Perception in Multimodal Large Language Models",
+      "authors": "Wenbin Wang, Liang Ding, Minyan Zeng, Xiabin Zhou, Li Shen, Yong Luo, Dacheng Tao",
+      "first_author": "Wenbin Wang",
+      "url": "http://arxiv.org/abs/2408.15556",
+      "citations": 93,
+      "published": "2024-08-28"
+    },
+    "2405.10739": {
+      "title": "Efficient Multimodal Large Language Models: A Survey",
+      "authors": "Yizhang Jin, Jian Li, Yexin Liu, Tianjun Gu, Kai Wu, Zhengkai Jiang, Muyang He, Bo Zhao, Xin Tan, Zhenye Gan, Yabiao Wang, Chengjie Wang, Lizhuang Ma",
+      "first_author": "Yizhang Jin",
+      "url": "http://arxiv.org/abs/2405.10739",
+      "citations": 93,
+      "published": "2024-05-17"
+    },
+    "2505.23747": {
+      "title": "Spatial-MLLM: Boosting MLLM Capabilities in Visual-based Spatial Intelligence",
+      "authors": "Diankun Wu, Fangfu Liu, Yi-Hsin Hung, Yueqi Duan",
+      "first_author": "Diankun Wu",
+      "url": "http://arxiv.org/abs/2505.23747",
+      "citations": 92,
+      "published": "2025-05-29"
+    },
+    "2401.16160": {
+      "title": "LLaVA-MoLE: Sparse Mixture of LoRA Experts for Mitigating Data Conflicts in Instruction Finetuning MLLMs",
+      "authors": "Shaoxiang Chen, Zequn Jie, Lin Ma",
+      "first_author": "Shaoxiang Chen",
+      "url": "http://arxiv.org/abs/2401.16160",
+      "citations": 89,
+      "published": "2024-01-29"
+    },
+    "2311.17092": {
+      "title": "SEED-Bench-2: Benchmarking Multimodal Large Language Models",
+      "authors": "Bohao Li, Yuying Ge, Yixiao Ge, Guangzhi Wang, Rui Wang, Ruimao Zhang, Ying Shan",
+      "first_author": "Bohao Li",
+      "url": "http://arxiv.org/abs/2311.17092",
+      "citations": 88,
+      "published": "2023-11-28"
+    },
+    "2311.11860": {
+      "title": "LION : Empowering Multimodal Large Language Model with Dual-Level Visual Knowledge",
+      "authors": "Gongwei Chen, Leyang Shen, Rui Shao, Xiang Deng, Liqiang Nie",
+      "first_author": "Gongwei Chen",
+      "url": "http://arxiv.org/abs/2311.11860",
+      "citations": 86,
+      "published": "2023-11-20"
+    },
+    "2411.02359": {
+      "title": "DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient Robot Execution",
+      "authors": "Yang Yue, Yulin Wang, Bingyi Kang, Yizeng Han, Shenzhi Wang, Shiji Song, Jiashi Feng, Gao Huang",
+      "first_author": "Yang Yue",
+      "url": "http://arxiv.org/abs/2411.02359",
+      "citations": 85,
+      "published": "2024-11-04"
+    },
+    "2411.17558": {
+      "title": "Natural Language Understanding and Inference with MLLM in Visual Question Answering: A Survey",
+      "authors": "Jiayi Kuang, Jingyou Xie, Haohao Luo, Ronghao Li, Zhe Xu, Xianfeng Cheng, Yinghui Li, Xika Lin, Ying Shen",
+      "first_author": "Jiayi Kuang",
+      "url": "http://arxiv.org/abs/2411.17558",
+      "citations": 80,
+      "published": "2024-11-26"
+    },
+    "2402.16846": {
+      "title": "GROUNDHOG: Grounding Large Language Models to Holistic Segmentation",
+      "authors": "Yichi Zhang, Ziqiao Ma, Xiaofeng Gao, Suhaila Shakiah, Qiaozi Gao, Joyce Chai",
+      "first_author": "Yichi Zhang",
+      "url": "http://arxiv.org/abs/2402.16846",
+      "citations": 80,
+      "published": "2024-02-26"
+    },
+    "2311.09127": {
+      "title": "Jailbreaking GPT-4V via Self-Adversarial Attacks with System Prompts",
+      "authors": "Yuanwei Wu, Xiang Li, Yixin Liu, Pan Zhou, Lichao Sun",
+      "first_author": "Yuanwei Wu",
+      "url": "http://arxiv.org/abs/2311.09127",
+      "citations": 78,
+      "published": "2023-11-15"
+    },
+    "2410.19702": {
+      "title": "TimeSuite: Improving MLLMs for Long Video Understanding via Grounded Tuning",
+      "authors": "Xiangyu Zeng, Kunchang Li, Chenting Wang, Xinhao Li, Tianxiang Jiang, Ziang Yan, Songze Li, Yansong Shi, Zhengrong Yue, Yi Wang, Yali Wang, Yu Qiao, Limin Wang",
+      "first_author": "Xiangyu Zeng",
+      "url": "http://arxiv.org/abs/2410.19702",
+      "citations": 74,
+      "published": "2024-10-25"
+    },
+    "2404.14047": {
+      "title": "An empirical study of LLaMA3 quantization: from LLMs to MLLMs",
+      "authors": "Wei Huang, Xingyu Zheng, Xudong Ma, Haotong Qin, Chengtao Lv, Hong Chen, Jie Luo, Xiaojuan Qi, Xianglong Liu, Michele Magno",
+      "first_author": "Wei Huang",
+      "url": "http://arxiv.org/abs/2404.14047",
+      "citations": 74,
+      "published": "2024-04-22"
+    },
+    "2409.10197": {
+      "title": "Fit and Prune: Fast and Training-free Visual Token Pruning for Multi-modal Large Language Models",
+      "authors": "Weihao Ye, Qiong Wu, Wenhao Lin, Yiyi Zhou",
+      "first_author": "Weihao Ye",
+      "url": "http://arxiv.org/abs/2409.10197",
+      "citations": 72,
+      "published": "2024-09-16"
+    },
+    "2312.02980": {
+      "title": "GPT4Point: A Unified Framework for Point-Language Understanding and Generation",
+      "authors": "Zhangyang Qi, Ye Fang, Zeyi Sun, Xiaoyang Wu, Tong Wu, Jiaqi Wang, Dahua Lin, Hengshuang Zhao",
+      "first_author": "Zhangyang Qi",
+      "url": "http://arxiv.org/abs/2312.02980",
+      "citations": 70,
+      "published": "2023-12-05"
+    },
+    "2404.18532": {
+      "title": "MileBench: Benchmarking MLLMs in Long Context",
+      "authors": "Dingjie Song, Shunian Chen, Guiming Hardy Chen, Fei Yu, Xiang Wan, Benyou Wang",
+      "first_author": "Dingjie Song",
+      "url": "http://arxiv.org/abs/2404.18532",
+      "citations": 65,
+      "published": "2024-04-29"
+    },
+    "2505.15879": {
+      "title": "GRIT: Teaching MLLMs to Think with Images",
+      "authors": "Yue Fan, Xuehai He, Diji Yang, Kaizhi Zheng, Ching-Chen Kuo, Yuting Zheng, Sravana Jyothi Narayanaraju, Xinze Guan, Xin Eric Wang",
+      "first_author": "Yue Fan",
+      "url": "http://arxiv.org/abs/2505.15879",
+      "citations": 65,
+      "published": "2025-05-21"
+    },
+    "2312.12436": {
+      "title": "A Challenger to GPT-4V? Early Explorations of Gemini in Visual Expertise",
+      "authors": "Chaoyou Fu, Renrui Zhang, Zihan Wang, Yubo Huang, Zhengye Zhang, Longtian Qiu, Gaoxiang Ye, Yunhang Shen, Mengdan Zhang, Peixian Chen, Sirui Zhao, Shaohui Lin, Deqiang Jiang, Di Yin, Peng Gao, Ke Li, Hongsheng Li, Xing Sun",
+      "first_author": "Chaoyou Fu",
+      "url": "http://arxiv.org/abs/2312.12436",
+      "citations": 65,
+      "published": "2023-12-19"
+    },
+    "2409.10542": {
+      "title": "SAM4MLLM: Enhance Multi-Modal Large Language Model for Referring Expression Segmentation",
+      "authors": "Yi-Chia Chen, Wei-Hua Li, Cheng Sun, Yu-Chiang Frank Wang, Chu-Song Chen",
+      "first_author": "Yi-Chia Chen",
+      "url": "http://arxiv.org/abs/2409.10542",
+      "citations": 64,
+      "published": "2024-09-01"
+    },
+    "2410.11779": {
+      "title": "MLLM can see? Dynamic Correction Decoding for Hallucination Mitigation",
+      "authors": "Chenxi Wang, Xiang Chen, Ningyu Zhang, Bozhong Tian, Haoming Xu, Shumin Deng, Huajun Chen",
+      "first_author": "Chenxi Wang",
+      "url": "http://arxiv.org/abs/2410.11779",
+      "citations": 62,
+      "published": "2024-10-15"
+    },
+    "2501.01904": {
+      "title": "Virgo: A Preliminary Exploration on Reproducing o1-like MLLM",
+      "authors": "Yifan Du, Zikang Liu, Yifan Li, Wayne Xin Zhao, Yuqi Huo, Bingning Wang, Weipeng Chen, Zheng Liu, Zhongyuan Wang, Ji-Rong Wen",
+      "first_author": "Yifan Du",
+      "url": "http://arxiv.org/abs/2501.01904",
+      "citations": 61,
+      "published": "2025-01-03"
+    },
+    "2405.04940": {
+      "title": "Harnessing the Power of MLLMs for Transferable Text-to-Image Person ReID",
+      "authors": "Wentao Tan, Changxing Ding, Jiayu Jiang, Fei Wang, Yibing Zhan, Dapeng Tao",
+      "first_author": "Wentao Tan",
+      "url": "http://arxiv.org/abs/2405.04940",
+      "citations": 61,
+      "published": "2024-05-08"
+    },
+    "2309.05186": {
+      "title": "HiLM-D: Enhancing MLLMs with Multi-Scale High-Resolution Details for Autonomous Driving",
+      "authors": "Xinpeng Ding, Jianhua Han, Hang Xu, Wei Zhang, Xiaomeng Li",
+      "first_author": "Xinpeng Ding",
+      "url": "http://arxiv.org/abs/2309.05186",
+      "citations": 59,
+      "published": "2023-09-11"
+    },
+    "2411.15296": {
+      "title": "MME-Survey: A Comprehensive Survey on Evaluation of Multimodal LLMs",
+      "authors": "Chaoyou Fu, Yi-Fan Zhang, Shukang Yin, Bo Li, Xinyu Fang, Sirui Zhao, Haodong Duan, Xing Sun, Ziwei Liu, Liang Wang, Caifeng Shan, Ran He",
+      "first_author": "Chaoyou Fu",
+      "url": "http://arxiv.org/abs/2411.15296",
+      "citations": 59,
+      "published": "2024-11-22"
+    },
+    "2408.09698": {
+      "title": "Harnessing Multimodal Large Language Models for Multimodal Sequential Recommendation",
+      "authors": "Yuyang Ye, Zhi Zheng, Yishan Shen, Tianshu Wang, Hengruo Zhang, Peijun Zhu, Runlong Yu, Kai Zhang, Hui Xiong",
+      "first_author": "Yuyang Ye",
+      "url": "http://arxiv.org/abs/2408.09698",
+      "citations": 59,
+      "published": "2024-08-19"
+    },
+    "2407.08303": {
+      "title": "DenseFusion-1M: Merging Vision Experts for Comprehensive Multimodal Perception",
+      "authors": "Xiaotong Li, Fan Zhang, Haiwen Diao, Yueze Wang, Xinlong Wang, Ling-Yu Duan",
+      "first_author": "Xiaotong Li",
+      "url": "http://arxiv.org/abs/2407.08303",
+      "citations": 57,
+      "published": "2024-07-11"
+    },
+    "2310.02071": {
+      "title": "Towards End-to-End Embodied Decision Making via Multi-modal Large Language Model: Explorations with GPT4-Vision and Beyond",
+      "authors": "Liang Chen, Yichi Zhang, Shuhuai Ren, Haozhe Zhao, Zefan Cai, Yuchi Wang, Peiyi Wang, Tianyu Liu, Baobao Chang",
+      "first_author": "Liang Chen",
+      "url": "http://arxiv.org/abs/2310.02071",
+      "citations": 55,
+      "published": "2023-10-03"
+    },
+    "2404.16033": {
+      "title": "Cantor: Inspiring Multimodal Chain-of-Thought of MLLM",
+      "authors": "Timin Gao, Peixian Chen, Mengdan Zhang, Chaoyou Fu, Yunhang Shen, Yan Zhang, Shengchuan Zhang, Xiawu Zheng, Xing Sun, Liujuan Cao, Rongrong Ji",
+      "first_author": "Timin Gao",
+      "url": "http://arxiv.org/abs/2404.16033",
+      "citations": 54,
+      "published": "2024-04-24"
+    },
+    "2411.03628": {
+      "title": "StreamingBench: Assessing the Gap for MLLMs to Achieve Streaming Video Understanding",
+      "authors": "Junming Lin, Zheng Fang, Chi Chen, Zihao Wan, Fuwen Luo, Peng Li, Yang Liu, Maosong Sun",
+      "first_author": "Junming Lin",
+      "url": "http://arxiv.org/abs/2411.03628",
+      "citations": 53,
+      "published": "2024-11-06"
+    },
+    "2403.12488": {
+      "title": "DetToolChain: A New Prompting Paradigm to Unleash Detection Ability of MLLM",
+      "authors": "Yixuan Wu, Yizhou Wang, Shixiang Tang, Wenhao Wu, Tong He, Wanli Ouyang, Philip Torr, Jian Wu",
+      "first_author": "Yixuan Wu",
+      "url": "http://arxiv.org/abs/2403.12488",
+      "citations": 52,
+      "published": "2024-03-19"
+    },
+    "2504.01805": {
+      "title": "SpaceR: Reinforcing MLLMs in Video Spatial Reasoning",
+      "authors": "Kun Ouyang, Yuanxin Liu, Haoning Wu, Yi Liu, Hao Zhou, Jie Zhou, Fandong Meng, Xu Sun",
+      "first_author": "Kun Ouyang",
+      "url": "http://arxiv.org/abs/2504.01805",
+      "citations": 52,
+      "published": "2025-04-02"
+    },
+    "2312.14233": {
+      "title": "VCoder: Versatile Vision Encoders for Multimodal Large Language Models",
+      "authors": "Jitesh Jain, Jianwei Yang, Humphrey Shi",
+      "first_author": "Jitesh Jain",
+      "url": "http://arxiv.org/abs/2312.14233",
+      "citations": 50,
+      "published": "2023-12-21"
+    }
+  },
+  "Neural Compression": {
+    "2210.13438": {
+      "title": "High Fidelity Neural Audio Compression",
+      "authors": "Alexandre Défossez, Jade Copet, Gabriel Synnaeve, Yossi Adi",
+      "first_author": "Alexandre Défossez",
+      "url": "http://arxiv.org/abs/2210.13438",
+      "citations": 1057,
+      "published": "2022-10-24"
+    },
+    "2206.07697": {
+      "title": "MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields",
+      "authors": "Ilyes Batatia, Dávid Péter Kovács, Gregor N. C. Simm, Christoph Ortner, Gábor Csányi",
+      "first_author": "Ilyes Batatia",
+      "url": "http://arxiv.org/abs/2206.07697",
+      "citations": 841,
+      "published": "2022-06-15"
+    },
+    "2006.05467": {
+      "title": "Pruning neural networks without any data by iteratively conserving synaptic flow",
+      "authors": "Hidenori Tanaka, Daniel Kunin, Daniel L. K. Yamins, Surya Ganguli",
+      "first_author": "Hidenori Tanaka",
+      "url": "http://arxiv.org/abs/2006.05467",
+      "citations": 785,
+      "published": "2020-06-09"
+    },
+    "2009.04544": {
+      "title": "Self-Adaptive Physics-Informed Neural Networks using a Soft Attention Mechanism",
+      "authors": "Levi McClenny, Ulisses Braga-Neto",
+      "first_author": "Levi McClenny",
+      "url": "http://arxiv.org/abs/2009.04544",
+      "citations": 620,
+      "published": "2020-09-07"
+    },
+    "2106.07998": {
+      "title": "Revisiting the Calibration of Modern Neural Networks",
+      "authors": "Matthias Minderer, Josip Djolonga, Rob Romijnders, Frances Hubis, Xiaohua Zhai, Neil Houlsby, Dustin Tran, Mario Lucic",
+      "first_author": "Matthias Minderer",
+      "url": "http://arxiv.org/abs/2106.07998",
+      "citations": 474,
+      "published": "2021-06-15"
+    },
+    "2202.03376": {
+      "title": "Message Passing Neural PDE Solvers",
+      "authors": "Johannes Brandstetter, Daniel Worrall, Max Welling",
+      "first_author": "Johannes Brandstetter",
+      "url": "http://arxiv.org/abs/2202.03376",
+      "citations": 394,
+      "published": "2022-02-07"
+    },
+    "2011.10379": {
+      "title": "Neural Scene Graphs for Dynamic Scenes",
+      "authors": "Julian Ost, Fahim Mannan, Nils Thuerey, Julian Knodt, Felix Heide",
+      "first_author": "Julian Ost",
+      "url": "http://arxiv.org/abs/2011.10379",
+      "citations": 378,
+      "published": "2020-11-20"
+    },
+    "2103.02597": {
+      "title": "Neural 3D Video Synthesis from Multi-view Video",
+      "authors": "Tianye Li, Mira Slavcheva, Michael Zollhoefer, Simon Green, Christoph Lassner, Changil Kim, Tanner Schmidt, Steven Lovegrove, Michael Goesele, Richard Newcombe, Zhaoyang Lv",
+      "first_author": "Tianye Li",
+      "url": "http://arxiv.org/abs/2103.02597",
+      "citations": 358,
+      "published": "2021-03-03"
+    },
+    "2103.03123": {
+      "title": "COIN: COmpression with Implicit Neural representations",
+      "authors": "Emilien Dupont, Adam Goliński, Milad Alizadeh, Yee Whye Teh, Arnaud Doucet",
+      "first_author": "Emilien Dupont",
+      "url": "http://arxiv.org/abs/2103.03123",
+      "citations": 292,
+      "published": "2021-03-03"
+    },
+    "2302.14402": {
+      "title": "Neural Video Compression with Diverse Contexts",
+      "authors": "Jiahao Li, Bin Li, Yan Lu",
+      "first_author": "Jiahao Li",
+      "url": "http://arxiv.org/abs/2302.14402",
+      "citations": 258,
+      "published": "2023-02-28"
+    },
+    "2110.14373": {
+      "title": "Neural-PIL: Neural Pre-Integrated Lighting for Reflectance Decomposition",
+      "authors": "Mark Boss, Varun Jampani, Raphael Braun, Ce Liu, Jonathan T. Barron, Hendrik P. A. Lensch",
+      "first_author": "Mark Boss",
+      "url": "http://arxiv.org/abs/2110.14373",
+      "citations": 249,
+      "published": "2021-10-27"
+    },
+    "2207.05894": {
+      "title": "Hybrid Spatial-Temporal Entropy Modelling for Neural Video Compression",
+      "authors": "Jiahao Li, Bin Li, Yan Lu",
+      "first_author": "Jiahao Li",
+      "url": "http://arxiv.org/abs/2207.05894",
+      "citations": 228,
+      "published": "2022-07-13"
+    },
+    "2003.04547": {
+      "title": "3D Quasi-Recurrent Neural Network for Hyperspectral Image Denoising",
+      "authors": "Kaixuan Wei, Ying Fu, Hua Huang",
+      "first_author": "Kaixuan Wei",
+      "url": "http://arxiv.org/abs/2003.04547",
+      "citations": 212,
+      "published": "2020-03-10"
+    },
+    "2112.04267": {
+      "title": "Implicit Neural Representations for Image Compression",
+      "authors": "Yannick Strümpler, Janis Postels, Ren Yang, Luc van Gool, Federico Tombari",
+      "first_author": "Yannick Strümpler",
+      "url": "http://arxiv.org/abs/2112.04267",
+      "citations": 202,
+      "published": "2021-12-08"
+    },
+    "2002.03711": {
+      "title": "Learning End-to-End Lossy Image Compression: A Benchmark",
+      "authors": "Yueyu Hu, Wenhan Yang, Zhan Ma, Jiaying Liu",
+      "first_author": "Yueyu Hu",
+      "url": "http://arxiv.org/abs/2002.03711",
+      "citations": 191,
+      "published": "2020-02-10"
+    },
+    "2307.12306": {
+      "title": "Tackling the Curse of Dimensionality with Physics-Informed Neural Networks",
+      "authors": "Zheyuan Hu, Khemraj Shukla, George Em Karniadakis, Kenji Kawaguchi",
+      "first_author": "Zheyuan Hu",
+      "url": "http://arxiv.org/abs/2307.12306",
+      "citations": 191,
+      "published": "2023-07-23"
+    },
+    "2110.14513": {
+      "title": "Neural Analysis and Synthesis: Reconstructing Speech from Self-Supervised Representations",
+      "authors": "Hyeong-Seok Choi, Juheon Lee, Wansoo Kim, Jie Hwan Lee, Hoon Heo, Kyogu Lee",
+      "first_author": "Hyeong-Seok Choi",
+      "url": "http://arxiv.org/abs/2110.14513",
+      "citations": 184,
+      "published": "2021-10-27"
+    },
+    "2111.06283": {
+      "title": "DropGNN: Random Dropouts Increase the Expressiveness of Graph Neural Networks",
+      "authors": "Pál András Papp, Karolis Martinkus, Lukas Faber, Roger Wattenhofer",
+      "first_author": "Pál András Papp",
+      "url": "http://arxiv.org/abs/2111.06283",
+      "citations": 167,
+      "published": "2021-11-11"
+    },
+    "2005.05859": {
+      "title": "Neural Architecture Transfer",
+      "authors": "Zhichao Lu, Gautam Sreekumar, Erik Goodman, Wolfgang Banzhaf, Kalyanmoy Deb, Vishnu Naresh Boddeti",
+      "first_author": "Zhichao Lu",
+      "url": "http://arxiv.org/abs/2005.05859",
+      "citations": 165,
+      "published": "2020-05-12"
+    },
+    "2008.05441": {
+      "title": "Stable Low-rank Tensor Decomposition for Compression of Convolutional Neural Network",
+      "authors": "Anh-Huy Phan, Konstantin Sobolev, Konstantin Sozykin, Dmitry Ermilov, Julia Gusak, Petr Tichavsky, Valeriy Glukhov, Ivan Oseledets, Andrzej Cichocki",
+      "first_author": "Anh-Huy Phan",
+      "url": "http://arxiv.org/abs/2008.05441",
+      "citations": 160,
+      "published": "2020-08-12"
+    },
+    "2009.13055": {
+      "title": "Rotated Binary Neural Network",
+      "authors": "Mingbao Lin, Rongrong Ji, Zihan Xu, Baochang Zhang, Yan Wang, Yongjian Wu, Feiyue Huang, Chia-Wen Lin",
+      "first_author": "Mingbao Lin",
+      "url": "http://arxiv.org/abs/2009.13055",
+      "citations": 153,
+      "published": "2020-09-28"
+    },
+    "2202.06533": {
+      "title": "An Introduction to Neural Data Compression",
+      "authors": "Yibo Yang, Stephan Mandt, Lucas Theis",
+      "first_author": "Yibo Yang",
+      "url": "http://arxiv.org/abs/2202.06533",
+      "citations": 149,
+      "published": "2022-02-14"
+    },
+    "2010.14075": {
+      "title": "Neural Network Approximation: Three Hidden Layers Are Enough",
+      "authors": "Zuowei Shen, Haizhao Yang, Shijun Zhang",
+      "first_author": "Zuowei Shen",
+      "url": "http://arxiv.org/abs/2010.14075",
+      "citations": 144,
+      "published": "2020-10-25"
+    },
+    "2006.04240": {
+      "title": "Improving Inference for Neural Image Compression",
+      "authors": "Yibo Yang, Robert Bamler, Stephan Mandt",
+      "first_author": "Yibo Yang",
+      "url": "http://arxiv.org/abs/2006.04240",
+      "citations": 141,
+      "published": "2020-06-07"
+    },
+    "2111.00053": {
+      "title": "Symbolic Regression via Neural-Guided Genetic Programming Population Seeding",
+      "authors": "T. Nathan Mundhenk, Mikel Landajuela, Ruben Glatt, Claudio P. Santiago, Daniel M. Faissol, Brenden K. Petersen",
+      "first_author": "T. Nathan Mundhenk",
+      "url": "http://arxiv.org/abs/2111.00053",
+      "citations": 123,
+      "published": "2021-10-29"
+    },
+    "2201.12904": {
+      "title": "COIN++: Neural Compression Across Modalities",
+      "authors": "Emilien Dupont, Hrushikesh Loya, Milad Alizadeh, Adam Goliński, Yee Whye Teh, Arnaud Doucet",
+      "first_author": "Emilien Dupont",
+      "url": "http://arxiv.org/abs/2201.12904",
+      "citations": 123,
+      "published": "2022-01-30"
+    },
+    "2103.07492": {
+      "title": "Continual Learning for Recurrent Neural Networks: an Empirical Evaluation",
+      "authors": "Andrea Cossu, Antonio Carta, Vincenzo Lomonaco, Davide Bacciu",
+      "first_author": "Andrea Cossu",
+      "url": "http://arxiv.org/abs/2103.07492",
+      "citations": 122,
+      "published": "2021-03-12"
+    },
+    "2005.11138": {
+      "title": "TinyLSTMs: Efficient Neural Speech Enhancement for Hearing Aids",
+      "authors": "Igor Fedorov, Marko Stamenovic, Carl Jensen, Li-Chia Yang, Ari Mandell, Yiming Gan, Matthew Mattina, Paul N. Whatmough",
+      "first_author": "Igor Fedorov",
+      "url": "http://arxiv.org/abs/2005.11138",
+      "citations": 121,
+      "published": "2020-05-20"
+    },
+    "2104.04523": {
+      "title": "Compressive Neural Representations of Volumetric Scalar Fields",
+      "authors": "Yuzhe Lu, Kairong Jiang, Joshua A. Levine, Matthew Berger",
+      "first_author": "Yuzhe Lu",
+      "url": "http://arxiv.org/abs/2104.04523",
+      "citations": 119,
+      "published": "2021-04-11"
+    },
+    "2006.03669": {
+      "title": "An Overview of Neural Network Compression",
+      "authors": "James O' Neill",
+      "first_author": "James O' Neill",
+      "url": "http://arxiv.org/abs/2006.03669",
+      "citations": 118,
+      "published": "2020-06-05"
+    },
+    "2108.12654": {
+      "title": "Self-supervised Neural Networks for Spectral Snapshot Compressive Imaging",
+      "authors": "Ziyi Meng, Zhenming Yu, Kun Xu, Xin Yuan",
+      "first_author": "Ziyi Meng",
+      "url": "http://arxiv.org/abs/2108.12654",
+      "citations": 110,
+      "published": "2021-08-28"
+    },
+    "2001.04246": {
+      "title": "AdaBERT: Task-Adaptive BERT Compression with Differentiable Neural Architecture Search",
+      "authors": "Daoyuan Chen, Yaliang Li, Minghui Qiu, Zhen Wang, Bofang Li, Bolin Ding, Hongbo Deng, Jun Huang, Wei Lin, Jingren Zhou",
+      "first_author": "Daoyuan Chen",
+      "url": "http://arxiv.org/abs/2001.04246",
+      "citations": 108,
+      "published": "2020-01-13"
+    },
+    "2010.03954": {
+      "title": "A Survey on Deep Neural Network Compression: Challenges, Overview, and Solutions",
+      "authors": "Rahul Mishra, Hari Prabhat Gupta, Tanima Dutta",
+      "first_author": "Rahul Mishra",
+      "url": "http://arxiv.org/abs/2010.03954",
+      "citations": 103,
+      "published": "2020-10-05"
+    },
+    "2005.00615": {
+      "title": "A Dual-Dimer Method for Training Physics-Constrained Neural Networks with Minimax Architecture",
+      "authors": "Dehao Liu, Yan Wang",
+      "first_author": "Dehao Liu",
+      "url": "http://arxiv.org/abs/2005.00615",
+      "citations": 102,
+      "published": "2020-05-01"
+    },
+    "2110.09443": {
+      "title": "Beltrami Flow and Neural Diffusion on Graphs",
+      "authors": "Benjamin Paul Chamberlain, James Rowbottom, Davide Eynard, Francesco Di Giovanni, Xiaowen Dong, Michael M Bronstein",
+      "first_author": "Benjamin Paul Chamberlain",
+      "url": "http://arxiv.org/abs/2110.09443",
+      "citations": 100,
+      "published": "2021-10-18"
+    },
+    "2206.10177": {
+      "title": "TCJA-SNN: Temporal-Channel Joint Attention for Spiking Neural Networks",
+      "authors": "Rui-Jie Zhu, Malu Zhang, Qihang Zhao, Haoyu Deng, Yule Duan, Liang-Jian Deng",
+      "first_author": "Rui-Jie Zhu",
+      "url": "http://arxiv.org/abs/2206.10177",
+      "citations": 99,
+      "published": "2022-06-21"
+    },
+    "2009.01174": {
+      "title": "Transform Quantization for CNN (Convolutional Neural Network) Compression",
+      "authors": "Sean I. Young, Wang Zhe, David Taubman, Bernd Girod",
+      "first_author": "Sean I. Young",
+      "url": "http://arxiv.org/abs/2009.01174",
+      "citations": 96,
+      "published": "2020-09-02"
+    },
+    "2302.05071": {
+      "title": "EVC: Towards Real-Time Neural Image Compression with Mask Decay",
+      "authors": "Guo-Hua Wang, Jiahao Li, Bin Li, Yan Lu",
+      "first_author": "Guo-Hua Wang",
+      "url": "http://arxiv.org/abs/2302.05071",
+      "citations": 95,
+      "published": "2023-02-10"
+    },
+    "2104.05168": {
+      "title": "Soft then Hard: Rethinking the Quantization in Neural Image Compression",
+      "authors": "Zongyu Guo, Zhizheng Zhang, Runsen Feng, Zhibo Chen",
+      "first_author": "Zongyu Guo",
+      "url": "http://arxiv.org/abs/2104.05168",
+      "citations": 93,
+      "published": "2021-04-12"
+    },
+    "2105.14444": {
+      "title": "NAS-BERT: Task-Agnostic and Adaptive-Size BERT Compression with Neural Architecture Search",
+      "authors": "Jin Xu, Xu Tan, Renqian Luo, Kaitao Song, Jian Li, Tao Qin, Tie-Yan Liu",
+      "first_author": "Jin Xu",
+      "url": "http://arxiv.org/abs/2105.14444",
+      "citations": 92,
+      "published": "2021-05-30"
+    },
+    "2004.12273": {
+      "title": "Reachable Set Estimation for Neural Network Control Systems: A Simulation-Guided Approach",
+      "authors": "Weiming Xiang, Hoang-Dung Tran, Xiaodong Yang, Taylor T. Johnson",
+      "first_author": "Weiming Xiang",
+      "url": "http://arxiv.org/abs/2004.12273",
+      "citations": 91,
+      "published": "2020-04-26"
+    },
+    "2306.09818": {
+      "title": "HiNeRV: Video Compression with Hierarchical Encoding-based Neural Representation",
+      "authors": "Ho Man Kwan, Ge Gao, Fan Zhang, Andrew Gower, David Bull",
+      "first_author": "Ho Man Kwan",
+      "url": "http://arxiv.org/abs/2306.09818",
+      "citations": 88,
+      "published": "2023-06-16"
+    },
+    "2105.02451": {
+      "title": "Learning Skeletal Articulations with Neural Blend Shapes",
+      "authors": "Peizhuo Li, Kfir Aberman, Rana Hanocka, Libin Liu, Olga Sorkine-Hornung, Baoquan Chen",
+      "first_author": "Peizhuo Li",
+      "url": "http://arxiv.org/abs/2105.02451",
+      "citations": 87,
+      "published": "2021-05-06"
+    },
+    "2009.08459": {
+      "title": "Likelihood-free inference with neural compression of DES SV weak lensing map statistics",
+      "authors": "Niall Jeffrey, Justin Alsing, François Lanusse",
+      "first_author": "Niall Jeffrey",
+      "url": "http://arxiv.org/abs/2009.08459",
+      "citations": 85,
+      "published": "2020-09-17"
+    },
+    "2109.02869": {
+      "title": "The Sensory Neuron as a Transformer: Permutation-Invariant Neural Networks for Reinforcement Learning",
+      "authors": "Yujin Tang, David Ha",
+      "first_author": "Yujin Tang",
+      "url": "http://arxiv.org/abs/2109.02869",
+      "citations": 84,
+      "published": "2021-09-07"
+    },
+    "2011.11911": {
+      "title": "Generalization techniques of neural networks for fluid flow estimation",
+      "authors": "Masaki Morimoto, Kai Fukami, Kai Zhang, Koji Fukagata",
+      "first_author": "Masaki Morimoto",
+      "url": "http://arxiv.org/abs/2011.11911",
+      "citations": 84,
+      "published": "2020-11-24"
+    },
+    "2110.14633": {
+      "title": "Similarity and Matching of Neural Network Representations",
+      "authors": "Adrián Csiszárik, Péter Kőrösi-Szabó, Ákos K. Matszangosz, Gergely Papp, Dániel Varga",
+      "first_author": "Adrián Csiszárik",
+      "url": "http://arxiv.org/abs/2110.14633",
+      "citations": 83,
+      "published": "2021-10-27"
+    },
+    "2007.04965": {
+      "title": "A Study on Encodings for Neural Architecture Search",
+      "authors": "Colin White, Willie Neiswanger, Sam Nolen, Yash Savani",
+      "first_author": "Colin White",
+      "url": "http://arxiv.org/abs/2007.04965",
+      "citations": 82,
+      "published": "2020-07-09"
+    },
+    "2307.01944": {
+      "title": "Text + Sketch: Image Compression at Ultra Low Rates",
+      "authors": "Eric Lei, Yiğit Berkay Uslu, Hamed Hassani, Shirin Saeedi Bidokhti",
+      "first_author": "Eric Lei",
+      "url": "http://arxiv.org/abs/2307.01944",
+      "citations": 80,
+      "published": "2023-07-04"
+    },
+    "2102.04373": {
+      "title": "Partition-based formulations for mixed-integer optimization of trained ReLU neural networks",
+      "authors": "Calvin Tsay, Jan Kronqvist, Alexander Thebelt, Ruth Misener",
+      "first_author": "Calvin Tsay",
+      "url": "http://arxiv.org/abs/2102.04373",
+      "citations": 80,
+      "published": "2021-02-08"
+    },
+    "2003.10184": {
+      "title": "Learning Better Lossless Compression Using Lossy Compression",
+      "authors": "Fabian Mentzer, Luc Van Gool, Michael Tschannen",
+      "first_author": "Fabian Mentzer",
+      "url": "http://arxiv.org/abs/2003.10184",
+      "citations": 80,
+      "published": "2020-03-23"
+    },
+    "2502.01654": {
+      "title": "Predicting concentration levels of air pollutants by transfer learning and recurrent neural network",
+      "authors": "Iat Hang Fong, Tengyue Li, Simon Fong, Raymond K. Wong, Antonio J. Tallón-Ballesteros",
+      "first_author": "Iat Hang Fong",
+      "url": "http://arxiv.org/abs/2502.01654",
+      "citations": 78,
+      "published": "2025-01-30"
+    },
+    "2108.11898": {
+      "title": "Supervised Compression for Resource-Constrained Edge Computing Systems",
+      "authors": "Yoshitomo Matsubara, Ruihan Yang, Marco Levorato, Stephan Mandt",
+      "first_author": "Yoshitomo Matsubara",
+      "url": "http://arxiv.org/abs/2108.11898",
+      "citations": 78,
+      "published": "2021-08-21"
+    },
+    "2103.15726": {
+      "title": "Slimmable Compressive Autoencoders for Practical Neural Image Compression",
+      "authors": "Fei Yang, Luis Herranz, Yongmei Cheng, Mikhail G. Mozerov",
+      "first_author": "Fei Yang",
+      "url": "http://arxiv.org/abs/2103.15726",
+      "citations": 78,
+      "published": "2021-03-29"
+    },
+    "2101.06341": {
+      "title": "Advances In Video Compression System Using Deep Neural Network: A Review And Case Studies",
+      "authors": "Dandan Ding, Zhan Ma, Di Chen, Qingshuang Chen, Zoe Liu, Fengqing Zhu",
+      "first_author": "Dandan Ding",
+      "url": "http://arxiv.org/abs/2101.06341",
+      "citations": 77,
+      "published": "2021-01-16"
+    },
+    "2110.12764": {
+      "title": "Contrastive Learning for Neural Topic Model",
+      "authors": "Thong Nguyen, Anh Tuan Luu",
+      "first_author": "Thong Nguyen",
+      "url": "http://arxiv.org/abs/2110.12764",
+      "citations": 77,
+      "published": "2021-10-25"
+    },
+    "2102.03147": {
+      "title": "Learning Conjoint Attentions for Graph Neural Nets",
+      "authors": "Tiantian He, Yew-Soon Ong, Lu Bai",
+      "first_author": "Tiantian He",
+      "url": "http://arxiv.org/abs/2102.03147",
+      "citations": 76,
+      "published": "2021-02-05"
+    },
+    "2205.11141": {
+      "title": "OPQ: Compressing Deep Neural Networks with One-shot Pruning-Quantization",
+      "authors": "Peng Hu, Xi Peng, Hongyuan Zhu, Mohamed M. Sabry Aly, Jie Lin",
+      "first_author": "Peng Hu",
+      "url": "http://arxiv.org/abs/2205.11141",
+      "citations": 75,
+      "published": "2022-05-23"
+    },
+    "2203.04963": {
+      "title": "Neural Data-Dependent Transform for Learned Image Compression",
+      "authors": "Dezhao Wang, Wenhan Yang, Yueyu Hu, Jiaying Liu",
+      "first_author": "Dezhao Wang",
+      "url": "http://arxiv.org/abs/2203.04963",
+      "citations": 74,
+      "published": "2022-03-09"
+    },
+    "2307.15421": {
+      "title": "MLIC++: Linear Complexity Multi-Reference Entropy Modeling for Learned Image Compression",
+      "authors": "Wei Jiang, Jiayu Yang, Yongqi Zhai, Feng Gao, Ronggang Wang",
+      "first_author": "Wei Jiang",
+      "url": "http://arxiv.org/abs/2307.15421",
+      "citations": 72,
+      "published": "2023-07-28"
+    },
+    "2402.05964": {
+      "title": "A Survey on Transformer Compression",
+      "authors": "Yehui Tang, Yunhe Wang, Jianyuan Guo, Zhijun Tu, Kai Han, Hailin Hu, Dacheng Tao",
+      "first_author": "Yehui Tang",
+      "url": "http://arxiv.org/abs/2402.05964",
+      "citations": 71,
+      "published": "2024-02-05"
+    },
+    "2011.06220": {
+      "title": "Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting",
+      "authors": "Zeke Xie, Fengxiang He, Shaopeng Fu, Issei Sato, Dacheng Tao, Masashi Sugiyama",
+      "first_author": "Zeke Xie",
+      "url": "http://arxiv.org/abs/2011.06220",
+      "citations": 69,
+      "published": "2020-11-12"
+    },
+    "2110.04840": {
+      "title": "Heavy Ball Neural Ordinary Differential Equations",
+      "authors": "Hedi Xia, Vai Suliafu, Hangjie Ji, Tan M. Nguyen, Andrea L. Bertozzi, Stanley J. Osher, Bao Wang",
+      "first_author": "Hedi Xia",
+      "url": "http://arxiv.org/abs/2110.04840",
+      "citations": 69,
+      "published": "2021-10-10"
+    },
+    "2301.13694": {
+      "title": "Are Defenses for Graph Neural Networks Robust?",
+      "authors": "Felix Mujkanovic, Simon Geisler, Stephan Günnemann, Aleksandar Bojchevski",
+      "first_author": "Felix Mujkanovic",
+      "url": "http://arxiv.org/abs/2301.13694",
+      "citations": 69,
+      "published": "2023-01-31"
+    },
+    "2112.11312": {
+      "title": "Implicit Neural Video Compression",
+      "authors": "Yunfan Zhang, Ties van Rozendaal, Johann Brehmer, Markus Nagel, Taco Cohen",
+      "first_author": "Yunfan Zhang",
+      "url": "http://arxiv.org/abs/2112.11312",
+      "citations": 68,
+      "published": "2021-12-21"
+    },
+    "2312.02753": {
+      "title": "C3: High-performance and low-complexity neural compression from a single image or video",
+      "authors": "Hyunjik Kim, Matthias Bauer, Lucas Theis, Jonathan Richard Schwarz, Emilien Dupont",
+      "first_author": "Hyunjik Kim",
+      "url": "http://arxiv.org/abs/2312.02753",
+      "citations": 66,
+      "published": "2023-12-05"
+    },
+    "2406.07520": {
+      "title": "Neural Gaffer: Relighting Any Object via Diffusion",
+      "authors": "Haian Jin, Yuan Li, Fujun Luan, Yuanbo Xiangli, Sai Bi, Kai Zhang, Zexiang Xu, Jin Sun, Noah Snavely",
+      "first_author": "Haian Jin",
+      "url": "http://arxiv.org/abs/2406.07520",
+      "citations": 65,
+      "published": "2024-06-11"
+    },
+    "2212.04386": {
+      "title": "Multi-View Mesh Reconstruction with Neural Deferred Shading",
+      "authors": "Markus Worchel, Rodrigo Diaz, Weiwen Hu, Oliver Schreer, Ingo Feldmann, Peter Eisert",
+      "first_author": "Markus Worchel",
+      "url": "http://arxiv.org/abs/2212.04386",
+      "citations": 64,
+      "published": "2022-12-08"
+    },
+    "2112.09300": {
+      "title": "Towards End-to-End Image Compression and Analysis with Transformers",
+      "authors": "Yuanchao Bai, Xu Yang, Xianming Liu, Junjun Jiang, Yaowei Wang, Xiangyang Ji, Wen Gao",
+      "first_author": "Yuanchao Bai",
+      "url": "http://arxiv.org/abs/2112.09300",
+      "citations": 63,
+      "published": "2021-12-17"
+    },
+    "2112.03968": {
+      "title": "Learning Theory Can (Sometimes) Explain Generalisation in Graph Neural Networks",
+      "authors": "Pascal Mattia Esser, Leena Chennuru Vankadara, Debarghya Ghoshdastidar",
+      "first_author": "Pascal Mattia Esser",
+      "url": "http://arxiv.org/abs/2112.03968",
+      "citations": 63,
+      "published": "2021-12-07"
+    },
+    "2003.09671": {
+      "title": "On Information Plane Analyses of Neural Network Classifiers -- A Review",
+      "authors": "Bernhard C. Geiger",
+      "first_author": "Bernhard C. Geiger",
+      "url": "http://arxiv.org/abs/2003.09671",
+      "citations": 62,
+      "published": "2020-03-21"
+    },
+    "2004.11293": {
+      "title": "Intermittent Inference with Nonuniformly Compressed Multi-Exit Neural Network for Energy Harvesting Powered Devices",
+      "authors": "Yawen Wu, Zhepeng Wang, Zhenge Jia, Yiyu Shi, Jingtong Hu",
+      "first_author": "Yawen Wu",
+      "url": "http://arxiv.org/abs/2004.11293",
+      "citations": 62,
+      "published": "2020-04-23"
+    },
+    "2506.22084": {
+      "title": "Transformers are Graph Neural Networks",
+      "authors": "Chaitanya K. Joshi",
+      "first_author": "Chaitanya K. Joshi",
+      "url": "http://arxiv.org/abs/2506.22084",
+      "citations": 60,
+      "published": "2025-06-27"
+    },
+    "2312.17199": {
+      "title": "Tractable Function-Space Variational Inference in Bayesian Neural Networks",
+      "authors": "Tim G. J. Rudner, Zonghao Chen, Yee Whye Teh, Yarin Gal",
+      "first_author": "Tim G. J. Rudner",
+      "url": "http://arxiv.org/abs/2312.17199",
+      "citations": 58,
+      "published": "2023-12-28"
+    },
+    "2209.14733": {
+      "title": "Hyper-Representations as Generative Models: Sampling Unseen Neural Network Weights",
+      "authors": "Konstantin Schürholt, Boris Knyazev, Xavier Giró-i-Nieto, Damian Borth",
+      "first_author": "Konstantin Schürholt",
+      "url": "http://arxiv.org/abs/2209.14733",
+      "citations": 58,
+      "published": "2022-09-29"
+    },
+    "2205.07848": {
+      "title": "Power and limitations of single-qubit native quantum neural networks",
+      "authors": "Zhan Yu, Hongshun Yao, Mujin Li, Xin Wang",
+      "first_author": "Zhan Yu",
+      "url": "http://arxiv.org/abs/2205.07848",
+      "citations": 57,
+      "published": "2022-05-16"
+    },
+    "2006.02361": {
+      "title": "Optimizing Neural Networks via Koopman Operator Theory",
+      "authors": "Akshunna S. Dogra, William T Redman",
+      "first_author": "Akshunna S. Dogra",
+      "url": "http://arxiv.org/abs/2006.02361",
+      "citations": 56,
+      "published": "2020-06-03"
+    },
+    "2012.00307": {
+      "title": "Edge Deep Learning for Neural Implants",
+      "authors": "Xilin Liu, Andrew G. Richardson",
+      "first_author": "Xilin Liu",
+      "url": "http://arxiv.org/abs/2012.00307",
+      "citations": 56,
+      "published": "2020-12-01"
+    },
+    "2105.01683": {
+      "title": "A reconfigurable neural network ASIC for detector front-end data compression at the HL-LHC",
+      "authors": "Giuseppe Di Guglielmo, Farah Fahim, Christian Herwig, Manuel Blanco Valentin, Javier Duarte, Cristian Gingu, Philip Harris, James Hirschauer, Martin Kwok, Vladimir Loncar, Yingyi Luo, Llovizna Miranda, Jennifer Ngadiuba, Daniel Noonan, Seda Ogrenci-Memik, Maurizio Pierini, Sioni Summers, Nhan Tran",
+      "first_author": "Giuseppe Di Guglielmo",
+      "url": "http://arxiv.org/abs/2105.01683",
+      "citations": 56,
+      "published": "2021-05-04"
+    },
+    "2107.11442": {
+      "title": "Compressing Neural Networks: Towards Determining the Optimal Layer-wise Decomposition",
+      "authors": "Lucas Liebenwein, Alaa Maalouf, Oren Gal, Dan Feldman, Daniela Rus",
+      "first_author": "Lucas Liebenwein",
+      "url": "http://arxiv.org/abs/2107.11442",
+      "citations": 54,
+      "published": "2021-07-23"
+    },
+    "2502.20762": {
+      "title": "Towards Practical Real-Time Neural Video Compression",
+      "authors": "Zhaoyang Jia, Bin Li, Jiahao Li, Wenxuan Xie, Linfeng Qi, Houqiang Li, Yan Lu",
+      "first_author": "Zhaoyang Jia",
+      "url": "http://arxiv.org/abs/2502.20762",
+      "citations": 54,
+      "published": "2025-02-28"
+    },
+    "2206.03865": {
+      "title": "Fault-Aware Neural Code Rankers",
+      "authors": "Jeevana Priya Inala, Chenglong Wang, Mei Yang, Andres Codas, Mark Encarnación, Shuvendu K Lahiri, Madanlal Musuvathi, Jianfeng Gao",
+      "first_author": "Jeevana Priya Inala",
+      "url": "http://arxiv.org/abs/2206.03865",
+      "citations": 54,
+      "published": "2022-06-04"
+    },
+    "2210.08772": {
+      "title": "Signal Processing for Implicit Neural Representations",
+      "authors": "Dejia Xu, Peihao Wang, Yifan Jiang, Zhiwen Fan, Zhangyang Wang",
+      "first_author": "Dejia Xu",
+      "url": "http://arxiv.org/abs/2210.08772",
+      "citations": 53,
+      "published": "2022-10-17"
+    },
+    "2105.06002": {
+      "title": "Lightweight compression of neural network feature tensors for collaborative intelligence",
+      "authors": "Robert A. Cohen, Hyomin Choi, Ivan V. Bajić",
+      "first_author": "Robert A. Cohen",
+      "url": "http://arxiv.org/abs/2105.06002",
+      "citations": 53,
+      "published": "2021-05-12"
+    },
+    "2304.13445": {
+      "title": "Neural-PBIR Reconstruction of Shape, Material, and Illumination",
+      "authors": "Cheng Sun, Guangyan Cai, Zhengqin Li, Kai Yan, Cheng Zhang, Carl Marshall, Jia-Bin Huang, Shuang Zhao, Zhao Dong",
+      "first_author": "Cheng Sun",
+      "url": "http://arxiv.org/abs/2304.13445",
+      "citations": 53,
+      "published": "2023-04-26"
+    },
+    "2006.15938": {
+      "title": "Hybrid Tensor Decomposition in Neural Network Compression",
+      "authors": "Bijiao Wu, Dingheng Wang, Guangshe Zhao, Lei Deng, Guoqi Li",
+      "first_author": "Bijiao Wu",
+      "url": "http://arxiv.org/abs/2006.15938",
+      "citations": 52,
+      "published": "2020-06-29"
+    },
+    "2112.06643": {
+      "title": "On the Dynamics of Hopfield Neural Networks on Unit Quaternions",
+      "authors": "Marcos Eduardo Valle, Fidelis Zanetti de Castro",
+      "first_author": "Marcos Eduardo Valle",
+      "url": "http://arxiv.org/abs/2112.06643",
+      "citations": 51,
+      "published": "2021-12-13"
+    },
+    "2003.09696": {
+      "title": "PyCARL: A PyNN Interface for Hardware-Software Co-Simulation of Spiking Neural Network",
+      "authors": "Adarsha Balaji, Prathyusha Adiraju, Hirak J. Kashyap, Anup Das, Jeffrey L. Krichmar, Nikil D. Dutt, Francky Catthoor",
+      "first_author": "Adarsha Balaji",
+      "url": "http://arxiv.org/abs/2003.09696",
+      "citations": 51,
+      "published": "2020-03-21"
+    },
+    "2106.03795": {
+      "title": "Heavy Tails in SGD and Compressibility of Overparametrized Neural Networks",
+      "authors": "Melih Barsbey, Milad Sefidgaran, Murat A. Erdogdu, Gaël Richard, Umut Şimşekli",
+      "first_author": "Melih Barsbey",
+      "url": "http://arxiv.org/abs/2106.03795",
+      "citations": 51,
+      "published": "2021-06-07"
+    },
+    "2102.09270": {
+      "title": "On the advantages of stochastic encoders",
+      "authors": "Lucas Theis, Eirikur Agustsson",
+      "first_author": "Lucas Theis",
+      "url": "http://arxiv.org/abs/2102.09270",
+      "citations": 51,
+      "published": "2021-02-18"
+    },
+    "2104.07930": {
+      "title": "Conditional Coding for Flexible Learned Video Compression",
+      "authors": "Théo Ladune, Pierrick Philippe, Wassim Hamidouche, Lu Zhang, Olivier Déforges",
+      "first_author": "Théo Ladune",
+      "url": "http://arxiv.org/abs/2104.07930",
+      "citations": 50,
+      "published": "2021-04-16"
+    },
+    "2010.10090": {
+      "title": "Knowledge Distillation in Wide Neural Networks: Risk Bound, Data Efficiency and Imperfect Teacher",
+      "authors": "Guangda Ji, Zhanxing Zhu",
+      "first_author": "Guangda Ji",
+      "url": "http://arxiv.org/abs/2010.10090",
+      "citations": 50,
+      "published": "2020-10-20"
+    },
+    "2008.02956": {
+      "title": "Bootstrapping Neural Processes",
+      "authors": "Juho Lee, Yoonho Lee, Jungtaek Kim, Eunho Yang, Sung Ju Hwang, Yee Whye Teh",
+      "first_author": "Juho Lee",
+      "url": "http://arxiv.org/abs/2008.02956",
+      "citations": 50,
+      "published": "2020-08-07"
+    }
+  },
+  "Video Codec": {
+    "2109.15047": {
+      "title": "Deep Contextual Video Compression",
+      "authors": "Jiahao Li, Bin Li, Yan Lu",
+      "first_author": "Jiahao Li",
+      "url": "http://arxiv.org/abs/2109.15047",
+      "citations": 404,
+      "published": "2021-09-30"
+    },
+    "2110.13903": {
+      "title": "NeRV: Neural Representations for Videos",
+      "authors": "Hao Chen, Bo He, Hanyu Wang, Yixuan Ren, Ser-Nam Lim, Abhinav Shrivastava",
+      "first_author": "Hao Chen",
+      "url": "http://arxiv.org/abs/2110.13903",
+      "citations": 349,
+      "published": "2021-10-26"
+    },
+    "2204.07790": {
+      "title": "Wireless Semantic Communications for Video Conferencing",
+      "authors": "Peiwen Jiang, Chao-Kai Wen, Shi Jin, Geoffrey Ye Li",
+      "first_author": "Peiwen Jiang",
+      "url": "http://arxiv.org/abs/2204.07790",
+      "citations": 244,
+      "published": "2022-04-16"
+    },
+    "2312.17432": {
+      "title": "Video Understanding with Large Language Models: A Survey",
+      "authors": "Yolo Y. Tang, Jing Bi, Siting Xu, Luchuan Song, Susan Liang, Teng Wang, Daoan Zhang, Jie An, Jingyang Lin, Rongyi Zhu, Ali Vosoughi, Chao Huang, Zeliang Zhang, Pinxin Liu, Mingqian Feng, Feng Zheng, Jianguo Zhang, Ping Luo, Jiebo Luo, Chenliang Xu",
+      "first_author": "Yolo Y. Tang",
+      "url": "http://arxiv.org/abs/2312.17432",
+      "citations": 198,
+      "published": "2023-12-29"
+    },
+    "2111.13034": {
+      "title": "DeepWiVe: Deep-Learning-Aided Wireless Video Transmission",
+      "authors": "Tze-Yang Tung, Deniz Gündüz",
+      "first_author": "Tze-Yang Tung",
+      "url": "http://arxiv.org/abs/2111.13034",
+      "citations": 185,
+      "published": "2021-11-25"
+    },
+    "2003.13552": {
+      "title": "BVI-DVC: A Training Database for Deep Video Compression",
+      "authors": "Di Ma, Fan Zhang, David R. Bull",
+      "first_author": "Di Ma",
+      "url": "http://arxiv.org/abs/2003.13552",
+      "citations": 185,
+      "published": "2020-03-30"
+    },
+    "2003.11282": {
+      "title": "Content Adaptive and Error Propagation Aware Deep Video Compression",
+      "authors": "Guo Lu, Chunlei Cai, Xiaoyun Zhang, Li Chen, Wanli Ouyang, Dong Xu, Zhiyong Gao",
+      "first_author": "Guo Lu",
+      "url": "http://arxiv.org/abs/2003.11282",
+      "citations": 166,
+      "published": "2020-03-25"
+    },
+    "2402.03413": {
+      "title": "Perceptual Video Quality Assessment: A Survey",
+      "authors": "Xiongkuo Min, Huiyu Duan, Wei Sun, Yucheng Zhu, Guangtao Zhai",
+      "first_author": "Xiongkuo Min",
+      "url": "http://arxiv.org/abs/2402.03413",
+      "citations": 163,
+      "published": "2024-02-05"
+    },
+    "2402.17414": {
+      "title": "Neural Video Compression with Feature Modulation",
+      "authors": "Jiahao Li, Bin Li, Yan Lu",
+      "first_author": "Jiahao Li",
+      "url": "http://arxiv.org/abs/2402.17414",
+      "citations": 153,
+      "published": "2024-02-27"
+    },
+    "2408.16532": {
+      "title": "WavTokenizer: an Efficient Acoustic Discrete Codec Tokenizer for Audio Language Modeling",
+      "authors": "Shengpeng Ji, Ziyue Jiang, Wen Wang, Yifu Chen, Minghui Fang, Jialong Zuo, Qian Yang, Xize Cheng, Zehan Wang, Ruiqi Li, Ziang Zhang, Xiaoda Yang, Rongjie Huang, Yidi Jiang, Qian Chen, Siqi Zheng, Zhou Zhao",
+      "first_author": "Shengpeng Ji",
+      "url": "http://arxiv.org/abs/2408.16532",
+      "citations": 138,
+      "published": "2024-08-29"
+    },
+    "2206.07307": {
+      "title": "VCT: A Video Compression Transformer",
+      "authors": "Fabian Mentzer, George Toderici, David Minnen, Sung-Jin Hwang, Sergi Caelles, Mario Lucic, Eirikur Agustsson",
+      "first_author": "Fabian Mentzer",
+      "url": "http://arxiv.org/abs/2206.07307",
+      "citations": 133,
+      "published": "2022-06-15"
+    },
+    "2104.14335": {
+      "title": "ELF-VC: Efficient Learned Flexible-Rate Video Coding",
+      "authors": "Oren Rippel, Alexander G. Anderson, Kedar Tatwawadi, Sanjay Nair, Craig Lytle, Lubomir Bourdev",
+      "first_author": "Oren Rippel",
+      "url": "http://arxiv.org/abs/2104.14335",
+      "citations": 132,
+      "published": "2021-04-29"
+    },
+    "2304.05112": {
+      "title": "Video Event Restoration Based on Keyframes for Video Anomaly Detection",
+      "authors": "Zhiwei Yang, Jing Liu, Zhaoyang Wu, Peng Wu, Xiaotao Liu",
+      "first_author": "Zhiwei Yang",
+      "url": "http://arxiv.org/abs/2304.05112",
+      "citations": 108,
+      "published": "2023-04-11"
+    },
+    "2101.04822": {
+      "title": "Plug-and-Play Algorithms for Video Snapshot Compressive Imaging",
+      "authors": "Xin Yuan, Yang Liu, Jinli Suo, Frédo Durand, Qionghai Dai",
+      "first_author": "Xin Yuan",
+      "url": "http://arxiv.org/abs/2101.04822",
+      "citations": 99,
+      "published": "2021-01-13"
+    },
+    "2207.05315": {
+      "title": "CANF-VC: Conditional Augmented Normalizing Flows for Video Compression",
+      "authors": "Yung-Han Ho, Chih-Peng Chang, Peng-Yu Chen, Alessandro Gnutti, Wen-Hsiao Peng",
+      "first_author": "Yung-Han Ho",
+      "url": "http://arxiv.org/abs/2207.05315",
+      "citations": 88,
+      "published": "2022-07-12"
+    },
+    "2008.09180": {
+      "title": "Conditional Entropy Coding for Efficient Video Compression",
+      "authors": "Jerry Liu, Shenlong Wang, Wei-Chiu Ma, Meet Shah, Rui Hu, Pranaab Dhawan, Raquel Urtasun",
+      "first_author": "Jerry Liu",
+      "url": "http://arxiv.org/abs/2008.09180",
+      "citations": 78,
+      "published": "2020-08-20"
+    },
+    "2104.14868": {
+      "title": "On the Computation of PSNR for a Set of Images or Video",
+      "authors": "Onur Keleş, M. Akın Yılmaz, A. Murat Tekalp, Cansu Korkmaz, Zafer Dogan",
+      "first_author": "Onur Keleş",
+      "url": "http://arxiv.org/abs/2104.14868",
+      "citations": 72,
+      "published": "2021-04-30"
+    },
+    "2212.05458": {
+      "title": "COOL-CHIC: Coordinate-based Low Complexity Hierarchical Image Codec",
+      "authors": "Théo Ladune, Pierrick Philippe, Félix Henry, Gordon Clare, Thomas Leguay",
+      "first_author": "Théo Ladune",
+      "url": "http://arxiv.org/abs/2212.05458",
+      "citations": 70,
+      "published": "2022-12-11"
+    },
+    "2104.02322": {
+      "title": "Efficient Video Compression via Content-Adaptive Super-Resolution",
+      "authors": "Mehrdad Khani, Vibhaalakshmi Sivaraman, Mohammad Alizadeh",
+      "first_author": "Mehrdad Khani",
+      "url": "http://arxiv.org/abs/2104.02322",
+      "citations": 63,
+      "published": "2021-04-06"
+    },
+    "2112.09529": {
+      "title": "End-to-End Rate-Distortion Optimized Learned Hierarchical Bi-Directional Video Compression",
+      "authors": "M. Akın Yılmaz, A. Murat Tekalp",
+      "first_author": "M. Akın Yılmaz",
+      "url": "http://arxiv.org/abs/2112.09529",
+      "citations": 63,
+      "published": "2021-12-17"
+    },
+    "2007.02375": {
+      "title": "Auto-captions on GIF: A Large-scale Video-sentence Dataset for Vision-language Pre-training",
+      "authors": "Yingwei Pan, Yehao Li, Jianjie Luo, Jun Xu, Ting Yao, Tao Mei",
+      "first_author": "Yingwei Pan",
+      "url": "http://arxiv.org/abs/2007.02375",
+      "citations": 61,
+      "published": "2020-07-05"
+    },
+    "2405.20279": {
+      "title": "CV-VAE: A Compatible Video VAE for Latent Generative Video Models",
+      "authors": "Sijie Zhao, Yong Zhang, Xiaodong Cun, Shaoshu Yang, Muyao Niu, Xiaoyu Li, Wenbo Hu, Ying Shan",
+      "first_author": "Sijie Zhao",
+      "url": "http://arxiv.org/abs/2405.20279",
+      "citations": 55,
+      "published": "2024-05-30"
+    },
+    "2104.00531": {
+      "title": "Extending Neural P-frame Codecs for B-frame Coding",
+      "authors": "Reza Pourreza, Taco S Cohen",
+      "first_author": "Reza Pourreza",
+      "url": "http://arxiv.org/abs/2104.00531",
+      "citations": 52,
+      "published": "2021-03-30"
+    }
+  },
+  "Video Quality": {
+    "2210.02303": {
+      "title": "Imagen Video: High Definition Video Generation with Diffusion Models",
+      "authors": "Jonathan Ho, William Chan, Chitwan Saharia, Jay Whang, Ruiqi Gao, Alexey Gritsenko, Diederik P. Kingma, Ben Poole, Mohammad Norouzi, David J. Fleet, Tim Salimans",
+      "first_author": "Jonathan Ho",
+      "url": "http://arxiv.org/abs/2210.02303",
+      "citations": 1921,
+      "published": "2022-10-05"
+    },
+    "2306.02858": {
+      "title": "Video-LLaMA: An Instruction-tuned Audio-Visual Language Model for Video Understanding",
+      "authors": "Hang Zhang, Xin Li, Lidong Bing",
+      "first_author": "Hang Zhang",
+      "url": "http://arxiv.org/abs/2306.02858",
+      "citations": 1584,
+      "published": "2023-06-05"
+    },
+    "2405.21075": {
+      "title": "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis",
+      "authors": "Chaoyou Fu, Yuhan Dai, Yongdong Luo, Lei Li, Shuhuai Ren, Renrui Zhang, Zihan Wang, Chenyu Zhou, Yunhang Shen, Mengdan Zhang, Peixian Chen, Yanwei Li, Shaohui Lin, Sirui Zhao, Ke Li, Tong Xu, Xiawu Zheng, Enhong Chen, Caifeng Shan, Ran He, Xing Sun",
+      "first_author": "Chaoyou Fu",
+      "url": "http://arxiv.org/abs/2405.21075",
+      "citations": 964,
+      "published": "2024-05-31"
+    },
+    "2308.06571": {
+      "title": "ModelScope Text-to-Video Technical Report",
+      "authors": "Jiuniu Wang, Hangjie Yuan, Dayou Chen, Yingya Zhang, Xiang Wang, Shiwei Zhang",
+      "first_author": "Jiuniu Wang",
+      "url": "http://arxiv.org/abs/2308.06571",
+      "citations": 643,
+      "published": "2023-08-12"
+    },
+    "2401.09047": {
+      "title": "VideoCrafter2: Overcoming Data Limitations for High-Quality Video Diffusion Models",
+      "authors": "Haoxin Chen, Yong Zhang, Xiaodong Cun, Menghan Xia, Xintao Wang, Chao Weng, Ying Shan",
+      "first_author": "Haoxin Chen",
+      "url": "http://arxiv.org/abs/2401.09047",
+      "citations": 535,
+      "published": "2024-01-17"
+    },
+    "2310.19512": {
+      "title": "VideoCrafter1: Open Diffusion Models for High-Quality Video Generation",
+      "authors": "Haoxin Chen, Menghan Xia, Yingqing He, Yong Zhang, Xiaodong Cun, Shaoshu Yang, Jinbo Xing, Yaofang Liu, Qifeng Chen, Xintao Wang, Chao Weng, Ying Shan",
+      "first_author": "Haoxin Chen",
+      "url": "http://arxiv.org/abs/2310.19512",
+      "citations": 504,
+      "published": "2023-10-30"
+    },
+    "2303.08320": {
+      "title": "VideoFusion: Decomposed Diffusion Models for High-Quality Video Generation",
+      "authors": "Zhengxiong Luo, Dayou Chen, Yingya Zhang, Yan Huang, Liang Wang, Yujun Shen, Deli Zhao, Jingren Zhou, Tieniu Tan",
+      "first_author": "Zhengxiong Luo",
+      "url": "http://arxiv.org/abs/2303.08320",
+      "citations": 401,
+      "published": "2023-03-15"
+    },
+    "2004.15021": {
+      "title": "Consistent Video Depth Estimation",
+      "authors": "Xuan Luo, Jia-Bin Huang, Richard Szeliski, Kevin Matzen, Johannes Kopf",
+      "first_author": "Xuan Luo",
+      "url": "http://arxiv.org/abs/2004.15021",
+      "citations": 396,
+      "published": "2020-04-30"
+    },
+    "2201.12288": {
+      "title": "VRT: A Video Restoration Transformer",
+      "authors": "Jingyun Liang, Jiezhang Cao, Yuchen Fan, Kai Zhang, Rakesh Ranjan, Yawei Li, Radu Timofte, Luc Van Gool",
+      "first_author": "Jingyun Liang",
+      "url": "http://arxiv.org/abs/2201.12288",
+      "citations": 359,
+      "published": "2022-01-28"
+    },
+    "2112.14683": {
+      "title": "StyleGAN-V: A Continuous Video Generator with the Price, Image Quality and Perks of StyleGAN2",
+      "authors": "Ivan Skorokhodov, Sergey Tulyakov, Mohamed Elhoseiny",
+      "first_author": "Ivan Skorokhodov",
+      "url": "http://arxiv.org/abs/2112.14683",
+      "citations": 358,
+      "published": "2021-12-29"
+    },
+    "2211.04894": {
+      "title": "Exploring Video Quality Assessment on User Generated Contents from Aesthetic and Technical Perspectives",
+      "authors": "Haoning Wu, Erli Zhang, Liang Liao, Chaofeng Chen, Jingwen Hou, Annan Wang, Wenxiu Sun, Qiong Yan, Weisi Lin",
+      "first_author": "Haoning Wu",
+      "url": "http://arxiv.org/abs/2211.04894",
+      "citations": 341,
+      "published": "2022-11-09"
+    },
+    "2309.15103": {
+      "title": "LAVIE: High-Quality Video Generation with Cascaded Latent Diffusion Models",
+      "authors": "Yaohui Wang, Xinyuan Chen, Xin Ma, Shangchen Zhou, Ziqi Huang, Yi Wang, Ceyuan Yang, Yinan He, Jiashuo Yu, Peiqing Yang, Yuwei Guo, Tianxing Wu, Chenyang Si, Yuming Jiang, Cunjian Chen, Chen Change Loy, Bo Dai, Dahua Lin, Yu Qiao, Ziwei Liu",
+      "first_author": "Yaohui Wang",
+      "url": "http://arxiv.org/abs/2309.15103",
+      "citations": 337,
+      "published": "2023-09-26"
+    },
+    "2410.02713": {
+      "title": "LLaVA-Video: Video Instruction Tuning With Synthetic Data",
+      "authors": "Yuanhan Zhang, Jinming Wu, Wei Li, Bo Li, Zejun Ma, Ziwei Liu, Chunyuan Li",
+      "first_author": "Yuanhan Zhang",
+      "url": "http://arxiv.org/abs/2410.02713",
+      "citations": 330,
+      "published": "2024-10-03"
+    },
+    "2005.14354": {
+      "title": "UGC-VQA: Benchmarking Blind Video Quality Assessment for User Generated Content",
+      "authors": "Zhengzhong Tu, Yilin Wang, Neil Birkbeck, Balu Adsumilli, Alan C. Bovik",
+      "first_author": "Zhengzhong Tu",
+      "url": "http://arxiv.org/abs/2005.14354",
+      "citations": 325,
+      "published": "2020-05-29"
+    },
+    "2207.02595": {
+      "title": "FAST-VQA: Efficient End-to-end Video Quality Assessment with Fragment Sampling",
+      "authors": "Haoning Wu, Chaofeng Chen, Jingwen Hou, Liang Liao, Annan Wang, Wenxiu Sun, Qiong Yan, Weisi Lin",
+      "first_author": "Haoning Wu",
+      "url": "http://arxiv.org/abs/2207.02595",
+      "citations": 285,
+      "published": "2022-07-06"
+    },
+    "2204.14047": {
+      "title": "A Deep Learning based No-reference Quality Assessment Model for UGC Videos",
+      "authors": "Wei Sun, Xiongkuo Min, Wei Lu, Guangtao Zhai",
+      "first_author": "Wei Sun",
+      "url": "http://arxiv.org/abs/2204.14047",
+      "citations": 252,
+      "published": "2022-04-29"
+    },
+    "2112.01554": {
+      "title": "Neural Head Avatars from Monocular RGB Videos",
+      "authors": "Philip-William Grassal, Malte Prinzler, Titus Leistner, Carsten Rother, Matthias Nießner, Justus Thies",
+      "first_author": "Philip-William Grassal",
+      "url": "http://arxiv.org/abs/2112.01554",
+      "citations": 251,
+      "published": "2021-12-02"
+    },
+    "2003.01966": {
+      "title": "Learning for Video Compression with Hierarchical Quality and Recurrent Enhancement",
+      "authors": "Ren Yang, Fabian Mentzer, Luc Van Gool, Radu Timofte",
+      "first_author": "Ren Yang",
+      "url": "http://arxiv.org/abs/2003.01966",
+      "citations": 235,
+      "published": "2020-03-04"
+    },
+    "2011.13544": {
+      "title": "Patch-VQ: 'Patching Up' the Video Quality Problem",
+      "authors": "Zhenqiang Ying, Maniratnam Mandal, Deepti Ghadiyaram, Alan Bovik",
+      "first_author": "Zhenqiang Ying",
+      "url": "http://arxiv.org/abs/2011.13544",
+      "citations": 232,
+      "published": "2020-11-27"
+    },
+    "2209.06243": {
+      "title": "CometKiwi: IST-Unbabel 2022 Submission for the Quality Estimation Shared Task",
+      "authors": "Ricardo Rei, Marcos Treviso, Nuno M. Guerreiro, Chrysoula Zerva, Ana C. Farinha, Christine Maroti, José G. C. de Souza, Taisiya Glushkova, Duarte M. Alves, Alon Lavie, Luisa Coheur, André F. T. Martins",
+      "first_author": "Ricardo Rei",
+      "url": "http://arxiv.org/abs/2209.06243",
+      "citations": 220,
+      "published": "2022-09-13"
+    },
+    "2407.02371": {
+      "title": "OpenVid-1M: A Large-Scale High-Quality Dataset for Text-to-video Generation",
+      "authors": "Kepan Nan, Rui Xie, Penghao Zhou, Tiehan Fan, Zhenheng Yang, Zhijie Chen, Xiang Li, Jian Yang, Ying Tai",
+      "first_author": "Kepan Nan",
+      "url": "http://arxiv.org/abs/2407.02371",
+      "citations": 219,
+      "published": "2024-07-02"
+    },
+    "2101.10955": {
+      "title": "RAPIQUE: Rapid and Accurate Video Quality Prediction of User Generated Content",
+      "authors": "Zhengzhong Tu, Xiangxu Yu, Yilin Wang, Neil Birkbeck, Balu Adsumilli, Alan C. Bovik",
+      "first_author": "Zhengzhong Tu",
+      "url": "http://arxiv.org/abs/2101.10955",
+      "citations": 207,
+      "published": "2021-01-26"
+    },
+    "2012.02512": {
+      "title": "ID-Reveal: Identity-aware DeepFake Video Detection",
+      "authors": "Davide Cozzolino, Andreas Rössler, Justus Thies, Matthias Nießner, Luisa Verdoliva",
+      "first_author": "Davide Cozzolino",
+      "url": "http://arxiv.org/abs/2012.02512",
+      "citations": 206,
+      "published": "2020-12-04"
+    },
+    "2108.08505": {
+      "title": "Blindly Assess Quality of In-the-Wild Videos via Quality-aware Pre-training and Motion Perception",
+      "authors": "Bowen Li, Weixia Zhang, Meng Tian, Guangtao Zhai, Xianpei Wang",
+      "first_author": "Bowen Li",
+      "url": "http://arxiv.org/abs/2108.08505",
+      "citations": 169,
+      "published": "2021-08-19"
+    },
+    "2406.19680": {
+      "title": "MimicMotion: High-Quality Human Motion Video Generation with Confidence-aware Pose Guidance",
+      "authors": "Yuang Zhang, Jiaxi Gu, Li-Wen Wang, Han Wang, Junqi Cheng, Yuefeng Zhu, Fangyuan Zou",
+      "first_author": "Yuang Zhang",
+      "url": "http://arxiv.org/abs/2406.19680",
+      "citations": 169,
+      "published": "2024-06-28"
+    },
+    "2403.14773": {
+      "title": "StreamingT2V: Consistent, Dynamic, and Extendable Long Video Generation from Text",
+      "authors": "Roberto Henschel, Levon Khachatryan, Hayk Poghosyan, Daniil Hayrapetyan, Vahram Tadevosyan, Zhangyang Wang, Shant Navasardyan, Humphrey Shi",
+      "first_author": "Roberto Henschel",
+      "url": "http://arxiv.org/abs/2403.14773",
+      "citations": 169,
+      "published": "2024-03-21"
+    },
+    "2012.05258": {
+      "title": "ViP-DeepLab: Learning Visual Perception with Depth-aware Video Panoptic Segmentation",
+      "authors": "Siyuan Qiao, Yukun Zhu, Hartwig Adam, Alan Yuille, Liang-Chieh Chen",
+      "first_author": "Siyuan Qiao",
+      "url": "http://arxiv.org/abs/2012.05258",
+      "citations": 167,
+      "published": "2020-12-09"
+    },
+    "2205.03409": {
+      "title": "VFHQ: A High-Quality Dataset and Benchmark for Video Face Super-Resolution",
+      "authors": "Liangbin Xie. Xintao Wang, Honglun Zhang, Chao Dong, Ying Shan",
+      "first_author": "Liangbin Xie. Xintao Wang",
+      "url": "http://arxiv.org/abs/2205.03409",
+      "citations": 164,
+      "published": "2022-05-06"
+    },
+    "2211.14758": {
+      "title": "VideoReTalking: Audio-based Lip Synchronization for Talking Head Video Editing In the Wild",
+      "authors": "Kun Cheng, Xiaodong Cun, Yong Zhang, Menghan Xia, Fei Yin, Mingrui Zhu, Xuan Wang, Jue Wang, Nannan Wang",
+      "first_author": "Kun Cheng",
+      "url": "http://arxiv.org/abs/2211.14758",
+      "citations": 151,
+      "published": "2022-11-27"
+    },
+    "2011.04263": {
+      "title": "Unified Quality Assessment of In-the-Wild Videos with Mixed Datasets Training",
+      "authors": "Dingquan Li, Tingting Jiang, Ming Jiang",
+      "first_author": "Dingquan Li",
+      "url": "http://arxiv.org/abs/2011.04263",
+      "citations": 150,
+      "published": "2020-11-09"
+    },
+    "2011.02250": {
+      "title": "Video Generative Adversarial Networks: A Review",
+      "authors": "Nuha Aldausari, Arcot Sowmya, Nadine Marcus, Gelareh Mohammadi",
+      "first_author": "Nuha Aldausari",
+      "url": "http://arxiv.org/abs/2011.02250",
+      "citations": 149,
+      "published": "2020-11-04"
+    },
+    "2006.10704": {
+      "title": "Latent Video Transformer",
+      "authors": "Ruslan Rakhimov, Denis Volkhonskiy, Alexey Artemov, Denis Zorin, Evgeny Burnaev",
+      "first_author": "Ruslan Rakhimov",
+      "url": "http://arxiv.org/abs/2006.10704",
+      "citations": 133,
+      "published": "2020-06-18"
+    },
+    "2306.00943": {
+      "title": "Make-Your-Video: Customized Video Generation Using Textual and Structural Guidance",
+      "authors": "Jinbo Xing, Menghan Xia, Yuxin Liu, Yuechen Zhang, Yong Zhang, Yingqing He, Hanyuan Liu, Haoxin Chen, Xiaodong Cun, Xintao Wang, Ying Shan, Tien-Tsin Wong",
+      "first_author": "Jinbo Xing",
+      "url": "http://arxiv.org/abs/2306.00943",
+      "citations": 131,
+      "published": "2023-06-01"
+    },
+    "2010.11838": {
+      "title": "Blind Video Temporal Consistency via Deep Video Prior",
+      "authors": "Chenyang Lei, Yazhou Xing, Qifeng Chen",
+      "first_author": "Chenyang Lei",
+      "url": "http://arxiv.org/abs/2010.11838",
+      "citations": 124,
+      "published": "2020-10-22"
+    },
+    "2312.06640": {
+      "title": "Upscale-A-Video: Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution",
+      "authors": "Shangchen Zhou, Peiqing Yang, Jianyi Wang, Yihang Luo, Chen Change Loy",
+      "first_author": "Shangchen Zhou",
+      "url": "http://arxiv.org/abs/2312.06640",
+      "citations": 122,
+      "published": "2023-12-11"
+    },
+    "2106.04185": {
+      "title": "LipSync3D: Data-Efficient Learning of Personalized 3D Talking Faces from Video using Pose and Lighting Normalization",
+      "authors": "Avisek Lahiri, Vivek Kwatra, Christian Frueh, John Lewis, Chris Bregler",
+      "first_author": "Avisek Lahiri",
+      "url": "http://arxiv.org/abs/2106.04185",
+      "citations": 113,
+      "published": "2021-06-08"
+    },
+    "2303.09508": {
+      "title": "LDMVFI: Video Frame Interpolation with Latent Diffusion Models",
+      "authors": "Duolikun Danier, Fan Zhang, David Bull",
+      "first_author": "Duolikun Danier",
+      "url": "http://arxiv.org/abs/2303.09508",
+      "citations": 103,
+      "published": "2023-03-16"
+    },
+    "2012.13936": {
+      "title": "Learning Generalized Spatial-Temporal Deep Feature Representation for No-Reference Video Quality Assessment",
+      "authors": "Baoliang Chen, Lingyu Zhu, Guo Li, Hongfei Fan, Shiqi Wang",
+      "first_author": "Baoliang Chen",
+      "url": "http://arxiv.org/abs/2012.13936",
+      "citations": 102,
+      "published": "2020-12-27"
+    },
+    "2311.16103": {
+      "title": "Video-Bench: A Comprehensive Benchmark and Toolkit for Evaluating Video-based Large Language Models",
+      "authors": "Munan Ning, Bin Zhu, Yujia Xie, Bin Lin, Jiaxi Cui, Lu Yuan, Dongdong Chen, Li Yuan",
+      "first_author": "Munan Ning",
+      "url": "http://arxiv.org/abs/2311.16103",
+      "citations": 96,
+      "published": "2023-11-27"
+    },
+    "2206.10810": {
+      "title": "A Simple Baseline for Video Restoration with Grouped Spatial-temporal Shift",
+      "authors": "Dasong Li, Xiaoyu Shi, Yi Zhang, Ka Chun Cheung, Simon See, Xiaogang Wang, Hongwei Qin, Hongsheng Li",
+      "first_author": "Dasong Li",
+      "url": "http://arxiv.org/abs/2206.10810",
+      "citations": 94,
+      "published": "2022-06-22"
+    },
+    "2412.15322": {
+      "title": "MMAudio: Taming Multimodal Joint Training for High-Quality Video-to-Audio Synthesis",
+      "authors": "Ho Kei Cheng, Masato Ishii, Akio Hayakawa, Takashi Shibuya, Alexander Schwing, Yuki Mitsufuji",
+      "first_author": "Ho Kei Cheng",
+      "url": "http://arxiv.org/abs/2412.15322",
+      "citations": 84,
+      "published": "2024-12-19"
+    },
+    "2008.04687": {
+      "title": "SENSEI: Aligning Video Streaming Quality with Dynamic User Sensitivity",
+      "authors": "Xu Zhang, Yiyang Ou, Siddhartha Sen, Junchen Jiang",
+      "first_author": "Xu Zhang",
+      "url": "http://arxiv.org/abs/2008.04687",
+      "citations": 74,
+      "published": "2020-08-11"
+    },
+    "2210.05357": {
+      "title": "Neighbourhood Representative Sampling for Efficient End-to-end Video Quality Assessment",
+      "authors": "Haoning Wu, Chaofeng Chen, Liang Liao, Jingwen Hou, Wenxiu Sun, Qiong Yan, Jinwei Gu, Weisi Lin",
+      "first_author": "Haoning Wu",
+      "url": "http://arxiv.org/abs/2210.05357",
+      "citations": 74,
+      "published": "2022-10-11"
+    },
+    "2006.14348": {
+      "title": "Audeo: Audio Generation for a Silent Performance Video",
+      "authors": "Kun Su, Xiulong Liu, Eli Shlizerman",
+      "first_author": "Kun Su",
+      "url": "http://arxiv.org/abs/2006.14348",
+      "citations": 73,
+      "published": "2020-06-23"
+    },
+    "2212.07592": {
+      "title": "Solve the Puzzle of Instance Segmentation in Videos: A Weakly Supervised Framework with Spatio-Temporal Collaboration",
+      "authors": "Liqi Yan, Qifan Wang, Siqi Ma, Jingang Wang, Changbin Yu",
+      "first_author": "Liqi Yan",
+      "url": "http://arxiv.org/abs/2212.07592",
+      "citations": 72,
+      "published": "2022-12-15"
+    },
+    "2206.09853": {
+      "title": "DisCoVQA: Temporal Distortion-Content Transformers for Video Quality Assessment",
+      "authors": "Haoning Wu, Chaofeng Chen, Liang Liao, Jingwen Hou, Wenxiu Sun, Qiong Yan, Weisi Lin",
+      "first_author": "Haoning Wu",
+      "url": "http://arxiv.org/abs/2206.09853",
+      "citations": 72,
+      "published": "2022-06-20"
+    },
+    "2406.07548": {
+      "title": "Image and Video Tokenization with Binary Spherical Quantization",
+      "authors": "Yue Zhao, Yuanjun Xiong, Philipp Krähenbühl",
+      "first_author": "Yue Zhao",
+      "url": "http://arxiv.org/abs/2406.07548",
+      "citations": 72,
+      "published": "2024-06-11"
+    },
+    "2206.05054": {
+      "title": "A No-reference Quality Assessment Metric for Point Cloud Based on Captured Video Sequences",
+      "authors": "Yu Fan, Zicheng Zhang, Wei Sun, Xiongkuo Min, Wei Lu, Tao Wang, Ning Liu, Guangtao Zhai",
+      "first_author": "Yu Fan",
+      "url": "http://arxiv.org/abs/2206.05054",
+      "citations": 69,
+      "published": "2022-06-09"
+    },
+    "2106.01111": {
+      "title": "Deep Learning based Full-reference and No-reference Quality Assessment Models for Compressed UGC Videos",
+      "authors": "Wei Sun, Tao Wang, Xiongkuo Min, Fuwang Yi, Guangtao Zhai",
+      "first_author": "Wei Sun",
+      "url": "http://arxiv.org/abs/2106.01111",
+      "citations": 69,
+      "published": "2021-06-02"
+    },
+    "2405.18750": {
+      "title": "T2V-Turbo: Breaking the Quality Bottleneck of Video Consistency Model with Mixed Reward Feedback",
+      "authors": "Jiachen Li, Weixi Feng, Tsu-Jui Fu, Xinyi Wang, Sugato Basu, Wenhu Chen, William Yang Wang",
+      "first_author": "Jiachen Li",
+      "url": "http://arxiv.org/abs/2405.18750",
+      "citations": 69,
+      "published": "2024-05-29"
+    },
+    "2204.04210": {
+      "title": "Dancing under the stars: video denoising in starlight",
+      "authors": "Kristina Monakhova, Stephan R. Richter, Laura Waller, Vladlen Koltun",
+      "first_author": "Kristina Monakhova",
+      "url": "http://arxiv.org/abs/2204.04210",
+      "citations": 68,
+      "published": "2022-04-08"
+    },
+    "2102.08192": {
+      "title": "A Survey on 360-Degree Video: Coding, Quality of Experience and Streaming",
+      "authors": "Federico Chiariotti",
+      "first_author": "Federico Chiariotti",
+      "url": "http://arxiv.org/abs/2102.08192",
+      "citations": 67,
+      "published": "2021-02-16"
+    },
+    "2207.07922": {
+      "title": "Learning Quality-aware Dynamic Memory for Video Object Segmentation",
+      "authors": "Yong Liu, Ran Yu, Fei Yin, Xinyuan Zhao, Wei Zhao, Weihao Xia, Yujiu Yang",
+      "first_author": "Yong Liu",
+      "url": "http://arxiv.org/abs/2207.07922",
+      "citations": 67,
+      "published": "2022-07-16"
+    },
+    "2410.19355": {
+      "title": "FasterCache: Training-Free Video Diffusion Model Acceleration with High Quality",
+      "authors": "Zhengyao Lv, Chenyang Si, Junhao Song, Zhenyu Yang, Yu Qiao, Ziwei Liu, Kwan-Yee K. Wong",
+      "first_author": "Zhengyao Lv",
+      "url": "http://arxiv.org/abs/2410.19355",
+      "citations": 66,
+      "published": "2024-10-25"
+    },
+    "2305.12726": {
+      "title": "Towards Explainable In-the-Wild Video Quality Assessment: A Database and a Language-Prompted Approach",
+      "authors": "Haoning Wu, Erli Zhang, Liang Liao, Chaofeng Chen, Jingwen Hou, Annan Wang, Wenxiu Sun, Qiong Yan, Weisi Lin",
+      "first_author": "Haoning Wu",
+      "url": "http://arxiv.org/abs/2305.12726",
+      "citations": 64,
+      "published": "2023-05-22"
+    },
+    "2303.14933": {
+      "title": "MD-VQA: Multi-Dimensional Quality Assessment for UGC Live Videos",
+      "authors": "Zicheng Zhang, Wei Wu, Wei Sun, Dangyang Tu, Wei Lu, Xiongkuo Min, Ying Chen, Guangtao Zhai",
+      "first_author": "Zicheng Zhang",
+      "url": "http://arxiv.org/abs/2303.14933",
+      "citations": 64,
+      "published": "2023-03-27"
+    },
+    "2007.11634": {
+      "title": "Subjective and Objective Quality Assessment of High Frame Rate Videos",
+      "authors": "Pavan C. Madhusudana, Xiangxu Yu, Neil Birkbeck, Yilin Wang, Balu Adsumilli, Alan C. Bovik",
+      "first_author": "Pavan C. Madhusudana",
+      "url": "http://arxiv.org/abs/2007.11634",
+      "citations": 63,
+      "published": "2020-07-22"
+    },
+    "2002.10651": {
+      "title": "A Comparative Evaluation of Temporal Pooling Methods for Blind Video Quality Assessment",
+      "authors": "Zhengzhong Tu, Chia-Ju Chen, Li-Heng Chen, Neil Birkbeck, Balu Adsumilli, Alan C. Bovik",
+      "first_author": "Zhengzhong Tu",
+      "url": "http://arxiv.org/abs/2002.10651",
+      "citations": 62,
+      "published": "2020-02-25"
+    },
+    "2009.01632": {
+      "title": "Optimal Wireless Streaming of Multi-Quality 360 VR Video by Exploiting Natural, Relative Smoothness-enabled and Transcoding-enabled Multicast Opportunities",
+      "authors": "Kaixuan Long, Ying Cui, Chencheng Ye, Zhi Liu",
+      "first_author": "Kaixuan Long",
+      "url": "http://arxiv.org/abs/2009.01632",
+      "citations": 62,
+      "published": "2020-09-02"
+    },
+    "2105.14678": {
+      "title": "Image-to-Video Generation via 3D Facial Dynamics",
+      "authors": "Xiaoguang Tu, Yingtian Zou, Jian Zhao, Wenjie Ai, Jian Dong, Yuan Yao, Zhikang Wang, Guodong Guo, Zhifeng Li, Wei Liu, Jiashi Feng",
+      "first_author": "Xiaoguang Tu",
+      "url": "http://arxiv.org/abs/2105.14678",
+      "citations": 58,
+      "published": "2021-05-31"
+    },
+    "2008.04524": {
+      "title": "Vid2Player: Controllable Video Sprites that Behave and Appear like Professional Tennis Players",
+      "authors": "Haotian Zhang, Cristobal Sciutto, Maneesh Agrawala, Kayvon Fatahalian",
+      "first_author": "Haotian Zhang",
+      "url": "http://arxiv.org/abs/2008.04524",
+      "citations": 58,
+      "published": "2020-08-11"
+    },
+    "2208.14085": {
+      "title": "Evaluating Point Cloud from Moving Camera Videos: A No-Reference Metric",
+      "authors": "Zicheng Zhang, Wei Sun, Yucheng Zhu, Xiongkuo Min, Wei Wu, Ying Chen, Guangtao Zhai",
+      "first_author": "Zicheng Zhang",
+      "url": "http://arxiv.org/abs/2208.14085",
+      "citations": 56,
+      "published": "2022-08-30"
+    },
+    "2010.13715": {
+      "title": "ST-GREED: Space-Time Generalized Entropic Differences for Frame Rate Dependent Video Quality Prediction",
+      "authors": "Pavan C. Madhusudana, Neil Birkbeck, Yilin Wang, Balu Adsumilli, Alan C. Bovik",
+      "first_author": "Pavan C. Madhusudana",
+      "url": "http://arxiv.org/abs/2010.13715",
+      "citations": 55,
+      "published": "2020-10-26"
+    },
+    "2404.05029": {
+      "title": "LOGO: A Long-Form Video Dataset for Group Action Quality Assessment",
+      "authors": "Shiyi Zhang, Wenxun Dai, Sujia Wang, Xiangwei Shen, Jiwen Lu, Jie Zhou, Yansong Tang",
+      "first_author": "Shiyi Zhang",
+      "url": "http://arxiv.org/abs/2404.05029",
+      "citations": 55,
+      "published": "2024-04-07"
+    },
+    "2510.02283": {
+      "title": "Self-Forcing++: Towards Minute-Scale High-Quality Video Generation",
+      "authors": "Justin Cui, Jie Wu, Ming Li, Tao Yang, Xiaojie Li, Rui Wang, Andrew Bai, Yuanhao Ban, Cho-Jui Hsieh",
+      "first_author": "Justin Cui",
+      "url": "http://arxiv.org/abs/2510.02283",
+      "citations": 54,
+      "published": "2025-10-02"
+    },
+    "2008.00499": {
+      "title": "Multi-level Wavelet-based Generative Adversarial Network for Perceptual Quality Enhancement of Compressed Video",
+      "authors": "Jianyi Wang, Xin Deng, Mai Xu, Congyong Chen, Yuhang Song",
+      "first_author": "Jianyi Wang",
+      "url": "http://arxiv.org/abs/2008.00499",
+      "citations": 53,
+      "published": "2020-08-02"
+    },
+    "2110.08243": {
+      "title": "Neural Dubber: Dubbing for Videos According to Scripts",
+      "authors": "Chenxu Hu, Qiao Tian, Tingle Li, Yuping Wang, Yuxuan Wang, Hang Zhao",
+      "first_author": "Chenxu Hu",
+      "url": "http://arxiv.org/abs/2110.08243",
+      "citations": 52,
+      "published": "2021-10-15"
+    },
+    "2007.09187": {
+      "title": "Low Light Video Enhancement using Synthetic Data Produced with an Intermediate Domain Mapping",
+      "authors": "Danai Triantafyllidou, Sean Moran, Steven McDonagh, Sarah Parisot, Gregory Slabaugh",
+      "first_author": "Danai Triantafyllidou",
+      "url": "http://arxiv.org/abs/2007.09187",
+      "citations": 50,
+      "published": "2020-07-17"
+    }
+  }
+}
