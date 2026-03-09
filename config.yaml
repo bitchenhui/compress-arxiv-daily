@@ -7,8 +7,8 @@ show_links: True
 show_badge: True
 max_results: 10000
 min_citations: 200  # Minimum citations for history papers (0 = no filter)
-history_date_from: "20250101"  # Start date for history search in YYYYMMDD format (e.g., 20100101)
-history_date_to: "20250701"    # End date for history search in YYYYMMDD format (e.g., 20111231). If empty, searches to present
+history_date_from: "20200101"  # Start date for history search in YYYYMMDD format (e.g., 20100101)
+history_date_to: "20260301"    # End date for history search in YYYYMMDD format (e.g., 20111231). If empty, searches to present
 
 publish_readme: True
 publish_gitpage: True
