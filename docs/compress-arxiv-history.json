@@ -25,7 +25,64 @@
       "published": "2025-03-27"
     }
   },
-  "Neural Compression": {},
+  "Neural Compression": {
+    "1009.5358": {
+      "title": "Task-Driven Dictionary Learning",
+      "authors": "Julien Mairal, Francis Bach, Jean Ponce",
+      "first_author": "Julien Mairal",
+      "url": "http://arxiv.org/abs/1009.5358",
+      "citations": 907,
+      "published": "2010-09-27"
+    },
+    "1012.3623": {
+      "title": "Information capacity and transmission are maximized in balanced cortical networks with neuronal avalanches",
+      "authors": "Woodrow L. Shew, Hongdian Yang, Shan Yu, Rajarshi Roy, Dietmar Plenz",
+      "first_author": "Woodrow L. Shew",
+      "url": "http://arxiv.org/abs/1012.3623",
+      "citations": 537,
+      "published": "2010-12-16"
+    },
+    "1002.4407": {
+      "title": "A first unbiased global NLO determination of parton distributions and their uncertainties",
+      "authors": "Richard D. Ball, Luigi Del Debbio, Stefano Forte, Alberto Guffanti, Jose I. Latorre, Juan Rojo, Maria Ubiali",
+      "first_author": "Richard D. Ball",
+      "url": "http://arxiv.org/abs/1002.4407",
+      "citations": 456,
+      "published": "2010-02-24"
+    },
+    "1010.0431": {
+      "title": "Multilevel compression of random walks on networks reveals hierarchical organization in large integrated systems",
+      "authors": "M. Rosvall, C. T. Bergstrom",
+      "first_author": "M. Rosvall",
+      "url": "http://arxiv.org/abs/1010.0431",
+      "citations": 415,
+      "published": "2010-10-03"
+    },
+    "1008.5071": {
+      "title": "Brain covariance selection: better individual functional connectivity models using population prior",
+      "authors": "Gaël Varoquaux, Alexandre Gramfort, Jean Baptiste Poline, Bertrand Thirion",
+      "first_author": "Gaël Varoquaux",
+      "url": "http://arxiv.org/abs/1008.5071",
+      "citations": 302,
+      "published": "2010-08-30"
+    },
+    "1002.0299": {
+      "title": "Multivariate Granger Causality and Generalized Variance",
+      "authors": "Adam B. Barrett, Lionel Barnett, Anil K. Seth",
+      "first_author": "Adam B. Barrett",
+      "url": "http://arxiv.org/abs/1002.0299",
+      "citations": 245,
+      "published": "2010-02-01"
+    },
+    "1010.1847": {
+      "title": "Restricted Isometries for Partial Random Circulant Matrices",
+      "authors": "Holger Rauhut, Justin Romberg, Joel A. Tropp",
+      "first_author": "Holger Rauhut",
+      "url": "http://arxiv.org/abs/1010.1847",
+      "citations": 211,
+      "published": "2010-10-09"
+    }
+  },
   "MLLM": {
     "2504.10479": {
       "title": "InternVL3: Exploring Advanced Training and Test-Time Recipes for Open-Source Multimodal Models",
@@ -84,6 +141,38 @@
       "url": "http://arxiv.org/abs/2503.21776",
       "citations": 274,
       "published": "2025-03-27"
+    },
+    "1003.4053": {
+      "title": "A Comprehensive Review of Image Enhancement Techniques",
+      "authors": "Raman Maini, Himanshu Aggarwal",
+      "first_author": "Raman Maini",
+      "url": "http://arxiv.org/abs/1003.4053",
+      "citations": 409,
+      "published": "2010-03-22"
+    },
+    "1010.4084": {
+      "title": "Haar Wavelet Based Approach for Image Compression and Quality Assessment of Compressed Image",
+      "authors": "Kamrul Hasan Talukder, Koichi Harada",
+      "first_author": "Kamrul Hasan Talukder",
+      "url": "http://arxiv.org/abs/1010.4084",
+      "citations": 271,
+      "published": "2010-10-20"
+    },
+    "1008.2974": {
+      "title": "The Multiwavelength Survey by Yale-Chile (MUSYC): Deep Medium-Band optical imaging and high quality 32-band photometric redshifts in the ECDF-S",
+      "authors": "Carolin N. Cardamone, Pieter G. van Dokkum, C. Megan Urry, Yoshi Taniguchi, Eric Gawiser, Gabriel Brammer, Edward Taylor, Maaike Damen, Ezequiel Treister, Bethany E. Cobb, Nicholas Bond, Kevin Schawinski, Paulina Lira, Takashi Murayama, Tomoki Saito, Kentaro Sumikawa",
+      "first_author": "Carolin N. Cardamone",
+      "url": "http://arxiv.org/abs/1008.2974",
+      "citations": 231,
+      "published": "2010-08-17"
+    },
+    "1008.2042": {
+      "title": "GPU-based Iterative Cone Beam CT Reconstruction Using Tight Frame Regularization",
+      "authors": "Xun Jia, Bin Dong, Yifei Lou, Steve B. Jiang",
+      "first_author": "Xun Jia",
+      "url": "http://arxiv.org/abs/1008.2042",
+      "citations": 204,
+      "published": "2010-08-12"
     }
   },
   "3D Compression": {
@@ -102,6 +191,14 @@
       "url": "http://arxiv.org/abs/2501.13928",
       "citations": 203,
       "published": "2025-01-23"
+    },
+    "1002.3188": {
+      "title": "Noisy Network Coding",
+      "authors": "Sung Hoon Lim, Young-Han Kim, Abbas El Gamal, Sae-Young Chung",
+      "first_author": "Sung Hoon Lim",
+      "url": "http://arxiv.org/abs/1002.3188",
+      "citations": 490,
+      "published": "2010-02-16"
     }
   }
 }
