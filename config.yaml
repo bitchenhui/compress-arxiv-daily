@@ -6,6 +6,9 @@ show_authors: True
 show_links: True
 show_badge: True
 max_results: 10000
+min_citations: 200  # Minimum citations for history papers (0 = no filter)
+history_date_from: "20250101"  # Start date for history search in YYYYMMDD format (e.g., 20100101)
+history_date_to: "20250701"    # End date for history search in YYYYMMDD format (e.g., 20111231). If empty, searches to present
 
 publish_readme: True
 publish_gitpage: True
@@ -27,12 +30,12 @@ feishu_webhook: "https://open.feishu.cn/open-apis/bot/v2/hook/82390df1-c0fc-4b38
 # keywords to search
 keywords:
     "Video Codec":
-        filters: ["H.264", "AVC", "MPEG-4 Part 10", "H.265", "HEVC","H.266", "VVC", "MPEG-I Part 3", "JVET", "VTM", "AV1", "AOMedia Video 1", "AVS", "AVS2", "AVS3", "China AVS", "inter prediction", "intra prediction", "motion estimation", "mode decision", "DCT", "integer transform", "DST", "transform skip", "CABAC", "CAVLC", "arithmetic coding", "context modeling", "deblocking filter", "SAO", "ALF", "sample adaptive offset", "rate distortion optimization", "RDOQ", "λ optimization", "rate control", "bit allocation", "R-λ model", "R-Q model", "low bitrate coding", "ultra low bitrate", "screen content coding", "SCC", "mixed content", "text coding",  "SVC", "scalable video coding", "temporal scalability", "spatial scalability"]
+        filters: ["H.265", "HEVC","H.266", "VVC", "video codec",  "inter", "intra"]
     "Neural Compression": 
-        filters: ["neural video codec", "deep learning video coding", "AI video codec", "CNN-based video coding", "convolutional neural network video", "RNN video coding", "LSTM video", "generative video coding", "video prediction coding", "end-to-end image coding", "learned image compression", "neural image codec", "end-to-end video coding", "deep video compression", "neural video", "Deep Contextual Video Compression"]
+        filters: ["neural video codec", "deep learning video coding", "AI video codec", "CNN-based video coding", "RNN video coding", "generative video coding", "end-to-end image coding", "learned image compression", "neural image codec", "end-to-end video coding", "deep video compression", "neural video", "Deep Contextual Video Compression"]
     "MLLM":
-        filters: ["LLM Video Coding", "Semantic Video Coding", "Semantic Communication", "Diffusion Video Coding", "large model video compression", "transformer video codec", "multimodal video coding", "generative video compression"]
+        filters: ["LLM Video Coding", "Semantic Video Coding","Diffusion Video Coding", "large model video compression", "transformer video codec", "multimodal video coding", "generative video compression"]
     "Video Quality":
-        filters: ["video quality assessment", "SSIM", "VMAF", "PSNR", "perceptual quality", "VQA", "IQA"]
+        filters: ["video quality assessment", "VQA", "IQA"]
     "3D Compression":
-        filters: ["MVC", "multi-view video coding", "MVD", "multiview plus depth", "3D video coding", "stereoscopic video", "auto-stereoscopic", "VR video coding", "360 video", "omnidirectional video", "spherical video", "point cloud coding", "V-PCC", "G-PCC", "geometry coding", "panoramic video", "equirectangular", "cubemap", "VR streaming", "spherical video coding", "tile-based streaming", "viewport-adaptive", "Gaussian splatting", "3D Gaussian", "dynamic Gaussians", "mesh coding", "3D mesh", "progressive mesh"]
+        filters: ["MVC", "multi-view video coding", "3D video coding", "VR video coding", "point cloud coding", "spherical video coding"]

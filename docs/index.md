@@ -7,6 +7,7 @@ layout: default
 
 | Publish Date | Title | Authors | Tag | PDF |
 |:---------|:-----------------------|:---------|:------|:------|
+|**2026-03-05**|**ICHOR: A Robust Representation Learning Approach for ASL CBF Maps with Self-Supervised Masked Autoencoders**|Xavier Beltran-Urbano et.al.|Video Codec|[2603.05247](http://arxiv.org/pdf/2603.05247)|
 |**2026-03-05**|**Distributional Reinforcement Learning with Information Bottleneck for Uncertainty-Aware DRAM Equalization**|Muhammad Usama et.al.|Video Codec|[2603.04768](http://arxiv.org/pdf/2603.04768)|
 |**2026-03-05**|**Stacked from One: Multi-Scale Self-Injection for Context Window Extension**|Wei Han et.al.|Video Codec|[2603.04759](http://arxiv.org/pdf/2603.04759)|
 |**2026-03-05**|**Semantic Communication-Enhanced Split Federated Learning for Vehicular Networks: Architecture, Challenges, and Case Study**|Lu Yu et.al.|MLLM|[2603.04936](http://arxiv.org/pdf/2603.04936)|

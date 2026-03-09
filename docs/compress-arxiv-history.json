@@ -1,1 +1,107 @@
-{}
+{
+  "Video Codec": {
+    "2503.20314": {
+      "title": "Wan: Open and Advanced Large-Scale Video Generative Models",
+      "authors": "Team Wan, Ang Wang, Baole Ai, Bin Wen, Chaojie Mao, Chen-Wei Xie, Di Chen, Feiwu Yu, Haiming Zhao, Jianxiao Yang, Jianyuan Zeng, Jiayu Wang, Jingfeng Zhang, Jingren Zhou, Jinkai Wang, Jixuan Chen, Kai Zhu, Kang Zhao, Keyu Yan, Lianghua Huang, Mengyang Feng, Ningyi Zhang, Pandeng Li, Pingyu Wu, Ruihang Chu, Ruili Feng, Shiwei Zhang, Siyang Sun, Tao Fang, Tianxing Wang, Tianyi Gui, Tingyu Weng, Tong Shen, Wei Lin, Wei Wang, Wei Wang, Wenmeng Zhou, Wente Wang, Wenting Shen, Wenyuan Yu, Xianzhong Shi, Xiaoming Huang, Xin Xu, Yan Kou, Yangyu Lv, Yifei Li, Yijing Liu, Yiming Wang, Yingya Zhang, Yitong Huang, Yong Li, You Wu, Yu Liu, Yulin Pan, Yun Zheng, Yuntao Hong, Yupeng Shi, Yutong Feng, Zeyinzi Jiang, Zhen Han, Zhi-Fan Wu, Ziyu Liu",
+      "first_author": "Team Wan",
+      "url": "http://arxiv.org/abs/2503.20314",
+      "citations": 1068,
+      "published": "2025-03-26"
+    },
+    "2501.13106": {
+      "title": "VideoLLaMA 3: Frontier Multimodal Foundation Models for Image and Video Understanding",
+      "authors": "Boqiang Zhang, Kehan Li, Zesen Cheng, Zhiqiang Hu, Yuqian Yuan, Guanzheng Chen, Sicong Leng, Yuming Jiang, Hang Zhang, Xin Li, Peng Jin, Wenqi Zhang, Fan Wang, Lidong Bing, Deli Zhao",
+      "first_author": "Boqiang Zhang",
+      "url": "http://arxiv.org/abs/2501.13106",
+      "citations": 327,
+      "published": "2025-01-22"
+    },
+    "2503.21776": {
+      "title": "Video-R1: Reinforcing Video Reasoning in MLLMs",
+      "authors": "Kaituo Feng, Kaixiong Gong, Bohao Li, Zonghao Guo, Yibing Wang, Tianshuo Peng, Junfei Wu, Xiaoying Zhang, Benyou Wang, Xiangyu Yue",
+      "first_author": "Kaituo Feng",
+      "url": "http://arxiv.org/abs/2503.21776",
+      "citations": 274,
+      "published": "2025-03-27"
+    }
+  },
+  "Neural Compression": {},
+  "MLLM": {
+    "2504.10479": {
+      "title": "InternVL3: Exploring Advanced Training and Test-Time Recipes for Open-Source Multimodal Models",
+      "authors": "Jinguo Zhu, Weiyun Wang, Zhe Chen, Zhaoyang Liu, Shenglong Ye, Lixin Gu, Hao Tian, Yuchen Duan, Weijie Su, Jie Shao, Zhangwei Gao, Erfei Cui, Xuehui Wang, Yue Cao, Yangzhou Liu, Xingguang Wei, Hongjie Zhang, Haomin Wang, Weiye Xu, Hao Li, Jiahao Wang, Nianchen Deng, Songze Li, Yinan He, Tan Jiang, Jiapeng Luo, Yi Wang, Conghui He, Botian Shi, Xingcheng Zhang, Wenqi Shao, Junjun He, Yingtong Xiong, Wenwen Qu, Peng Sun, Penglong Jiao, Han Lv, Lijun Wu, Kaipeng Zhang, Huipeng Deng, Jiaye Ge, Kai Chen, Limin Wang, Min Dou, Lewei Lu, Xizhou Zhu, Tong Lu, Dahua Lin, Yu Qiao, Jifeng Dai, Wenhai Wang",
+      "first_author": "Jinguo Zhu",
+      "url": "http://arxiv.org/abs/2504.10479",
+      "citations": 0,
+      "published": "2025-04-14"
+    },
+    "2503.06749": {
+      "title": "Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models",
+      "authors": "Wenxuan Huang, Bohan Jia, Zijie Zhai, Shaosheng Cao, Zheyu Ye, Fei Zhao, Zhe Xu, Xu Tang, Yao Hu, Shaohui Lin",
+      "first_author": "Wenxuan Huang",
+      "url": "http://arxiv.org/abs/2503.06749",
+      "citations": 424,
+      "published": "2025-03-09"
+    },
+    "2503.10615": {
+      "title": "R1-Onevision: Advancing Generalized Multimodal Reasoning through Cross-Modal Formalization",
+      "authors": "Yi Yang, Xiaoxuan He, Hongkun Pan, Xiyan Jiang, Yan Deng, Xingtao Yang, Haoyu Lu, Dacheng Yin, Fengyun Rao, Minfeng Zhu, Bo Zhang, Wei Chen",
+      "first_author": "Yi Yang",
+      "url": "http://arxiv.org/abs/2503.10615",
+      "citations": 0,
+      "published": "2025-03-13"
+    },
+    "2503.21776": {
+      "title": "Video-R1: Reinforcing Video Reasoning in MLLMs",
+      "authors": "Kaituo Feng, Kaixiong Gong, Bohao Li, Zonghao Guo, Yibing Wang, Tianshuo Peng, Junfei Wu, Xiaoying Zhang, Benyou Wang, Xiangyu Yue",
+      "first_author": "Kaituo Feng",
+      "url": "http://arxiv.org/abs/2503.21776",
+      "citations": 274,
+      "published": "2025-03-27"
+    },
+    "2503.12937": {
+      "title": "R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization",
+      "authors": "Jingyi Zhang, Jiaxing Huang, Huanjin Yao, Shunyu Liu, Xikun Zhang, Shijian Lu, Dacheng Tao",
+      "first_author": "Jingyi Zhang",
+      "url": "http://arxiv.org/abs/2503.12937",
+      "citations": 232,
+      "published": "2025-03-17"
+    }
+  },
+  "Video Quality": {
+    "2503.20314": {
+      "title": "Wan: Open and Advanced Large-Scale Video Generative Models",
+      "authors": "Team Wan, Ang Wang, Baole Ai, Bin Wen, Chaojie Mao, Chen-Wei Xie, Di Chen, Feiwu Yu, Haiming Zhao, Jianxiao Yang, Jianyuan Zeng, Jiayu Wang, Jingfeng Zhang, Jingren Zhou, Jinkai Wang, Jixuan Chen, Kai Zhu, Kang Zhao, Keyu Yan, Lianghua Huang, Mengyang Feng, Ningyi Zhang, Pandeng Li, Pingyu Wu, Ruihang Chu, Ruili Feng, Shiwei Zhang, Siyang Sun, Tao Fang, Tianxing Wang, Tianyi Gui, Tingyu Weng, Tong Shen, Wei Lin, Wei Wang, Wei Wang, Wenmeng Zhou, Wente Wang, Wenting Shen, Wenyuan Yu, Xianzhong Shi, Xiaoming Huang, Xin Xu, Yan Kou, Yangyu Lv, Yifei Li, Yijing Liu, Yiming Wang, Yingya Zhang, Yitong Huang, Yong Li, You Wu, Yu Liu, Yulin Pan, Yun Zheng, Yuntao Hong, Yupeng Shi, Yutong Feng, Zeyinzi Jiang, Zhen Han, Zhi-Fan Wu, Ziyu Liu",
+      "first_author": "Team Wan",
+      "url": "http://arxiv.org/abs/2503.20314",
+      "citations": 1068,
+      "published": "2025-03-26"
+    },
+    "2503.21776": {
+      "title": "Video-R1: Reinforcing Video Reasoning in MLLMs",
+      "authors": "Kaituo Feng, Kaixiong Gong, Bohao Li, Zonghao Guo, Yibing Wang, Tianshuo Peng, Junfei Wu, Xiaoying Zhang, Benyou Wang, Xiangyu Yue",
+      "first_author": "Kaituo Feng",
+      "url": "http://arxiv.org/abs/2503.21776",
+      "citations": 274,
+      "published": "2025-03-27"
+    }
+  },
+  "3D Compression": {
+    "2501.12387": {
+      "title": "Continuous 3D Perception Model with Persistent State",
+      "authors": "Qianqian Wang, Yifei Zhang, Aleksander Holynski, Alexei A. Efros, Angjoo Kanazawa",
+      "first_author": "Qianqian Wang",
+      "url": "http://arxiv.org/abs/2501.12387",
+      "citations": 0,
+      "published": "2025-01-21"
+    },
+    "2501.13928": {
+      "title": "Fast3R: Towards 3D Reconstruction of 1000+ Images in One Forward Pass",
+      "authors": "Jianing Yang, Alexander Sax, Kevin J. Liang, Mikael Henaff, Hao Tang, Ang Cao, Joyce Chai, Franziska Meier, Matt Feiszli",
+      "first_author": "Jianing Yang",
+      "url": "http://arxiv.org/abs/2501.13928",
+      "citations": 203,
+      "published": "2025-01-23"
+    }
+  }
+}

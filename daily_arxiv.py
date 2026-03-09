@@ -63,7 +63,7 @@ def check_relevance(title: str, abstract: str, filters: list, topic: str) -> boo
     title_lower = title.lower()
 
     if topic == "Video Codec":
-        video_terms = ["video", "codec", "coding", "compression", "encoder", "decoder", "bitrate", "hevc", "h.264", "h.265", "av1", "vvc", "mpeg"]
+        video_terms = ["video", "image", "hevc", "h.265", "av1", "av2" "vvc", "h.266", "ecm"]
         has_video = any(term in text for term in video_terms)
         has_coding = any(term in text for term in ["codec", "coding", "compression", "encoder", "decoder"])
         codec_keywords = [k.lower() for k in filters if len(k) > 2]
@@ -85,19 +85,78 @@ def check_relevance(title: str, abstract: str, filters: list, topic: str) -> boo
     title_match = any(k.lower() in title_lower for k in filters)
     return match_count >= 2 or title_match
 
-def get_paper_citations(arxiv_id: str) -> int:
-    try:
-        arxiv_id = re.sub(r'v\d+$', '', arxiv_id)
-        url = f"{semantic_scholar_url}{arxiv_id}?fields=citationCount"
-        response = requests.get(url, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            return data.get('citationCount', 0)
-        else:
-            return 0
-    except Exception as e:
-        logging.warning(f"Failed to get citations for {arxiv_id}: {e}")
-        return 0
+def get_paper_citations(arxiv_id: str, retry: int = 3) -> int:
+    arxiv_id = re.sub(r'v\d+$', '', arxiv_id)
+    url = f"{semantic_scholar_url}{arxiv_id}?fields=citationCount"
+
+    for attempt in range(retry):
+        try:
+            response = requests.get(url, timeout=30)
+            if response.status_code == 200:
+                data = response.json()
+                return data.get('citationCount', 0)
+            elif response.status_code == 404:
+                return 0
+            else:
+                time.sleep(2)
+        except Exception as e:
+            if attempt < retry - 1:
+                time.sleep(2)
+            else:
+                logging.warning(f"Failed to get citations for {arxiv_id}: {e}")
+                return 0
+    return 0
+
+
+def get_papers_citations_batch(arxiv_ids: list, retry: int = 3) -> dict:
+    """
+    Batch fetch citations for multiple papers using Semantic Scholar graph API
+    Returns dict mapping arxiv_id to citation count
+    """
+    if not arxiv_ids:
+        return {}
+
+    # Clean up arxiv_ids - add arxiv: prefix as required by API
+    clean_ids = [re.sub(r'v\d+$', '', aid) for aid in arxiv_ids]
+    # Add arxiv: prefix for each ID
+    prefixed_ids = [f"ARXIV:{aid.upper()}" for aid in clean_ids]
+
+    url = "https://api.semanticscholar.org/graph/v1/paper/batch"
+    params = {
+        "fields": "paperId,citationCount,externalIds"
+    }
+    # Send as JSON with "ids" field
+    data = {"ids": prefixed_ids}
+
+    for attempt in range(retry):
+        try:
+            response = requests.post(url, json=data, params=params, timeout=60)
+            if response.status_code == 200:
+                results = response.json()
+                citations_dict = {}
+                for item in results:
+                    if item and item.get('externalIds'):
+                        ext_ids = item.get('externalIds', {})
+                        arxiv_id = ext_ids.get('ArXiv', '')
+                        citations_dict[arxiv_id.upper()] = item.get('citationCount', 0)
+                return citations_dict
+            elif response.status_code == 429:
+                # Rate limited, wait and retry
+                wait_time = (attempt + 1) * 30
+                logging.warning(f"Batch rate limit hit, waiting {wait_time}s...")
+                time.sleep(wait_time)
+            else:
+                # Log error details for debugging
+                logging.warning(f"Batch request failed: {response.status_code}, response: {response.text[:200]}")
+                time.sleep(5)
+        except Exception as e:
+            if attempt < retry - 1:
+                time.sleep(5)
+            else:
+                logging.warning(f"Batch citations failed: {e}")
+                return {}
+
+    return {}
 
 def search_arxiv_with_retry(query: str, max_results: int = 10, max_retries: int = 3, date_from: str = None, date_to: str = None):
     date_filter = ""
@@ -127,7 +186,7 @@ def search_arxiv_with_retry(query: str, max_results: int = 10, max_retries: int 
                 time.sleep(10)
     return []
 
-def get_history_papers(topic, query: str, max_results: int = 100, date_from: str = "20100101", date_to: str = None):
+def get_history_papers(topic, query: str, max_results: int = 100, date_from: str = "20100101", date_to: str = None, min_citations: int = 0):
     content = dict()
     papers_with_citations = []
 
@@ -136,40 +195,77 @@ def get_history_papers(topic, query: str, max_results: int = 100, date_from: str
     date_filter = f"submittedDate:[{date_from} TO {date_to}]"
     full_query = f"({query}) AND {date_filter}"
 
-    logging.info(f"History search: {date_from} to {date_to}, sorting by citations")
-    search_max = max_results * 3
+    # If min_citations is set, search more to find enough papers with high citations
+    if min_citations > 0:
+        # Search through all results to find papers with high citations
+        # Limit to 3000 to avoid taking too long
+        search_max = 1000
+    else:
+        search_max = max_results
+
+    logging.info(f"History search: {date_from} to {date_to}, min_citations={min_citations}, searching up to {search_max} papers to find all with citations > {min_citations}")
 
     for attempt in range(3):
         try:
             search_engine = arxiv.Search(
                 query=full_query,
                 max_results=search_max,
-                sort_by=arxiv.SortCriterion.Relevance
+                sort_by=arxiv.SortCriterion.Relevance  # Sort by relevance
             )
             break
         except Exception as e:
-            if attempt < 2:
-                logging.warning(f"Rate limit hit, waiting 60s before retry...")
-                time.sleep(60)
+            error_msg = str(e)
+            if "Rate exceeded" in error_msg or "429" in error_msg:
+                wait_time = (attempt + 1) * 30
+                logging.warning(f"Rate limit hit, waiting {wait_time}s before retry...")
+                time.sleep(wait_time)
             else:
-                logging.error(f"Failed to search arxiv: {e}")
+                logging.error(f"Arxiv search error: {e}")
                 return {topic: {}}
 
+    # Collect paper keys first
+    paper_results = []
     for result in search_engine.results():
         paper_id = result.get_short_id()
         ver_pos = paper_id.find('v')
         paper_key = paper_id[0:ver_pos] if ver_pos != -1 else paper_id
+        paper_results.append((result, paper_key))
 
-        citation_count = get_paper_citations(paper_key)
+    # Fetch all citations in batch (max 100 per request)
+    paper_keys = [pk for _, pk in paper_results]
+    logging.info(f"Fetching citations for {len(paper_keys)} papers in batch...")
+
+    citations_dict = {}
+    batch_size = 100
+    for i in range(0, len(paper_keys), batch_size):
+        batch = paper_keys[i:i+batch_size]
+        logging.info(f"Fetching batch {i//batch_size + 1}/{(len(paper_keys)-1)//batch_size + 1}...")
+        batch_result = get_papers_citations_batch(batch)
+        citations_dict.update(batch_result)
+        time.sleep(1)  # Rate limiting between batches
+
+    # Build papers with citations
+    papers_with_citations = []
+    for result, paper_key in paper_results:
+        citation_count = citations_dict.get(paper_key, 0)
         papers_with_citations.append({
             'result': result,
             'paper_key': paper_key,
             'citations': citation_count
         })
-        time.sleep(1)
 
+    # Sort by citations descending (high to low)
     papers_with_citations.sort(key=lambda x: x['citations'], reverse=True)
-    top_papers = papers_with_citations[:max_results]
+
+    # Filter by minimum citations if specified
+    if min_citations > 0:
+        papers_with_citations = [p for p in papers_with_citations if p['citations'] >= min_citations]
+        # Keep all papers that meet the criteria, not limited by max_results
+        top_papers = papers_with_citations
+    else:
+        top_papers = papers_with_citations[:max_results]
+
+    logging.info(f"Found {len(top_papers)} papers with citations >= {min_citations}")
 
     for item in top_papers:
         result = item['result']
@@ -609,12 +705,29 @@ def demo(**config):
     is_history_only = config.get('update_history', False)
 
     if is_history_only:
-        logging.info(f"GET history papers (2010-present, top 100 by citations) begin")
+        min_citations = config.get('min_citations', 0)
+        history_date_from = config.get('history_date_from', '').strip()
+        history_date_to = config.get('history_date_to', '').strip()
+
+        if not history_date_from:
+            logging.error("history_date_from is required for history search")
+            return
+
+        date_from = history_date_from
+        if history_date_to:
+            date_to = history_date_to
+            date_range = f"{date_from} to {date_to}"
+        else:
+            date_to = None  # Search to present
+            date_range = f"{date_from}-present"
+
+        logging.info(f"GET history papers ({date_range}, top 100 by citations, min_citations={min_citations}) begin")
         history_file = config.get('json_history_path', './docs/compress-arxiv-history.json')
         history_collector = []
-        for topic, keyword in keywords.items():
+        for topic, keyword_config in keywords.items():
             logging.info(f"History Keyword: {topic}")
-            history_data = get_history_papers(topic, query=keyword, max_results=100, date_from="20100101")
+            search_query = keyword_config.get('query', topic) if isinstance(keyword_config, dict) else topic
+            history_data = get_history_papers(topic, query=search_query, max_results=100, date_from=date_from, date_to=date_to, min_citations=min_citations)
             history_collector.append(history_data)
             time.sleep(10)
         update_history_json(history_file, history_collector)
