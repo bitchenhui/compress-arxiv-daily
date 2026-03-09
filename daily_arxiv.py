@@ -339,14 +339,17 @@ def get_history_papers(topic, query: str, max_results: int = 100, date_from: str
     papers_with_citations.sort(key=lambda x: x['citations'], reverse=True)
 
     # Filter by minimum citations if specified
+    # Also exclude papers with 0 citations (likely not found in Semantic Scholar)
     if min_citations > 0:
-        papers_with_citations = [p for p in papers_with_citations if p['citations'] >= min_citations]
+        papers_with_citations = [p for p in papers_with_citations if p['citations'] >= min_citations and p['citations'] > 0]
         # Keep all papers that meet the criteria, not limited by max_results
         top_papers = papers_with_citations
     else:
+        # Even without min_citations, still exclude 0 citations
+        papers_with_citations = [p for p in papers_with_citations if p['citations'] > 0]
         top_papers = papers_with_citations[:max_results]
 
-    logging.info(f"Found {len(top_papers)} papers with citations >= {min_citations}")
+    logging.info(f"Found {len(top_papers)} papers with citations > 0 (min_citations={min_citations})")
 
     for item in top_papers:
         result = item['result']
@@ -377,18 +380,32 @@ def update_history_json(filename: str, data_dict: dict):
         else:
             existing_data = json.loads(content)
 
+    # Track all papers across all topics to avoid duplicates
+    # Key: paper_id, Value: topic it belongs to (first one found)
+    paper_topics = {}
+    for topic in existing_data:
+        for paper_id in existing_data[topic]:
+            paper_topics[paper_id] = topic
+
     for data in data_dict:
         for keyword in data.keys():
             papers = data[keyword]
             if keyword not in existing_data:
                 existing_data[keyword] = {}
             for paper_id, paper_info in papers.items():
+                # Skip if paper already exists in another topic (deduplication)
+                if paper_id in paper_topics and paper_topics[paper_id] != keyword:
+                    logging.info(f"Skipping duplicate paper {paper_id} (already in {paper_topics[paper_id]})")
+                    continue
+                # Update if citations are higher
                 if paper_id in existing_data[keyword]:
                     existing_citations = existing_data[keyword][paper_id].get('citations', 0)
                     if paper_info['citations'] > existing_citations:
                         existing_data[keyword][paper_id] = paper_info
+                        paper_topics[paper_id] = keyword
                 else:
                     existing_data[keyword][paper_id] = paper_info
+                    paper_topics[paper_id] = keyword
 
     with open(filename, "w") as f:
         json.dump(existing_data, f, indent=2, ensure_ascii=False)
