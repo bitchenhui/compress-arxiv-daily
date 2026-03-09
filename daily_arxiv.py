@@ -62,28 +62,91 @@ def check_relevance(title: str, abstract: str, filters: list, topic: str) -> boo
     text = (title + " " + abstract).lower()
     title_lower = title.lower()
 
+    # Video Codec: 传统视频/图像编解码算法优化
+    # 必须包含：视频编解码核心标准/技术 + 编解码相关词
     if topic == "Video Codec":
-        video_terms = ["video", "image", "hevc", "h.265", "av1", "av2" "vvc", "h.266", "ecm"]
+        # 核心技术词
+        core_terms = ["video", "hevc", "h.265", "h.264", "av1", "vvc", "h.266",
+                      "inter prediction", "intra prediction", "motion estimation",
+                      "cabac", "rate control", "rd optimization", "transform"]
+        has_core = any(term in text for term in core_terms)
+
+        # 编解码相关词
+        codec_terms = ["codec", "coding", "compression", "encoder", "decoder", "bitrate"]
+        has_codec = any(term in text for term in codec_terms)
+
+        # 排除：视频理解、目标检测、分类等非编解码任务
+        exclude_terms = ["object detection", "tracking", "recognition", "classification",
+                        "segmentation", "generation", "synthesis", "super resolution"]
+        has_exclude = any(term in text for term in exclude_terms)
+
+        return has_core and has_codec and not has_exclude
+
+    # Neural Compression: 机器学习视频/图像编解码（端到端学习压缩、DCVC、VAE、GAN等）
+    # 必须包含：神经网络相关词 + 压缩/重建相关词
+    if topic == "Neural Compression":
+        neural_terms = ["neural", "learned", "deep learning", "cnn", "autoencoder",
+                       "vae", "gan", "generative", "dcvc", "end-to-end", "latent",
+                       "variational", "neural network", "convolution"]
+        has_neural = any(term in text for term in neural_terms)
+
+        compression_terms = ["compression", "codec", "coding", "encoder", "decoder",
+                           "reconstruction", "rate", "bits", "entropy", "image compression", "video compression"]
+        has_compression = any(term in text for term in compression_terms)
+
+        # 排除：视频理解、分类等
+        exclude_terms = ["object detection", "tracking", "recognition", "action recognition",
+                        "video understanding", "video caption", "video classification"]
+        has_exclude = any(term in text for term in exclude_terms)
+
+        return has_neural and has_compression and not has_exclude
+
+    # MLLM: LLM/多模态与视频/图像编解码交叉
+    # 必须包含：LLM/多模态相关词 + 视频/压缩/通信相关词
+    if topic == "MLLM":
+        llm_terms = ["llm", "large language model", "multimodal", "vlm", "vision language",
+                    "gpt", "transformer", "semantic", "token", "diffusion model",
+                    "language model", "chatgpt", "bert", "vision transformer"]
+        has_llm = any(term in text for term in llm_terms)
+
+        video_terms = ["video", "image", "compression", "codec", "coding", "communication",
+                      "bit", "rate", "semantic communication", "tokenize"]
         has_video = any(term in text for term in video_terms)
-        has_coding = any(term in text for term in ["codec", "coding", "compression", "encoder", "decoder"])
-        codec_keywords = [k.lower() for k in filters if len(k) > 2]
-        keyword_matches = sum(1 for k in codec_keywords if k in text)
-        return has_video and (has_coding or keyword_matches >= 2)
 
-    match_count = 0
-    for keyword in filters:
-        keyword_lower = keyword.lower()
-        if ' ' in keyword_lower:
-            parts = keyword_lower.split()
-            for part in parts:
-                if len(part) > 3 and part in text:
-                    match_count += 1
-        else:
-            if len(keyword_lower) > 2 and keyword_lower in text:
-                match_count += 1
+        return has_llm and has_video
 
+    # Video Quality: 视频/图像质量评估
+    if topic == "Video Quality":
+        quality_terms = ["quality", "ssim", "psnr", "vmaf", "metric", "assessment",
+                        "perceptual", "no-reference", "full-reference", "blind",
+                        "quality assessment", "quality evaluation"]
+        has_quality = any(term in text for term in quality_terms)
+
+        media_terms = ["video", "image", "frame", "picture", "picture quality", "video quality"]
+        has_media = any(term in text for term in media_terms)
+
+        return has_quality and has_media
+
+    # 3D Compression: 新兴场景技术（点云、VR、360、光场、NeRF等）
+    if topic == "3D Compression":
+        # 新兴技术词
+        emerging_terms = ["point cloud", "voxel", "mesh", "gaussian", "splatting",
+                         "vr", "virtual reality", "360", "omnidirectional", "panoramic",
+                         "light field", "nerf", "radiance field", "multiview",
+                         "stereo", "depth map", "mvd", "volumetric", "immersive",
+                         "holographic", "plenoptic"]
+        has_emerging = any(term in text for term in emerging_terms)
+
+        # 压缩相关词
+        compression_terms = ["compression", "codec", "coding", "encoding", "coding"]
+        has_compression = any(term in text for term in compression_terms)
+
+        return has_emerging and has_compression
+
+    # Default fallback
+    match_count = sum(1 for k in filters if k.lower() in text)
     title_match = any(k.lower() in title_lower for k in filters)
-    return match_count >= 2 or title_match
+    return match_count >= 1 or title_match
 
 def get_paper_citations(arxiv_id: str, retry: int = 3) -> int:
     arxiv_id = re.sub(r'v\d+$', '', arxiv_id)
@@ -223,13 +286,31 @@ def get_history_papers(topic, query: str, max_results: int = 100, date_from: str
                 logging.error(f"Arxiv search error: {e}")
                 return {topic: {}}
 
-    # Collect paper keys first
+    # Collect paper keys first, also get filters for relevance check
+    topic_filters = []
+    # Get filters from config based on topic
+    from yaml import safe_load
+    with open('config.yaml', 'r') as f:
+        config_data = safe_load(f)
+        topic_filters = config_data.get('keywords', {}).get(topic, {}).get('filters', [])
+
     paper_results = []
+    irrelevant_count = 0
     for result in search_engine.results():
         paper_id = result.get_short_id()
         ver_pos = paper_id.find('v')
         paper_key = paper_id[0:ver_pos] if ver_pos != -1 else paper_id
+
+        # Check relevance BEFORE fetching citations (save time)
+        if topic_filters:
+            abstract = result.summary.replace("\n", " ")
+            if not check_relevance(result.title, abstract, topic_filters, topic):
+                irrelevant_count += 1
+                continue
+
         paper_results.append((result, paper_key))
+
+    logging.info(f"Filtered out {irrelevant_count} irrelevant papers, keeping {len(paper_results)} relevant papers")
 
     # Fetch all citations in batch (max 100 per request)
     paper_keys = [pk for _, pk in paper_results]
@@ -271,14 +352,6 @@ def get_history_papers(topic, query: str, max_results: int = 100, date_from: str
         result = item['result']
         paper_key = item['paper_key']
         citation_count = item['citations']
-        paper_id = result.get_short_id()
-        ver_pos = paper_id.find('v')
-        if ver_pos != -1:
-            paper_key = paper_id[0:ver_pos]
-        else:
-            paper_key = paper_id
-
-        citation_count = get_paper_citations(paper_key)
         logging.info(f"Paper {paper_key}: {result.title[:50]}... citations={citation_count}")
 
         paper_url = arxiv_url + 'abs/' + paper_key

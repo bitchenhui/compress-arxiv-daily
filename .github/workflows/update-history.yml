@@ -1,0 +1,65 @@
+# GitHub Action for running history papers update (manual trigger only)
+
+name: Update History Papers
+
+on:
+  workflow_dispatch:
+    inputs:
+      history_date_from:
+        description: 'Start date (YYYYMMDD)'
+        required: true
+        default: '20250101'
+      history_date_to:
+        description: 'End date (YYYYMMDD)'
+        required: true
+        default: '20250701'
+      min_citations:
+        description: 'Minimum citations'
+        required: true
+        default: '200'
+
+env:
+  GITHUB_USER_NAME: bitchenhui
+  GITHUB_USER_EMAIL: 13261281082@163.com
+
+jobs:
+  update-history:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install arxiv
+          pip install requests
+          pip install pyyaml
+
+      - name: Update config with history parameters
+        run: |
+          # Update config.yaml with history parameters
+          sed -i "s/history_date_from: \"\"/history_date_from: \"${{ github.event.inputs.history_date_from }}\"/" config.yaml
+          sed -i "s/history_date_to: \"\"/history_date_to: \"${{ github.event.inputs.history_date_to }}\"/" config.yaml
+
+          # Also update min_citations
+          sed -i "s/min_citations: 3/min_citations: ${{ github.event.inputs.min_citations }}/" config.yaml
+
+          echo "Config updated:"
+          grep -E "history_date_from|history_date_to|min_citations" config.yaml
+
+      - name: Run history update
+        run: |
+          python daily_arxiv.py --update_history
+
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update history papers (${{ github.event.inputs.history_date_from }} to ${{ github.event.inputs.history_date_to }})"
+          file_pattern: docs/compress-arxiv-history.json

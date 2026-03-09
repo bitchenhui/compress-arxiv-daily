@@ -29,13 +29,27 @@ feishu_webhook: "https://open.feishu.cn/open-apis/bot/v2/hook/82390df1-c0fc-4b38
 
 # keywords to search
 keywords:
+    # 传统视频/图像编解码算法优化：H.264/H.265/HEVC/H.266/VVC/AV1标准、帧内预测、帧间预测、模式决策、率失真优化、DCT/变换、CABAC、去块滤波、SAO、ALF、码率控制等
     "Video Codec":
-        filters: ["H.265", "HEVC","H.266", "VVC", "video codec",  "inter", "intra"]
-    "Neural Compression": 
-        filters: ["neural video codec", "deep learning video coding", "AI video codec", "CNN-based video coding", "RNN video coding", "generative video coding", "end-to-end image coding", "learned image compression", "neural image codec", "end-to-end video coding", "deep video compression", "neural video", "Deep Contextual Video Compression"]
+        query: '"video codec" OR "video coding" OR "video compression" OR HEVC OR "H.265" OR "H.264" OR "H.266" OR VVC OR AV1 OR "inter prediction" OR "intra prediction" OR "motion estimation" OR CABAC OR "rate control"'
+        filters: ["H.264", "AVC", "H.265", "HEVC", "H.266", "VVC", "AV1", "AVS2", "AVS3", "inter prediction", "intra prediction", "motion estimation", "mode decision", "CABAC", "CAVLC", "deblocking", "SAO", "ALF", "RDO", "rate distortion", "rate control", "bit allocation", "transform coding"]
+
+    # 机器学习视频/图像编解码：端到端学习压缩、神经网络模块优化、DCVC、变分自编码器、GAN压缩等
+    "Neural Compression":
+        query: '"learned image compression" OR "neural image codec" OR "end-to-end image compression" OR "DCVC" OR "deep video compression" OR "neural video codec" OR "variational autoencoder compression" OR "GAN compression" OR "generative compression"'
+        filters: ["learned compression", "neural codec", "DCVC", "end-to-end compression", "variational autoencoder", "VAE", "GAN compression", "generative compression", "image reconstruction", "latent representation", "entropy coding", "neural entropy"]
+
+    # LLM/多模态与视频/图像编解码交叉：语义通信、利用LLM优化编解码、编解码辅助LLM任务等
     "MLLM":
-        filters: ["LLM Video Coding", "Semantic Video Coding","Diffusion Video Coding", "large model video compression", "transformer video codec", "multimodal video coding", "generative video compression"]
+        query: '"semantic communication" OR "LLM compression" OR "language model video" OR "multimodal compression" OR "semantic video coding" OR "neural semantic communication" OR "video understanding compression"'
+        filters: ["semantic communication", "LLM video", "language model codec", "multimodal compression", "semantic video", "video tokenization", "token compression", "LLM inference compression", "video understanding"]
+
+    # 视频/图像质量评估
     "Video Quality":
-        filters: ["video quality assessment", "VQA", "IQA"]
+        query: '"video quality assessment" OR "image quality assessment" OR VMAF OR SSIM OR PSNR OR "perceptual quality" OR "no-reference quality"'
+        filters: ["VMAF", "SSIM", "PSNR", "video quality", "image quality", "quality assessment", "perceptual quality", "no-reference", "full-reference", "quality metric"]
+
+    # 新兴场景技术：3D编解码、VR/360度视频、点云、光场、NeRF、Gaussian Splatting等
     "3D Compression":
-        filters: ["MVC", "multi-view video coding", "3D video coding", "VR video coding", "point cloud coding", "spherical video coding"]
+        query: '"point cloud compression" OR "3D video coding" OR "VR video" OR "360 video" OR "light field" OR "NeRF" OR "Gaussian splatting" OR "omnidirectional video" OR "immersive video"'
+        filters: ["point cloud", "PCC", "G-PCC", "V-PCC", "3D coding", "VR video", "360 video", "omnidirectional", "light field", "NeRF", "Gaussian splatting", "volumetric video", "mesh coding", "MVD"]
