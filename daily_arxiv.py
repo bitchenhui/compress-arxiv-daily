@@ -349,7 +349,7 @@ def get_history_papers(topic, query: str, max_results: int = 100, date_from: str
         papers_with_citations = [p for p in papers_with_citations if p['citations'] > 0]
         top_papers = papers_with_citations[:max_results]
 
-    logging.info(f"Found {len(top_papers)} papers with citations > 0 (min_citations={min_citations})")
+    logging.info(f"Found {len(top_papers)} papers with citations >= {min_citations}")
 
     for item in top_papers:
         result = item['result']

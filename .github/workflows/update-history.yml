@@ -44,15 +44,26 @@ jobs:
 
       - name: Update config with history parameters
         run: |
-          # Update config.yaml with history parameters
-          sed -i "s/history_date_from: \"\"/history_date_from: \"${{ github.event.inputs.history_date_from }}\"/" config.yaml
-          sed -i "s/history_date_to: \"\"/history_date_to: \"${{ github.event.inputs.history_date_to }}\"/" config.yaml
+          # Use Python to update config.yaml with workflow inputs
+          python3 << 'EOF'
+          import yaml
 
-          # Also update min_citations
-          sed -i "s/min_citations: 3/min_citations: ${{ github.event.inputs.min_citations }}/" config.yaml
+          with open('config.yaml', 'r') as f:
+              config = yaml.safe_load(f)
 
-          echo "Config updated:"
-          grep -E "history_date_from|history_date_to|min_citations" config.yaml
+          # Update history parameters from workflow inputs
+          config['history_date_from'] = "${{ github.event.inputs.history_date_from }}"
+          config['history_date_to'] = "${{ github.event.inputs.history_date_to }}"
+          config['min_citations'] = int("${{ github.event.inputs.min_citations }}")
+
+          with open('config.yaml', 'w') as f:
+              yaml.dump(config, f, default_flow_style=False)
+
+          print("Config updated:")
+          print(f"history_date_from: {config['history_date_from']}")
+          print(f"history_date_to: {config['history_date_to']}")
+          print(f"min_citations: {config['min_citations']}")
+          EOF
 
       - name: Run history update
         run: |
