@@ -822,6 +822,17 @@ def demo(**config):
             time.sleep(10)
         update_history_json(history_file, history_collector)
         logging.info(f"GET history papers end")
+
+        # Send history papers to Feishu if webhook is configured
+        feishu_webhook = config.get('feishu_webhook', '')
+        if feishu_webhook:
+            date_range_str = date_range
+            table_data = generate_feishu_table(history_collector, date_range_str)
+            if len(table_data) > 1:
+                send_to_feishun(feishu_webhook, table_data)
+                logging.info(f"History papers sent to Feishu")
+            else:
+                logging.info(f"No papers to send to Feishu")
         return
 
     search_date = config.get('search_date')
