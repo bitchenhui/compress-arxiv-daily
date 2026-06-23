@@ -76,6 +76,10 @@ jobs:
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_FROM: ${{ secrets.SMTP_USER }}
+          MAIL_TO: ${{ secrets.MAIL_TO_1 }},${{ secrets.MAIL_TO_2 }}
+          MAIL_SUBJECT: "[eess.IV Daily] ${{ steps.date.outputs.target }}"
+          HTML_PATH: docs/email-body.html
         run: |
           python3 scripts/send_email.py --check
 

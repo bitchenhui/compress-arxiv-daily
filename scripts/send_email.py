@@ -31,18 +31,22 @@ from email.utils import formatdate
 
 
 def _load_env():
-    smtp_host = os.environ.get("SMTP_HOST")
-    smtp_port = int(os.environ.get("SMTP_PORT", "465"))
-    smtp_user = os.environ.get("SMTP_USER")
-    smtp_pass = os.environ.get("SMTP_PASS")
-    mail_from = os.environ.get("MAIL_FROM") or smtp_user
+    smtp_host = (os.environ.get("SMTP_HOST") or "").strip()
+    smtp_port_raw = (os.environ.get("SMTP_PORT") or "465").strip()
+    smtp_user = (os.environ.get("SMTP_USER") or "").strip()
+    smtp_pass = os.environ.get("SMTP_PASS")  # 密码禁止 strip（怕用户密码含空白符）
+    mail_from = (os.environ.get("MAIL_FROM") or smtp_user).strip()
     mail_to_raw = os.environ.get("MAIL_TO", "")
-    mail_subject = os.environ.get("MAIL_SUBJECT", "eess.IV Daily")
-    html_path = os.environ.get("HTML_PATH", "docs/email-body.html")
+    mail_subject = (os.environ.get("MAIL_SUBJECT") or "eess.IV Daily").strip()
+    html_path = (os.environ.get("HTML_PATH") or "docs/email-body.html").strip()
     text_fallback = os.environ.get(
         "TEXT_FALLBACK",
         "本邮件包含 HTML 内容，请使用支持 HTML 的邮件客户端查看。"
     )
+    try:
+        smtp_port = int(smtp_port_raw)
+    except ValueError:
+        smtp_port = 465
     return {
         "smtp_host": smtp_host, "smtp_port": smtp_port,
         "smtp_user": smtp_user, "smtp_pass": smtp_pass,
@@ -66,15 +70,18 @@ def cmd_check(env) -> int:
     print("=" * 60)
     print("[check] Environment snapshot")
     print("=" * 60)
-    for k in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS", "MAIL_TO", "HTML_PATH"):
-        v = os.environ.get(k)
-        if v is None:
-            print(f"  {k:12s} = (not set)")
+    # 打印原始值（包括 strip 前后的差异，方便发现 secret 中是否有不可见字符）
+    for k in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS",
+              "MAIL_FROM", "MAIL_TO", "MAIL_SUBJECT", "HTML_PATH"):
+        raw = os.environ.get(k)
+        if raw is None:
+            print(f"  {k:14s} = (not set)")
         elif k == "SMTP_PASS":
             # 永远不打印密码原文/编码，只报告是否设置与长度
-            print(f"  {k:12s} = (set, {len(v)} chars)")
+            print(f"  {k:14s} = (set, {len(raw)} chars)")
         else:
-            print(f"  {k:12s} = {v!r}")
+            stripped_diff = "" if raw == raw.strip() else f"  [stripped->{raw.strip()!r}]"
+            print(f"  {k:14s} = {raw!r}{stripped_diff}")
     print()
 
     host = env["smtp_host"]
