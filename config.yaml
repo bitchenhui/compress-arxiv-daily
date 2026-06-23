@@ -1,55 +1,84 @@
-# TODO: add papers by configuration file
-base_url: "https://arxiv.paperswithcode.com/api/v0/papers/"
-user_name: "bitchenhui"
-repo_name: "compress-arxiv-daily"
-show_authors: True
-show_links: True
+# eess.IV 每日论文抓取配置
 show_badge: True
-max_results: 10000
-min_citations: 200  # Minimum citations for history papers (0 = no filter)
-history_date_from: "20200101"  # Start date for history search in YYYYMMDD format (e.g., 20100101)
-history_date_to: "20260301"    # End date for history search in YYYYMMDD format (e.g., 20111231). If empty, searches to present
+max_results: 300        # eess.IV 日均 80~150 条新论文，300 留余量
+min_citations: 200      # 历史论文最低引用数
+history_date_from: "20200101"
+history_date_to: ""
 
 publish_readme: True
-publish_gitpage: True
-publish_wechat: False
 
-# file paths
-json_readme_path: './docs/compress-arxiv-daily.json'
-json_gitpage_path: './docs/compress-arxiv-daily-web.json'
-json_wechat_path: './docs/compress-arxiv-daily-wechat.json'
-json_history_path: './docs/compress-arxiv-history.json'
+# 文件路径
+json_readme_path: "./docs/eess-iv-daily.json"
+md_readme_path: "README.md"
+json_history_path: "./docs/eess-iv-history.json"
 
-md_readme_path: 'README.md'
-md_gitpage_path: './docs/index.md'
-md_wechat_path: './docs/wechat.md'
+# 飞书 webhook（可选，留空则在 workflow 中通过 secret 注入）
+feishu_webhook: ""
 
-# Feishu webhook (optional) - 请替换为你的飞书机器人webhook地址
-feishu_webhook: "https://open.feishu.cn/open-apis/bot/v2/hook/82390df1-c0fc-4b38-840f-792abe38baf6"
+# arxiv 抓取目标类目
+arxiv_category: "eess.IV"
 
-# keywords to search
-keywords:
-    # 传统视频/图像编解码算法优化：H.264/H.265/HEVC/H.266/VVC/AV1标准、帧内预测、帧间预测、模式决策、率失真优化、DCT/变换、CABAC、去块滤波、SAO、ALF、码率控制等
-    "Video Codec":
-        query: '"video codec" OR "video coding" OR "video compression" OR HEVC OR "H.265" OR "H.264" OR "H.266" OR VVC OR AV1 OR "inter prediction" OR "intra prediction" OR "motion estimation" OR CABAC OR "rate control"'
-        filters: ["H.264", "AVC", "H.265", "HEVC", "H.266", "VVC", "AV1", "AVS2", "AVS3", "inter prediction", "intra prediction", "motion estimation", "mode decision", "CABAC", "CAVLC", "deblocking", "SAO", "ALF", "RDO", "rate distortion", "rate control", "bit allocation", "transform coding"]
+# 医学论文过滤词（命中任一即丢弃）
+medical_exclude_keywords:
+  - medical
+  - clinical
+  - mri
+  - ct scan
+  - ultrasound
+  - x-ray
+  - xray
+  - radiograph
+  - radiography
+  - patient
+  - hospital
+  - disease
+  - diagnosis
+  - diagnostic
+  - tumor
+  - tumour
+  - lesion
+  - biomedical
+  - anatomical
+  - pathology
+  - histopathology
+  - endoscope
+  - endoscopic
+  - surgical
+  - cardiology
+  - ophthalmology
+  - retinal
+  - brain tumor
+  - covid
+  - pneumonia
 
-    # 机器学习视频/图像编解码：端到端学习压缩、神经网络模块优化、DCVC、变分自编码器、GAN压缩等
-    "Neural Compression":
-        query: '"learned image compression" OR "neural image codec" OR "end-to-end image compression" OR "DCVC" OR "deep video compression" OR "neural video codec" OR "variational autoencoder compression" OR "GAN compression" OR "generative compression"'
-        filters: ["learned compression", "neural codec", "DCVC", "end-to-end compression", "variational autoencoder", "VAE", "GAN compression", "generative compression", "image reconstruction", "latent representation", "entropy coding", "neural entropy"]
+# 翻译配置（MyMemory 免费 API，en -> zh-CN）
+translation:
+  enabled: True
+  provider: "mymemory"
+  endpoint: "https://api.mymemory.translated.net/get"
+  langpair: "en|zh-CN"
+  timeout_sec: 5
+  max_input_chars: 500          # 超长摘要截断到该长度再翻译
+  max_translate_per_day: 10     # 每日翻译数量上限（避免 MyMemory 5000 字/天 限额）
+  retry: 2
+  fallback_to_english: True     # 失败时是否回退到英文
 
-    # LLM/多模态与视频/图像编解码交叉：语义通信、利用LLM优化编解码、编解码辅助LLM任务等
-    "MLLM":
-        query: '"semantic communication" OR "LLM compression" OR "language model video" OR "multimodal compression" OR "semantic video coding" OR "neural semantic communication" OR "video understanding compression"'
-        filters: ["semantic communication", "LLM video", "language model codec", "multimodal compression", "semantic video", "video tokenization", "token compression", "LLM inference compression", "video understanding"]
+# GitHub 链接抽取
+github:
+  # 匹配 http(s)://github.com/<owner>/<repo>[/path]
+  regex: 'https?://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_./-]*)?'
+  # 链接尾部常被粘上的标点
+  strip_trailing: '.,;:!?)>]\"'
 
-    # 视频/图像质量评估
-    "Video Quality":
-        query: '"video quality assessment" OR "image quality assessment" OR VMAF OR SSIM OR PSNR OR "perceptual quality" OR "no-reference quality"'
-        filters: ["VMAF", "SSIM", "PSNR", "video quality", "image quality", "quality assessment", "perceptual quality", "no-reference", "full-reference", "quality metric"]
-
-    # 新兴场景技术：3D编解码、VR/360度视频、点云、光场、NeRF、Gaussian Splatting等
-    "3D Compression":
-        query: '"point cloud compression" OR "3D video coding" OR "VR video" OR "360 video" OR "light field" OR "NeRF" OR "Gaussian splatting" OR "omnidirectional video" OR "immersive video"'
-        filters: ["point cloud", "PCC", "G-PCC", "V-PCC", "3D coding", "VR video", "360 video", "omnidirectional", "light field", "NeRF", "Gaussian splatting", "volumetric video", "mesh coding", "MVD"]
+# 邮件发送配置（实际凭据在 GitHub Secrets 中）
+email:
+  enabled: True
+  smtp_server: "smtp.163.com"
+  smtp_port: 465
+  use_ssl: True
+  sender: "13261281092@163.com"
+  recipients:
+    - "13261281092@163.com"
+    - "duanchenhui.zoro@jd.com"
+  subject_prefix: "[eess.IV Daily]"
+  include_english_summary: True

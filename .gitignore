@@ -11,5 +11,8 @@ cmake_modules/
 cmake-build-debug/
 .idea/
 .vscode/
+__pycache__/
 *.pyc
+.env
+*.log
 

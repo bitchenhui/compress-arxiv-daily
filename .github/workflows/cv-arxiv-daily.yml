@@ -1,69 +1,94 @@
-# This is a basic workflow to help you get started with Actions
+# GitHub Action: eess.IV daily arxiv crawler
+# - 每天 UTC 01:00 (= 北京时间 09:00) 触发
+# - 拉取 arXiv eess.IV 类目当天新增（Asia/Shanghai 时区），过滤医学论文，翻译中文摘要
+# - 更新 README.md 与 docs/
+# - 通过 163 SMTP 把当日结果邮件发送给两位订阅人
+# - 可选：飞书 webhook 推送
 
-name: Run Compress Arxiv Daily
+name: Run eess.IV Daily
 
-# Controls when the workflow will run
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   schedule:
-    # Beijing time 01:23 every day (UTC 17:23)
-    - cron: "23 17 * * *"
+    # Beijing time 09:00 = UTC 01:00 (GitHub Actions cron always UTC)
+    - cron: "0 1 * * *"
 
 env:
-
   GITHUB_USER_NAME: bitchenhui
   GITHUB_USER_EMAIL: 13261281092@163.com
+  TZ: Asia/Shanghai
 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
     name: update
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up Python Env
-        uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install arxiv
-          pip install requests
-          pip install pyyaml
+          pip install -r requirements.txt
 
-      - name: Prepare config
+      - name: Compute target date (today, Asia/Shanghai)
+        id: date
         run: |
-          # Read current config and check if feishu_webhook already exists
+          TARGET=$(TZ=Asia/Shanghai python3 -c "import datetime; print(datetime.date.today().strftime('%Y%m%d'))")
+          echo "target=$TARGET" >> "$GITHUB_OUTPUT"
+          echo "[date] target=$TARGET (Asia/Shanghai today)"
+
+      - name: Prepare feishu webhook (optional)
+        run: |
           if grep -q "feishu_webhook:" config.yaml; then
-            echo "feishu_webhook already exists in config"
-          else
-            # Add feishu_webhook from secret if available
             if [ -n "${{ secrets.FEISHU_WEBHOOK }}" ]; then
-              echo "feishu_webhook: \"${{ secrets.FEISHU_WEBHOOK }}\"" >> config.yaml
+              sed -i "s|feishu_webhook:.*|feishu_webhook: \"${{ secrets.FEISHU_WEBHOOK }}\"|" config.yaml
+              echo "[feishu] webhook injected from secret"
             else
-              echo "feishu_webhook: ''" >> config.yaml
+              echo "[feishu] no FEISHU_WEBHOOK secret, skipped"
             fi
+          else
+            echo "[feishu] config.yaml missing feishu_webhook key, skipped"
           fi
 
       - name: Run daily arxiv
         run: |
-          python daily_arxiv.py
+          python daily_arxiv.py --date ${{ steps.date.outputs.target }}
 
-      - name: Push new files
+      - name: Build email HTML
+        if: success()
+        run: |
+          python3 scripts/build_email.py \
+            --json docs/eess-iv-daily.json \
+            --date ${{ steps.date.outputs.target }} \
+            --out docs/email-body.html
+
+      - name: Send email
+        if: success()
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_FROM: ${{ secrets.SMTP_USER }}
+          MAIL_TO: ${{ secrets.MAIL_TO_1 }},${{ secrets.MAIL_TO_2 }}
+          MAIL_SUBJECT: "[eess.IV Daily] ${{ steps.date.outputs.target }}"
+          HTML_PATH: docs/email-body.html
+        run: |
+          python3 scripts/send_email.py
+
+      - name: Commit and push
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Github Action Automatic Update Compress Arxiv Papers"
-          files: README.md docs/compress-arxiv-daily.json docs/compress-arxiv-daily-web.json docs/index.md docs/compress-arxiv-daily-wechat.json docs/compress-arxiv-history.json
-          rebase: 'true'
+          commit-message: "eess.IV daily update ${{ steps.date.outputs.target }}"
+          files: README.md docs/eess-iv-daily.json docs/eess-iv-history.json docs/email-body.html
+          rebase: "true"
           name: ${{ env.GITHUB_USER_NAME }}
           email: ${{ env.GITHUB_USER_EMAIL }}
