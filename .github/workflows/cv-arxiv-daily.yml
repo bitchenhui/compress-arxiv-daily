@@ -102,7 +102,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "eess.IV daily update ${{ steps.date.outputs.target }}"
-          files: README.md docs/eess-iv-daily.json docs/eess-iv-history.json docs/email-body.html
+          files: README.md docs/eess-iv-daily.json docs/email-body.html
           rebase: "true"
           name: ${{ env.GITHUB_USER_NAME }}
           email: ${{ env.GITHUB_USER_EMAIL }}
