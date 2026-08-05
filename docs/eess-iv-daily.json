@@ -1,3 +1,28 @@
 {
-  "eess.IV": {}
+  "eess.IV": {
+    "2608.03419": {
+      "update_time": "2026-08-04",
+      "title": "Multi-Task Multi-Frame Visual Piano Transcription",
+      "first_author": "Yonghyun Kim",
+      "authors": "Yonghyun Kim, Hoyeol Sohn, Juhan Nam, Alexander Lerch",
+      "url": "http://arxiv.org/abs/2608.03419",
+      "pdf_url": "http://arxiv.org/pdf/2608.03419",
+      "code_url": "",
+      "category": "cs.SD",
+      "summary_en": "Audio-based piano transcription performs well on onset, pitch, and velocity, but the sustain pedal lets sound persist long after key release, so audio systems predict pedal-extended offsets rather than physical key release. Yet existing Visual Piano Transcription (VPT) systems focus on onset detection from short video windows, offset accuracy lags onset by a wide margin, and note-level velocity has not been reported. To address these gaps, we present V2N (Video to Notes), the first complete VPT system: a shared temporal backbone feeds task-specific heads for onset, offset, key hold, and velocity, jointly trained with per-frame supervision rather than only at the window center. Ablations show that multi-task supervision enables offset and velocity prediction while improving onset accuracy; longer temporal context yields further improvements. V2N sets new state-of-the-art results on PianoVAM and R3.",
+      "summary_zh": "基于音频的钢琴转录在发作、音调和速度方面表现良好，但维持踏板让声音在按键释放后保持很长时间，因此音频系统预测踏板扩展偏移而不是物理按键释放。然而，现有的视觉钢琴转录（ VPT ）系统侧重于从短视频窗口进行发作检测，偏移精度滞后于大幅度发作，并且尚未报道音符级别的速度。为了弥补这些差距，我们推出了V2N （视频到笔记） ，这是第一个完整的VPT……"
+    },
+    "2608.03313": {
+      "update_time": "2026-08-04",
+      "title": "ProCAVE: A Self-Adaptive, Full-Lifecycle Edge Caching Framework for Video Streaming via Predictive Bandwidth Estimation and Preference-Aware Deep Reinforcement Learning",
+      "first_author": "Yeganeh Chatri",
+      "authors": "Yeganeh Chatri, Behzad Akbari, Foad Ghaderi, Pejman Goudarzi",
+      "url": "http://arxiv.org/abs/2608.03313",
+      "pdf_url": "http://arxiv.org/pdf/2608.03313",
+      "code_url": "",
+      "category": "cs.NI",
+      "summary_en": "The growing demand for mobile video streaming requires edge delivery systems that adapt efficiently to rapid network fluctuations and diverse user preferences. Existing approaches such as FlyCache rely on reactive ABR heuristics and loosely coupled cache policies, limiting their responsiveness and coordination under real-world wireless dynamics. We propose ProCAVE (Proactive Caching with Adaptive Video Experience), a self-adaptive DRL-based framework that unifies predictive bandwidth modeling, proactive bitrate selection, and preference-aware cache control. ProCAVE employs: (i) a lightweight Transformer for short-term throughput forecasting; (ii) a PPO-driven ABR agent; and (iii) a DDPG-based continuous cache controller operating on a high-dimensional global state. Experiments using MovieLens preference traces and Ghent 4G bandwidth measurements show that ProCAVE improves byte hit rate, reduces backhaul load, and enhances QoE compared with FlyCache and other baselines. These results highlight the benefits of predictive, DRL-coordinated control for efficient and user-centric edge video delivery.",
+      "summary_zh": "对移动视频流日益增长的需求要求边缘传输系统能够有效地适应快速的网络波动和多样化的用户偏好。FlyCache等现有方法依赖于反应式ABR启发式和松散耦合的缓存策略，限制了它们在真实世界无线动态下的响应和协调性。我们提出ProCAVE （具有自适应视频体验的主动缓存） ，这是一个基于自适应DRL的框架，可统一预测带宽建模， …"
+    }
+  }
 }
