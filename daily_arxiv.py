@@ -225,18 +225,24 @@ def get_daily_papers(category: str, max_results: int,
     返回 (data, data_web) — 两者结构相同，便于兼容后续输出渲染。
 
     date_from / date_to: 北京日期 D（YYYYMMDD）。
-    arXiv 每天仅在 UTC 0:00（= 北京 8:00）公告一批，"北京 D 当天"用户能看到的
-    论文实际上是 UTC D-1 全天提交的，故搜索范围与过滤基准都改用 arxiv_day = D-1。
+    arXiv 公告批次对应 EDT 截止窗口，映射到 UTC 约 [D-2 18:00, D-1 18:00)。
+    为稳妥起见搜 UTC [D-2, D-1] 两整天，再按 published 日期落在这两天内过滤。
     """
     time.sleep(3)
 
     beijing_day = datetime.date(
         int(date_from[:4]), int(date_from[4:6]), int(date_from[6:8])
     )
-    arxiv_day = beijing_day - datetime.timedelta(days=1)
-    arxiv_date = arxiv_day.strftime('%Y%m%d')
+    arxiv_day_from = beijing_day - datetime.timedelta(days=2)
+    arxiv_day_to = beijing_day - datetime.timedelta(days=1)
+    allowed_days = {arxiv_day_from, arxiv_day_to}
 
-    results = search_arxiv_with_retry(category, arxiv_date, arxiv_date, max_results)
+    results = search_arxiv_with_retry(
+        category,
+        arxiv_day_from.strftime('%Y%m%d'),
+        arxiv_day_to.strftime('%Y%m%d'),
+        max_results,
+    )
 
     content = {}
     content_web = {}
@@ -244,8 +250,7 @@ def get_daily_papers(category: str, max_results: int,
     skipped_date = 0
 
     for r in results:
-        # arxiv 跨时区公告：r.published 是 UTC，按 arxiv_day（UTC D-1）过滤
-        if r.published.date() != arxiv_day:
+        if r.published.date() not in allowed_days:
             skipped_date += 1
             continue
 
@@ -702,7 +707,10 @@ def demo(**config):
     if config.get('publish_readme', True):
         json_file = config['json_readme_path']
         md_file = config['md_readme_path']
-        update_json_file(json_file, [data])
+        # 每日摘要覆盖写，避免历史累积进邮件正文
+        os.makedirs(os.path.dirname(json_file) or ".", exist_ok=True)
+        with open(json_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
         json_to_md(json_file, md_file, show_badge=config.get('show_badge', True))
 
     # 飞书推送
