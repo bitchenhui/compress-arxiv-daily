@@ -223,13 +223,20 @@ def get_daily_papers(category: str, max_results: int,
     """
     拉取指定日期的 eess.IV 新论文。
     返回 (data, data_web) — 两者结构相同，便于兼容后续输出渲染。
+
+    date_from / date_to: 北京日期 D（YYYYMMDD）。
+    arXiv 每天仅在 UTC 0:00（= 北京 8:00）公告一批，"北京 D 当天"用户能看到的
+    论文实际上是 UTC D-1 全天提交的，故搜索范围与过滤基准都改用 arxiv_day = D-1。
     """
     time.sleep(3)
 
-    target_day = datetime.date(
+    beijing_day = datetime.date(
         int(date_from[:4]), int(date_from[4:6]), int(date_from[6:8])
     )
-    results = search_arxiv_with_retry(category, date_from, date_to, max_results)
+    arxiv_day = beijing_day - datetime.timedelta(days=1)
+    arxiv_date = arxiv_day.strftime('%Y%m%d')
+
+    results = search_arxiv_with_retry(category, arxiv_date, arxiv_date, max_results)
 
     content = {}
     content_web = {}
@@ -237,8 +244,8 @@ def get_daily_papers(category: str, max_results: int,
     skipped_date = 0
 
     for r in results:
-        # arxiv 跨时区公告：按 published 日期二次过滤
-        if r.published.date() != target_day:
+        # arxiv 跨时区公告：r.published 是 UTC，按 arxiv_day（UTC D-1）过滤
+        if r.published.date() != arxiv_day:
             skipped_date += 1
             continue
 
