@@ -1,5 +1,29 @@
 {
   "eess.IV": {
+    "2608.04915": {
+      "update_time": "2026-08-05",
+      "title": "DefoEye: Python-Based Software for Facilitating Time-Series InSAR Analysis of Sentinel-1 Remote-Sensing Data",
+      "first_author": "Alireza Taheri Dehkordi",
+      "authors": "Alireza Taheri Dehkordi, Hossein Hashemi, Amir Naghibi",
+      "url": "http://arxiv.org/abs/2608.04915",
+      "pdf_url": "http://arxiv.org/pdf/2608.04915",
+      "code_url": "",
+      "category": "eess.IV",
+      "summary_en": "Many existing time-series Interferometric Synthetic Aperture Radar (TS-InSAR) software tools have limitations, including restricted geographic applicability, commercial licensing, and incomplete end-to-end processing support. Although GMTSAR avoids some of these constraints, it still requires substantial manual intervention and C-shell commands, lacks a user-friendly graphical interface, and omits important steps such as interferogram network pruning and anchoring of unwrapped interferograms. This paper introduces DefoEye (v1), an open-source Python-based software package that wraps GMTSAR and provides a unified, user-friendly TS-InSAR workflow for Sentinel-1 data. DefoEye supports parallel job execution, interferogram network pruning, and multiple anchoring options. Its performance was evaluated from 2020 to 2024 in four regions with different geological settings, deformation mechanisms, and atmospheric and climatic conditions. In Bologna, Italy; Gotland, Sweden; and Houston, USA, DefoEye results were compared with observations from 10 GNSS stations and showed strong agreement, with RMSE values of 4.3-11.9 mm and Pearson correlation coefficients of 0.63-0.95. In Karaj, Iran, where GNSS observations were unavailable, DefoEye was compared with other widely used processing tools and achieved similarly close agreement, with an RMSE of 4.8 mm/yr and a Pearson correlation coefficient of 0.98. These results demonstrate that DefoEye provides reliable TS-InSAR products for geological, hydrological, and environmental applications.",
+      "summary_zh": "许多现有的时间序列干涉合成孔径雷达（ TS-InSAR ）软件工具存在局限性，包括地理适用性受限、商业许可和不完整的端到端处理支持。尽管GMTSAR避免了其中一些限制，但它仍然需要大量的手动干预和C-shell命令，缺乏用户友好的图形界面，并且省略了干涉图网络修剪和未包装干涉图锚定等重要步骤。……"
+    },
+    "2608.04106": {
+      "update_time": "2026-08-04",
+      "title": "LoRetta: A Foundation Model and Extensive Dataset for Global-Scale Remote Sensing Dense Image Matching",
+      "first_author": "Siwei Yu",
+      "authors": "Siwei Yu, Han Guo, Zhenwei Shi, Zhengxia Zou",
+      "url": "http://arxiv.org/abs/2608.04106",
+      "pdf_url": "http://arxiv.org/pdf/2608.04106",
+      "code_url": "",
+      "category": "cs.CV",
+      "summary_en": "Dense image matching establishes pixel-wise correspondences and underpins broad applications in computer vision and photogrammetry. However, extending dense matching to global-scale remote sensing remains challenging because image pairs may differ in acquisition time, season, viewpoint, spatial resolution, and land-cover state. The resulting large geometric offsets, partial overlap, and intrinsically unmatchable regions make direct dense correspondence prediction unreliable and inefficient. We thus reformulate dense matching as localization-and-registration: first localizing the matchable overlap and affine geometry, then refining dense residuals within the aligned frame. Based on this formulation, we propose LoRetta, a foundation model coupling matchability-aware affine localization with guided dense registration. We also introduce LEVIR-GM, a global-scale multi-temporal optical matching benchmark with dataset-native matchability labels (103K aligned, 827K augmented pairs, six continents, five years, 0.5-1024 m resolution). We further establish a unified evaluation protocol for sparse, semi-dense, and dense matchers. On LEVIR-GM, LoRetta achieves an area under the curve (AUC) of 83.3%, outperforming the strongest baseline RoMa v2 by 1.6 points, with larger percentage of correct keypoints (PCK) gains of 6.5 and 8.2 points at 1 and 2 pixels, while reducing inference latency by 47.8%. Astronaut-to-satellite and unmanned aerial vehicle (UAV)-to-satellite geolocalization experiments further demonstrate its transferability as a reusable geometric aligner.",
+      "summary_zh": "密集的图像匹配可以建立像素对应关系，并支持计算机视觉和摄影测量的广泛应用。然而，将密集匹配扩展到全球尺度遥感仍然具有挑战性，因为图像对在采集时间、季节、视点、空间分辨率和土地覆盖状态方面可能有所不同。由此产生的大几何偏移、部分重叠和本质上不可匹配的区域使得直接密集对应预测不可靠且效率低下。我们…"
+    },
     "2608.03419": {
       "update_time": "2026-08-04",
       "title": "Multi-Task Multi-Frame Visual Piano Transcription",
