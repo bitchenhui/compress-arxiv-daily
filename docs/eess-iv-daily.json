@@ -1,5 +1,29 @@
 {
   "eess.IV": {
+    "2608.06028": {
+      "update_time": "2026-08-06",
+      "title": "Hyperspectral Calibration Detection: A Novel Concept For Change Detection With Unsupervised Incremental Safe Pseudo-Labeling Implementation",
+      "first_author": "Chia-Hsiang Lin",
+      "authors": "Chia-Hsiang Lin, Shih-Min Hsu, Ching-Yun Liang, Jocelyn Chanussot, Jhih-Yan Chen",
+      "url": "http://arxiv.org/abs/2608.06028",
+      "pdf_url": "http://arxiv.org/pdf/2608.06028",
+      "code_url": "https://github.com/IHCLab/HyperLUCID",
+      "category": "eess.IV",
+      "summary_en": "Hyperspectral change detection (HCD) has found numerous key applications, such as land cover monitoring. The majority of benchmark HCD algorithms are semi-supervised methods, and some of them can even achieve very low sample labeling rates. However, in some practical scenarios, such as those requiring immediate detection responses for onboard edge computing, we need to achieve the zero-label requirement as ground-truth labeling would not be available onboard for newly acquired images. In this work, we propose a fully unsupervised HCD algorithm, together with a lightweight model, quite suitable for onboard detection missions. Based on an iteratively augmented training set that safely collects some unchanged pixel samples, we learn an iteratively refined spectrum calibration function that eventually compensates the variability of acquisition conditions (often observed in bitemporal images), thereby making the changed pixels easily detectable by analyzing the calibrated spectra. The proposed hyperspectral looping unsupervised calibration and incremental detection (HyperLUCID) algorithm is not only computationally efficient (around 1 to 2 orders of magnitude faster than most benchmark HCD methods), but has also achieved state-of-the-art results (around 93.6% to 97.9% overall accuracy) on several real benchmark HCD datasets. Source codes: https://github.com/IHCLab/HyperLUCID.",
+      "summary_zh": "高光谱变化检测（ HCD ）已经发现了许多关键应用，例如土地覆盖监测。大多数基准HCD算法都是半监督方法，其中一些甚至可以实现非常低的样本标记率。然而，在一些实际场景中，例如需要对板载边缘计算进行即时检测响应的场景中，我们需要实现零标记要求，因为新采集的图像无法在板载上进行地面真实标记。在这…"
+    },
+    "2608.05840": {
+      "update_time": "2026-08-06",
+      "title": "Accurate Localization of Road Traffic Objects on the Road Plane Using Surveillance Camera Imagery",
+      "first_author": "Jan Gawroński",
+      "authors": "Jan Gawroński, Witold Czajewski",
+      "url": "http://arxiv.org/abs/2608.05840",
+      "pdf_url": "http://arxiv.org/pdf/2608.05840",
+      "code_url": "",
+      "category": "cs.CV",
+      "summary_en": "Accurate vehicle localization from monocular roadside surveillance cameras is important for intelligent transportation systems, traffic monitoring, and traffic conflict analysis. Standard approaches often estimate vehicle position from the center of the detector bounding box, which can produce large errors due to perspective distortion and parallax, especially for elevated cameras and large vehicles.   This paper proposes a two-stage geometry-aware localization pipeline that estimates the projection of the vehicle footprint onto the road plane. First, vehicles are detected using a YOLO26-based detector. Second, a dedicated ResNet34 regression network predicts four corner points corresponding to the projected vehicle base. The final position is computed as the geometric center of the predicted quadrilateral.   The method was trained on synthetic data generated in CARLA and fine-tuned on real-world roadside imagery from DAIR-V2X. Experiments on synthetic and real data showed clear improvements over naive bounding-box-center localization. On DAIR-V2X, the mean image-space localization error decreased from 31.77 px to 15.30 px, a 51.8% improvement, while the median error decreased to 4.29 px. Median ground-plane error for medium-range vehicles decreased from 5.52 m to 0.90 m, and for far-range vehicles from 8.67 m to 1.84 m.   The results also show that contextual information surrounding the detector bounding box is important for geometric localization. The largest gains were observed for distant vehicles and geometrically challenging cases affected by strong perspective distortion and parallax.",
+      "summary_zh": "单目路边监控摄像头的精确车辆定位对于智能交通系统、交通监控和交通冲突分析非常重要。标准方法通常从探测器包围盒的中心估计车辆位置，这可能由于透视失真和视差而产生很大的误差，特别是对于高架摄像机和大型车辆。本文提出了一种两阶段几何感知定位流水线，该流水线估计…"
+    },
     "2608.04915": {
       "update_time": "2026-08-05",
       "title": "DefoEye: Python-Based Software for Facilitating Time-Series InSAR Analysis of Sentinel-1 Remote-Sensing Data",
@@ -11,42 +35,6 @@
       "category": "eess.IV",
       "summary_en": "Many existing time-series Interferometric Synthetic Aperture Radar (TS-InSAR) software tools have limitations, including restricted geographic applicability, commercial licensing, and incomplete end-to-end processing support. Although GMTSAR avoids some of these constraints, it still requires substantial manual intervention and C-shell commands, lacks a user-friendly graphical interface, and omits important steps such as interferogram network pruning and anchoring of unwrapped interferograms. This paper introduces DefoEye (v1), an open-source Python-based software package that wraps GMTSAR and provides a unified, user-friendly TS-InSAR workflow for Sentinel-1 data. DefoEye supports parallel job execution, interferogram network pruning, and multiple anchoring options. Its performance was evaluated from 2020 to 2024 in four regions with different geological settings, deformation mechanisms, and atmospheric and climatic conditions. In Bologna, Italy; Gotland, Sweden; and Houston, USA, DefoEye results were compared with observations from 10 GNSS stations and showed strong agreement, with RMSE values of 4.3-11.9 mm and Pearson correlation coefficients of 0.63-0.95. In Karaj, Iran, where GNSS observations were unavailable, DefoEye was compared with other widely used processing tools and achieved similarly close agreement, with an RMSE of 4.8 mm/yr and a Pearson correlation coefficient of 0.98. These results demonstrate that DefoEye provides reliable TS-InSAR products for geological, hydrological, and environmental applications.",
       "summary_zh": "许多现有的时间序列干涉合成孔径雷达（ TS-InSAR ）软件工具存在局限性，包括地理适用性受限、商业许可和不完整的端到端处理支持。尽管GMTSAR避免了其中一些限制，但它仍然需要大量的手动干预和C-shell命令，缺乏用户友好的图形界面，并且省略了干涉图网络修剪和未包装干涉图锚定等重要步骤。……"
-    },
-    "2608.04106": {
-      "update_time": "2026-08-04",
-      "title": "LoRetta: A Foundation Model and Extensive Dataset for Global-Scale Remote Sensing Dense Image Matching",
-      "first_author": "Siwei Yu",
-      "authors": "Siwei Yu, Han Guo, Zhenwei Shi, Zhengxia Zou",
-      "url": "http://arxiv.org/abs/2608.04106",
-      "pdf_url": "http://arxiv.org/pdf/2608.04106",
-      "code_url": "",
-      "category": "cs.CV",
-      "summary_en": "Dense image matching establishes pixel-wise correspondences and underpins broad applications in computer vision and photogrammetry. However, extending dense matching to global-scale remote sensing remains challenging because image pairs may differ in acquisition time, season, viewpoint, spatial resolution, and land-cover state. The resulting large geometric offsets, partial overlap, and intrinsically unmatchable regions make direct dense correspondence prediction unreliable and inefficient. We thus reformulate dense matching as localization-and-registration: first localizing the matchable overlap and affine geometry, then refining dense residuals within the aligned frame. Based on this formulation, we propose LoRetta, a foundation model coupling matchability-aware affine localization with guided dense registration. We also introduce LEVIR-GM, a global-scale multi-temporal optical matching benchmark with dataset-native matchability labels (103K aligned, 827K augmented pairs, six continents, five years, 0.5-1024 m resolution). We further establish a unified evaluation protocol for sparse, semi-dense, and dense matchers. On LEVIR-GM, LoRetta achieves an area under the curve (AUC) of 83.3%, outperforming the strongest baseline RoMa v2 by 1.6 points, with larger percentage of correct keypoints (PCK) gains of 6.5 and 8.2 points at 1 and 2 pixels, while reducing inference latency by 47.8%. Astronaut-to-satellite and unmanned aerial vehicle (UAV)-to-satellite geolocalization experiments further demonstrate its transferability as a reusable geometric aligner.",
-      "summary_zh": "密集的图像匹配可以建立像素对应关系，并支持计算机视觉和摄影测量的广泛应用。然而，将密集匹配扩展到全球尺度遥感仍然具有挑战性，因为图像对在采集时间、季节、视点、空间分辨率和土地覆盖状态方面可能有所不同。由此产生的大几何偏移、部分重叠和本质上不可匹配的区域使得直接密集对应预测不可靠且效率低下。我们…"
-    },
-    "2608.03419": {
-      "update_time": "2026-08-04",
-      "title": "Multi-Task Multi-Frame Visual Piano Transcription",
-      "first_author": "Yonghyun Kim",
-      "authors": "Yonghyun Kim, Hoyeol Sohn, Juhan Nam, Alexander Lerch",
-      "url": "http://arxiv.org/abs/2608.03419",
-      "pdf_url": "http://arxiv.org/pdf/2608.03419",
-      "code_url": "",
-      "category": "cs.SD",
-      "summary_en": "Audio-based piano transcription performs well on onset, pitch, and velocity, but the sustain pedal lets sound persist long after key release, so audio systems predict pedal-extended offsets rather than physical key release. Yet existing Visual Piano Transcription (VPT) systems focus on onset detection from short video windows, offset accuracy lags onset by a wide margin, and note-level velocity has not been reported. To address these gaps, we present V2N (Video to Notes), the first complete VPT system: a shared temporal backbone feeds task-specific heads for onset, offset, key hold, and velocity, jointly trained with per-frame supervision rather than only at the window center. Ablations show that multi-task supervision enables offset and velocity prediction while improving onset accuracy; longer temporal context yields further improvements. V2N sets new state-of-the-art results on PianoVAM and R3.",
-      "summary_zh": "基于音频的钢琴转录在发作、音调和速度方面表现良好，但维持踏板让声音在按键释放后保持很长时间，因此音频系统预测踏板扩展偏移而不是物理按键释放。然而，现有的视觉钢琴转录（ VPT ）系统侧重于从短视频窗口进行发作检测，偏移精度滞后于大幅度发作，并且尚未报道音符级别的速度。为了弥补这些差距，我们推出了V2N （视频到笔记） ，这是第一个完整的VPT……"
-    },
-    "2608.03313": {
-      "update_time": "2026-08-04",
-      "title": "ProCAVE: A Self-Adaptive, Full-Lifecycle Edge Caching Framework for Video Streaming via Predictive Bandwidth Estimation and Preference-Aware Deep Reinforcement Learning",
-      "first_author": "Yeganeh Chatri",
-      "authors": "Yeganeh Chatri, Behzad Akbari, Foad Ghaderi, Pejman Goudarzi",
-      "url": "http://arxiv.org/abs/2608.03313",
-      "pdf_url": "http://arxiv.org/pdf/2608.03313",
-      "code_url": "",
-      "category": "cs.NI",
-      "summary_en": "The growing demand for mobile video streaming requires edge delivery systems that adapt efficiently to rapid network fluctuations and diverse user preferences. Existing approaches such as FlyCache rely on reactive ABR heuristics and loosely coupled cache policies, limiting their responsiveness and coordination under real-world wireless dynamics. We propose ProCAVE (Proactive Caching with Adaptive Video Experience), a self-adaptive DRL-based framework that unifies predictive bandwidth modeling, proactive bitrate selection, and preference-aware cache control. ProCAVE employs: (i) a lightweight Transformer for short-term throughput forecasting; (ii) a PPO-driven ABR agent; and (iii) a DDPG-based continuous cache controller operating on a high-dimensional global state. Experiments using MovieLens preference traces and Ghent 4G bandwidth measurements show that ProCAVE improves byte hit rate, reduces backhaul load, and enhances QoE compared with FlyCache and other baselines. These results highlight the benefits of predictive, DRL-coordinated control for efficient and user-centric edge video delivery.",
-      "summary_zh": "对移动视频流日益增长的需求要求边缘传输系统能够有效地适应快速的网络波动和多样化的用户偏好。FlyCache等现有方法依赖于反应式ABR启发式和松散耦合的缓存策略，限制了它们在真实世界无线动态下的响应和协调性。我们提出ProCAVE （具有自适应视频体验的主动缓存） ，这是一个基于自适应DRL的框架，可统一预测带宽建模， …"
     }
   }
 }

@@ -1,16 +1,15 @@
-## Updated on 2026.08.06
+## Updated on 2026.08.07
 
 > 来源：arXiv **eess.IV** (Image and Video Processing) · 每日 09:00 北京时间自动更新
 > 邮件订阅：见 [使用说明](./docs/README.md#邮件订阅)
 
 |Publish Date|Title|Authors|Code|中文摘要|
 |---|---|---|---|---|
+|**2026-08-06**|[Hyperspectral Calibration Detection: A Novel Concept For Change Detection With Unsupervised Incremental Safe Pseudo-Labeling Implementation](http://arxiv.org/abs/2608.06028)|Chia-Hsiang Lin et.al.|[GitHub](https://github.com/IHCLab/HyperLUCID)|<details><summary>展开中文摘要 (147 字)</summary>高光谱变化检测（ HCD ）已经发现了许多关键应用，例如土地覆盖监测。大多数基准HCD算法都是半监督方法，其中一些甚至可以实现非常低的样本标记率。然而，在一些实际场景中，例如需要对板载边缘计算进行即时检测响应的场景中，我们需要实现零标记要求，因为新采集的图像无法在板载上进行地面真实标记。在这…</details>|
+|**2026-08-06**|[Accurate Localization of Road Traffic Objects on the Road Plane Using Surveillance Camera Imagery](http://arxiv.org/abs/2608.05840)|Jan Gawroński et.al.|—|<details><summary>展开中文摘要 (128 字)</summary>单目路边监控摄像头的精确车辆定位对于智能交通系统、交通监控和交通冲突分析非常重要。标准方法通常从探测器包围盒的中心估计车辆位置，这可能由于透视失真和视差而产生很大的误差，特别是对于高架摄像机和大型车辆。本文提出了一种两阶段几何感知定位流水线，该流水线估计…</details>|
 |**2026-08-05**|[DefoEye: Python-Based Software for Facilitating Time-Series InSAR Analysis of Sentinel-1 Remote-Sensing Data](http://arxiv.org/abs/2608.04915)|Alireza Taheri Dehkordi et.al.|—|<details><summary>展开中文摘要 (149 字)</summary>许多现有的时间序列干涉合成孔径雷达（ TS-InSAR ）软件工具存在局限性，包括地理适用性受限、商业许可和不完整的端到端处理支持。尽管GMTSAR避免了其中一些限制，但它仍然需要大量的手动干预和C-shell命令，缺乏用户友好的图形界面，并且省略了干涉图网络修剪和未包装干涉图锚定等重要步骤。……</details>|
-|**2026-08-04**|[LoRetta: A Foundation Model and Extensive Dataset for Global-Scale Remote Sensing Dense Image Matching](http://arxiv.org/abs/2608.04106)|Siwei Yu et.al.|—|<details><summary>展开中文摘要 (148 字)</summary>密集的图像匹配可以建立像素对应关系，并支持计算机视觉和摄影测量的广泛应用。然而，将密集匹配扩展到全球尺度遥感仍然具有挑战性，因为图像对在采集时间、季节、视点、空间分辨率和土地覆盖状态方面可能有所不同。由此产生的大几何偏移、部分重叠和本质上不可匹配的区域使得直接密集对应预测不可靠且效率低下。我们…</details>|
-|**2026-08-04**|[Multi-Task Multi-Frame Visual Piano Transcription](http://arxiv.org/abs/2608.03419)|Yonghyun Kim et.al.|—|<details><summary>展开中文摘要 (174 字)</summary>基于音频的钢琴转录在发作、音调和速度方面表现良好，但维持踏板让声音在按键释放后保持很长时间，因此音频系统预测踏板扩展偏移而不是物理按键释放。然而，现有的视觉钢琴转录（ VPT ）系统侧重于从短视频窗口进行发作检测，偏移精度滞后于大幅度发作，并且尚未报道音符级别的速度。为了弥补这些差距，我们推出了V2N （视频到笔记） ，这是第一个完整的VPT……</details>|
-|**2026-08-04**|[ProCAVE: A Self-Adaptive, Full-Lifecycle Edge Caching Framework for Video Streaming via Predictive Bandwidth Estimation and Preference-Aware Deep Reinforcement Learning](http://arxiv.org/abs/2608.03313)|Yeganeh Chatri et.al.|—|<details><summary>展开中文摘要 (162 字)</summary>对移动视频流日益增长的需求要求边缘传输系统能够有效地适应快速的网络波动和多样化的用户偏好。FlyCache等现有方法依赖于反应式ABR启发式和松散耦合的缓存策略，限制了它们在真实世界无线动态下的响应和协调性。我们提出ProCAVE （具有自适应视频体验的主动缓存） ，这是一个基于自适应DRL的框架，可统一预测带宽建模， …</details>|
 
-<p align=right>(<a href=#updated-on-20260806>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260807>back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/bitchenhui/compress-arxiv-daily.svg?style=for-the-badge
 [contributors-url]: https://github.com/bitchenhui/compress-arxiv-daily/graphs/contributors
