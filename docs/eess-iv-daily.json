@@ -1,28 +1,3 @@
 {
-  "eess.IV": {
-    "2608.06028": {
-      "update_time": "2026-08-06",
-      "title": "Hyperspectral Calibration Detection: A Novel Concept For Change Detection With Unsupervised Incremental Safe Pseudo-Labeling Implementation",
-      "first_author": "Chia-Hsiang Lin",
-      "authors": "Chia-Hsiang Lin, Shih-Min Hsu, Ching-Yun Liang, Jocelyn Chanussot, Jhih-Yan Chen",
-      "url": "http://arxiv.org/abs/2608.06028",
-      "pdf_url": "http://arxiv.org/pdf/2608.06028",
-      "code_url": "https://github.com/IHCLab/HyperLUCID",
-      "category": "eess.IV",
-      "summary_en": "Hyperspectral change detection (HCD) has found numerous key applications, such as land cover monitoring. The majority of benchmark HCD algorithms are semi-supervised methods, and some of them can even achieve very low sample labeling rates. However, in some practical scenarios, such as those requiring immediate detection responses for onboard edge computing, we need to achieve the zero-label requirement as ground-truth labeling would not be available onboard for newly acquired images. In this work, we propose a fully unsupervised HCD algorithm, together with a lightweight model, quite suitable for onboard detection missions. Based on an iteratively augmented training set that safely collects some unchanged pixel samples, we learn an iteratively refined spectrum calibration function that eventually compensates the variability of acquisition conditions (often observed in bitemporal images), thereby making the changed pixels easily detectable by analyzing the calibrated spectra. The proposed hyperspectral looping unsupervised calibration and incremental detection (HyperLUCID) algorithm is not only computationally efficient (around 1 to 2 orders of magnitude faster than most benchmark HCD methods), but has also achieved state-of-the-art results (around 93.6% to 97.9% overall accuracy) on several real benchmark HCD datasets. Source codes: https://github.com/IHCLab/HyperLUCID.",
-      "summary_zh": "高光谱变化检测（ HCD ）已经发现了许多关键应用，例如土地覆盖监测。大多数基准HCD算法都是半监督方法，其中一些甚至可以实现非常低的样本标记率。然而，在一些实际场景中，例如需要对板载边缘计算进行即时检测响应的场景中，我们需要实现零标记要求，因为新采集的图像无法在板载上进行地面真实标记。在这…"
-    },
-    "2608.05840": {
-      "update_time": "2026-08-06",
-      "title": "Accurate Localization of Road Traffic Objects on the Road Plane Using Surveillance Camera Imagery",
-      "first_author": "Jan Gawroński",
-      "authors": "Jan Gawroński, Witold Czajewski",
-      "url": "http://arxiv.org/abs/2608.05840",
-      "pdf_url": "http://arxiv.org/pdf/2608.05840",
-      "code_url": "",
-      "category": "cs.CV",
-      "summary_en": "Accurate vehicle localization from monocular roadside surveillance cameras is important for intelligent transportation systems, traffic monitoring, and traffic conflict analysis. Standard approaches often estimate vehicle position from the center of the detector bounding box, which can produce large errors due to perspective distortion and parallax, especially for elevated cameras and large vehicles.   This paper proposes a two-stage geometry-aware localization pipeline that estimates the projection of the vehicle footprint onto the road plane. First, vehicles are detected using a YOLO26-based detector. Second, a dedicated ResNet34 regression network predicts four corner points corresponding to the projected vehicle base. The final position is computed as the geometric center of the predicted quadrilateral.   The method was trained on synthetic data generated in CARLA and fine-tuned on real-world roadside imagery from DAIR-V2X. Experiments on synthetic and real data showed clear improvements over naive bounding-box-center localization. On DAIR-V2X, the mean image-space localization error decreased from 31.77 px to 15.30 px, a 51.8% improvement, while the median error decreased to 4.29 px. Median ground-plane error for medium-range vehicles decreased from 5.52 m to 0.90 m, and for far-range vehicles from 8.67 m to 1.84 m.   The results also show that contextual information surrounding the detector bounding box is important for geometric localization. The largest gains were observed for distant vehicles and geometrically challenging cases affected by strong perspective distortion and parallax.",
-      "summary_zh": "单目路边监控摄像头的精确车辆定位对于智能交通系统、交通监控和交通冲突分析非常重要。标准方法通常从探测器包围盒的中心估计车辆位置，这可能由于透视失真和视差而产生很大的误差，特别是对于高架摄像机和大型车辆。本文提出了一种两阶段几何感知定位流水线，该流水线估计…"
-    }
-  }
+  "eess.IV": {}
 }
