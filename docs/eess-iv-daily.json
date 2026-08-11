@@ -1,3 +1,28 @@
 {
-  "eess.IV": {}
+  "eess.IV": {
+    "2608.09923": {
+      "update_time": "2026-08-10",
+      "title": "Unrolling a Graph-Laplacian Denoiser Realizes Only Compositions of Polynomial Graph Filters",
+      "first_author": "Seyed Alireza Hosseini",
+      "authors": "Seyed Alireza Hosseini",
+      "url": "http://arxiv.org/abs/2608.09923",
+      "pdf_url": "http://arxiv.org/pdf/2608.09923",
+      "code_url": "",
+      "category": "eess.SP",
+      "summary_en": "A recent construction of unrolled networks for graph-based image restoration forms a system matrix from a graph-Laplacian denoiser through a truncated Taylor expansion, then inverts it with a fixed number of conjugate-gradient steps, with the coefficients of both stages learned. This paper shows the resulting map is a polynomial in the denoising operator, of degree at most the product of the two truncation orders, for every setting of those coefficients and therefore at every point of training: the learned steps select an element of a Krylov subspace they cannot enlarge. At the orders used in practice the reachable set is moreover a measure-zero subset of the polynomial class of the network's own degree budget, so the composition constrains the hypothesis space rather than enlarging it. At the standard initialization the realized spectral response is obtained in closed form, exceeding the intended response throughout the interior of the spectrum and approaching a nonzero floor. A lower bound on the operator's condition number, internal to the graph construction rather than to image content, then places the order required for a prescribed accuracy well above the order used in practice. The confining class is precisely the spectral graph filters for which a direct, convex parameterization has long been available.",
+      "summary_zh": "最近用于基于图的图像恢复的展开网络的构造通过截断的泰勒展开从图-拉普拉斯去噪器形成系统矩阵，然后用固定数量的共轭梯度步骤将其反转，并学习两个阶段的系数。本文显示，对于这些系数的每个设置，因此在每个训练点，生成的映射是去噪运算符中的多项式，最多是两个截断阶数的乘积： …"
+    },
+    "2608.09360": {
+      "update_time": "2026-08-10",
+      "title": "Deep Learning based Detection of Fishing Vessels and Fishing Monitoring using Nightlight Images",
+      "first_author": "Shantakar Mohanty",
+      "authors": "Shantakar Mohanty, Prasun Kumar Gupta, Raian Vargas Maretto",
+      "url": "http://arxiv.org/abs/2608.09360",
+      "pdf_url": "http://arxiv.org/pdf/2608.09360",
+      "code_url": "",
+      "category": "cs.CV",
+      "summary_en": "The demand for maritime surveillance has given rise to the need for monitoring fishing vessel activities, particularly in addressing the challenge of \"dark vessels\" that operate without Automatic Identification System (AIS) transmission. This study presents a novel approach for detecting small-scale fishing vessels using nighttime light (NTL) imagery from the SDGSAT-1 satellite, combined with deep learning techniques to enhance fishing monitoring awareness along the western coast of India. A dual-branch YOLO11 architecture was developed to exploit both the 10-meter panchromatic and 40-meter RGB imagery from SDGSAT-1. The custom model architecture was specifically optimized for small object detection in NTL imagery, featuring parallel convolutional backbones that process both modalities before concatenation for enhanced feature extraction. The dual-branch YOLO11 model demonstrated optimal performance with a precision of 0.99, recall of 0.93, F1-score of 0.96, and mAP@50 of 0.96, significantly outperforming single-branch implementations of YOLOv5s, YOLOv8s, and standard YOLO11s architectures. When applied to the western coast of India, the model detected 31525 vessel instances across the temporal dataset spanning 2022-23. Cross-matching analysis with AIS data revealed that only 7146 (22.7%) of detected vessels had corresponding AIS transmissions, while 24379 (77.3%) were identified as potential dark vessels. Spatio-temporal analysis showed peak fishing activity during January-April, with a primary activity corridor parallel to the coastline within 50-100 km, corresponding to productive continental shelf areas. This research contributes to maritime surveillance capabilities by highlighting the effectiveness of nighttime lights satellite imagery for fishing vessel detection and provides valuable insights into fishing patterns and potential regulatory compliance issues in Indian waters.",
+      "summary_zh": "对海上监控的需求引发了对渔船活动的监控需求，特别是在应对没有自动识别系统（ AIS ）传输的“暗船”的挑战方面。本研究提出了一种利用SDGSAT-1卫星夜间照明（ NTL ）图像检测小型渔船的新方法，结合深度学习技术，以提高印度西海岸的渔业监测意识。"
+    }
+  }
 }
