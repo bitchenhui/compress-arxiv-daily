@@ -1,5 +1,29 @@
 {
   "eess.IV": {
+    "2608.10741": {
+      "update_time": "2026-08-11",
+      "title": "Media-over-Multipath-QUIC for Realtime Video Applications",
+      "first_author": "Tanya Shreedhar",
+      "authors": "Tanya Shreedhar, Zuji Zhou, Nitinder Mohan, Fernando Kuipers",
+      "url": "http://arxiv.org/abs/2608.10741",
+      "pdf_url": "http://arxiv.org/pdf/2608.10741",
+      "code_url": "",
+      "category": "cs.NI",
+      "summary_en": "Multipath transports place a client's WiFi, cellular, and satellite networks under one connection, yet real-time video gains little from them. The scheduler that assigns packets to paths sees only bytes, so it cannot tell a keyframe that anchors a second of video from an enhancement frame whose loss costs one image. We show that the limiting factor is not a shortage of path diversity but the absence of a channel through which the application can name what the transport cannot see. Media over QUIC Transport (MoQT), already deployed on production CDNs, carries media as named Objects, and relays forward each Object's metadata without interpreting it. The knowledge the scheduler lacks therefore already flows through the subscriber's relay. We present MoMQ, a MoQT extension that turns this metadata into path decisions. Applications and relay operators install declarative rules at the edge relay that match Object metadata and express delivery preferences against labeled paths. The relay evaluates the rules mechanically, so it acts on video semantics while containing no video logic. On a live testbed spanning Starlink and WiFi, four rules cut P99.9 frame completion time from 384.7 ms under the best transport-only scheduler to 114.1 ms and reduce the required playback buffer by 61.5%. MoMQ is the only configuration that meets the 150 ms interactive latency target. Across relays in two countries and subscribers on two continents, the same rules apply unchanged and retain their advantage wherever the paths remain disjoint.",
+      "summary_zh": "多路径传输将客户的WiFi、蜂窝和卫星网络置于一个连接下，但实时视频从中获益甚微。将数据包分配给路径的调度器只能看到字节，因此它不能告诉从增强帧锚定一秒视频的关键帧，该增强帧的丢失会导致一张图像。我们表明，限制因素不是缺乏路径多样性，而是缺乏一个通道，应用程序可以通过该通道命名传输无法看到的内容。媒体…"
+    },
+    "2608.10401": {
+      "update_time": "2026-08-11",
+      "title": "Automatic Field-of-View Adjustment for a View-Expansive Microscope via LSTM-Based Gaze and Pipette Motion Interpretation",
+      "first_author": "Kenta Yokoe",
+      "authors": "Kenta Yokoe, Takuya Hara, Tadayoshi Aoyama",
+      "url": "http://arxiv.org/abs/2608.10401",
+      "pdf_url": "http://arxiv.org/pdf/2608.10401",
+      "code_url": "",
+      "category": "cs.HC",
+      "summary_en": "Intracytoplasmic sperm injection (ICSI) operators frequently adjust the field-of-view (FOV) during procedures, which interrupts workflow and increases procedure time. Conventional microscopes require manual objective lens switching and illumination adjustments to achieve different FOV sizes. We propose an AI-based automatic FOV adjustment method integrated with a view-expansive microscope. This microscope enables the simultaneous acquisition of a large FOV and high-resolution images using a single objective lens through multiview imaging with galvanometer mirrors and high-speed vision, thereby eliminating the need for physical lens exchanges. Our method utilizes a long short-term memory (LSTM) model to predict the appropriate FOV size based on real-time analysis of the pipette's position and velocity, combined with the operator's gaze position. The AI model is trained using ICSI procedure data from an expert with over five years of micromanipulation experience. Experimental evaluation with novice operators reveals that the proposed automatic FOV adjustment system significantly improves the ICSI procedure speed, reducing the average task completion time from 60.5 to 48.0 s (p < 0.001). The experiments also demonstrate that this improvement enables novice operators to achieve ICSI working speeds equivalent to those of expert operators.",
+      "summary_zh": "卵胞浆内精子注射（ ICSI ）操作员在手术过程中经常调整视野（ FOV ） ，这会中断工作流程并增加手术时间。传统显微镜需要手动物镜切换和照明调整，以实现不同的视场尺寸。我们提出了一种基于AI的自动视场调整方法，该方法与视野扩展显微镜集成在一起。这款显微镜可以使用……同时采集大视场和高分辨率图像"
+    },
     "2608.09923": {
       "update_time": "2026-08-10",
       "title": "Unrolling a Graph-Laplacian Denoiser Realizes Only Compositions of Polynomial Graph Filters",
