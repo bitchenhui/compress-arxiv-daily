@@ -1,5 +1,101 @@
 {
   "eess.IV": {
+    "2608.12230": {
+      "update_time": "2026-08-12",
+      "title": "Few-Shot Ordinal Learning for Day-Wise Freshness Estimation with Hyperspectral Fish Images",
+      "first_author": "Kazi Nabiul Alam",
+      "authors": "Kazi Nabiul Alam, Pooneh Bagheri Zadeh, Akbar Sheikh-Akbari",
+      "url": "http://arxiv.org/abs/2608.12230",
+      "pdf_url": "http://arxiv.org/pdf/2608.12230",
+      "code_url": "",
+      "category": "cs.CV",
+      "summary_en": "Non-destructive food quality assessment has increasingly benefited from hyperspectral imaging (HSI), which captures spectral signatures linked to biochemical changes during storage. Estimating day-wise freshness, however, remains challenging owing to strong inter-fillet variability and scarce labelled data per product. All existing deep learning approaches for HSI-based freshness prediction operate under full supervision, requiring densely annotated training sets that are costly to obtain at the individual-product level. We introduce, to the best of our knowledge, the first few-shot learning framework for HSI-based food quality estimation. Each fillet defines a distinct episodic task, and a CORAL-style ordinal prediction head captures the ranked nature of freshness progression through cumulative threshold modelling. Biologically grounded monotonicity and embedding smoothness constraints further guide predictions toward plausible trajectories. On a 16-day salmon HSI dataset under a strict unseen-fillet protocol, our method achieves a mean absolute error of 1.58 days and 2-day accuracy of 72.3% with only three labelled days per fillet, substantially outperforming scalar regression and label-distribution baselines under an identical unseen-fillet protocol.",
+      "summary_zh": "无损食品质量评估越来越多地受益于高光谱成像（ HSI ） ，它捕捉与储存期间生化变化相关的光谱特征。然而，由于很强的薄膜间变异性和每个产品的稀缺标记数据，估计日常新鲜度仍然具有挑战性。用于基于HSI的新鲜度预测的所有现有深度学习方法都在完全监督下运行，需要密集注释的训练集，这些训练集在…"
+    },
+    "2608.12227": {
+      "update_time": "2026-08-12",
+      "title": "Domain-Aware Lightweight Spectral-Grouped Convolutions for Hyperspectral Fish Freshness Classification",
+      "first_author": "Kazi Nabiul Alam",
+      "authors": "Kazi Nabiul Alam, Pooneh Bagheri Zadeh, Akbar Sheikh-Akbari",
+      "url": "http://arxiv.org/abs/2608.12227",
+      "pdf_url": "http://arxiv.org/pdf/2608.12227",
+      "code_url": "",
+      "category": "eess.IV",
+      "summary_en": "Hyperspectral imaging (HSI) offers nondestructive assessment of fish freshness by detecting biochemical alterations across spectral bands. However, conventional deep learning approaches do not fully address the particular characteristics of HSI data, such as spectral dominance over spatial textures, ordinal label structure, and a small number of training samples. We propose SGNet (Spectral-Grouped Network), a lightweight architecture that separates spectral and spatial feature extraction using grouped convolutions and a depthwise spatial pathway. A dual attention mechanism that couples channel-wise squeeze-and-excitation with spatial gating adaptively highlights informative features. SGNet achieves 97.8% classification accuracy and 0.64 days mean absolute error (MAE) with just 4.75M parameters when tested on our newly developed 16-day refrigerator-stored salmon fillet dataset. Ablation studies validate the contribution of each component, while comparisons demonstrate a five- to eighteen-fold parameter reduction relative to ResNet-50 and Vision Transformers. Our findings indicate that domain-aware design supports precise, real-time freshness prediction for industrial implementation.",
+      "summary_zh": "高光谱成像（ HSI ）通过检测跨光谱带的生化变化，提供鱼类新鲜度的无损评估。然而，传统的深度学习方法并没有完全解决人机交互数据的特殊特征，例如空间纹理上的谱优势、有序标签结构和少量训练样本。我们提出了SGNet （ Spectral-Grouped Network ） ，这是一种轻量级架构，可使用……将频谱和空间特征提取分开。"
+    },
+    "2608.11845": {
+      "update_time": "2026-08-12",
+      "title": "ResPCC: A Loss-Resilient Neural Point Cloud Codec over Lossy Networks",
+      "first_author": "Xueqin Niu",
+      "authors": "Xueqin Niu, Mufan Liu, Yifan Wang, Le Yang, Jun Sun, Yiling Xu",
+      "url": "http://arxiv.org/abs/2608.11845",
+      "pdf_url": "http://arxiv.org/pdf/2608.11845",
+      "code_url": "https://github.com/starrynight314/ResPCC",
+      "category": "eess.IV",
+      "summary_en": "Point cloud compression (PCC) is critical for efficient storage and transmission of 3D data. While recent learning-based PCC methods achieve good rate-distortion (R-D) performance, they generally rely on ideal transmission conditions. In practice, packet loss is a common issue and can severely distort latent features, causing coordinate drift and geometric degradation. To address this challenge, we present ResPCC, the first end-to-end neural point cloud codec designed to offer intrinsic resilience against data loss. Our framework is loss-rate-aware and adapts to diverse packet loss conditions. At the encoder, we introduce a Condition-Adaptive Latent Modulation (CALM) module to adjust latent feature distributions according to the perceived loss rate, as well as a Spatial-Channel Interleaving (SCI) mechanism that transforms channel-wise data extinction into spatially scattered element-wise missing patterns. At the decoder, we develop a Mask-Aware Graph-based Latent Restoration (MGLR) module, followed by a Dictionary-based Refinement (DBR) stage to recover corrupted features and align them with canonical priors. Evaluations on ShapeNet and SemanticKITTI under 5\\% to 30\\% packet loss rates show that ResPCC consistently delivers superior stability and R-D performance over baselines. Our framework maintains high reconstruction fidelity under lossy conditions, providing a reliable solution for 3D data transmission over practical networks. Code is available at https://github.com/starrynight314/ResPCC.",
+      "summary_zh": "点云压缩（ PCC ）对于3D数据的高效存储和传输至关重要。虽然最近基于学习的PCC方法实现了良好的速率失真（ R-D ）性能，但它们通常依赖于理想的传输条件。在实践中，丢包是一个常见问题，可能会严重扭曲潜在特征，导致坐标漂移和几何退化。为了应对这一挑战，我们推出了ResPCC ，这是第一款端到端神经点云编解码器，旨在提供内在的..."
+    },
+    "2608.11646": {
+      "update_time": "2026-08-12",
+      "title": "Hybrid-LUT: Channel-Aware Hybrid Lookup Table and Filtering for Efficient Image Denoising",
+      "first_author": "Zhilin Ai",
+      "authors": "Zhilin Ai, Boyu Li, Sidi Yang, Wenqing Shi, Wenyong Zhou, Binxiao Huang, Chenchen Ding, Ngai Wong",
+      "url": "http://arxiv.org/abs/2608.11646",
+      "pdf_url": "http://arxiv.org/pdf/2608.11646",
+      "code_url": "https://github.com/Ai-ZL/Hybrid-LUT",
+      "category": "cs.CV",
+      "summary_en": "Lookup table (LUT)-based image denoising methods have attracted increasing attention due to their high efficiency and hardware-friendly properties. However, existing RGB-LUT approaches require three identical LUTs to process RGB channels in parallel, resulting in large on-chip SRAM consumption. A simple alternative is to apply LUT processing only to the luminance (Y) channel in the YUV color space to reduce memory usage. However, this naive strategy leads to degraded restoration quality, since ignoring the chrominance (UV) channels introduces color distortion and residual artifacts. In this work, we propose Hybrid-LUT, a YUV-based asymmetric channel-processing framework that combines LUT and filtering in a unified design. Specifically, a multi-band LUT branch with pixel-level weight fusion is applied to the Y channel to recover fine textures, while lightweight filtering is used for the UV channels to maintain color consistency. This design reduces LUT storage by two-thirds compared with RGB-LUT methods while maintaining the same runtime throughput. Extensive experiments show that Hybrid-LUT achieves state-of-the-art (SOTA) performance across multiple benchmarks with only 421 KB of storage. In particular, our method surpasses existing LUT-based denoising approaches by at least 0.63 dB CPSNR on real-world datasets, demonstrating its effectiveness for image denoising on resource-constrained edge devices. The project is available at https://github.com/Ai-ZL/Hybrid-LUT .",
+      "summary_zh": "基于查找表（ LUT ）的图像去噪方法因其高效率和硬件友好性而受到越来越多的关注。然而，现有的RGB-LUT方法需要三个相同的LUT来并行处理RGB通道，从而导致大量的片上SRAM消耗。一个简单的替代方案是仅将LUT处理应用于YUV颜色空间中的亮度（ Y ）通道，以减少内存使用。然而，这种天真的策略会导致修复质量下降，因为……"
+    },
+    "2608.11565": {
+      "update_time": "2026-08-12",
+      "title": "Alignment of Similarity-Transformed Images Based on Fourier--Mellin Transform Using Auxiliary Function Method",
+      "first_author": "Shinji Yamashita",
+      "authors": "Shinji Yamashita, Yuma Kinoshita, Hitoshi Kiya",
+      "url": "http://arxiv.org/abs/2608.11565",
+      "pdf_url": "http://arxiv.org/pdf/2608.11565",
+      "code_url": "",
+      "category": "eess.IV",
+      "summary_en": "This paper proposes an algorithm for estimating the similarity transformation, namely translation, scale, and rotation, between two images with subpixel accuracy. Image registration is a fundamental technique for aligning images acquired under different viewpoints and imaging conditions, and a representative approach based on maximizing discrete cross-correlation is the Fourier--Mellin registration. However, the Fourier--Mellin approach often fails to achieve sufficient alignment accuracy when subpixel-level estimation is required. The proposed method integrates (i) scale-and-rotation estimation from the Fourier magnitude spectrum in a log-polar representation and (ii) maximization of phase-only correlation based on the auxiliary function method. This integration enables a two-stage estimation procedure: it first estimates scale and rotation without being affected by translation, and then estimates translation with subpixel precision in the spatial domain using the corrected image pair. A simulation experiment on image pairs subjected to random similarity transformations demonstrates that the proposed method reduces estimation errors in scale, rotation, and translation compared with Fourier--Mellin-based registration methods using discrete cross-correlation.",
+      "summary_zh": "本文提出了一种具有亚像素精度的相似度变换估计算法，即平移、缩放和旋转。图像配准是校准在不同视点和成像条件下获取的图像的基本技术，基于最大化离散互相关的代表性方法是傅里叶-梅林配准。然而，当……时，傅里叶-梅林方法通常无法达到足够的对中精度。"
+    },
+    "2608.11562": {
+      "update_time": "2026-08-12",
+      "title": "From Synthesis to Removal: Physics-Grounded Reflection Simulation and Diffusion-Based Video Dereflection",
+      "first_author": "Zepeng Wang",
+      "authors": "Zepeng Wang, Jiagao Hu, Fuhao Li, Yuxuan Chen, Fei Wang, Daiguo Zhou",
+      "url": "http://arxiv.org/abs/2608.11562",
+      "pdf_url": "http://arxiv.org/pdf/2608.11562",
+      "code_url": "",
+      "category": "cs.CV",
+      "summary_en": "Videos captured through glass often contain reflections that degrade visual quality and interfere with downstream vision tasks. Although single-image reflection removal has been extensively studied, video reflection removal remains largely underexplored due to the lack of paired video data, temporally coherent removal models, and dedicated evaluation benchmarks. We present a closed-loop framework that unifies physics-grounded reflection simulation, diffusion-based video dereflection, and benchmark evaluation. Our S2R-Synthesis pipeline generates paired reflected and reflection-free videos by performing physics-grounded augmentation in the structure space and rendering realistic reflected videos with a trained video diffusion renderer; the augmentation models key glass-related effects including roughness-induced blur, thickness-induced ghosting, and reflectance variation. Based on the synthesized data, we introduce S2R-Removal, the first diffusion-based video reflection removal model, which adapts a pretrained video diffusion prior through reflection-aware latent adaptation and one-step pixel-geometric refinement, recovering the clean transmission in a single denoising step. We further build S2R-Bench, the first benchmark for video reflection removal, supporting both full-reference evaluation and real-world human perceptual assessment. Experiments on S2R-Bench and multiple public image benchmarks demonstrate state-of-the-art performance and faster inference than even non-diffusion baselines, and validate the effectiveness of S2R-Synthesis. Project page: https://codingwzp.github.io/VideoDereflection_S2R.",
+      "summary_zh": "通过玻璃拍摄的视频通常包含反射，会降低视觉质量并干扰下游的视觉任务。尽管单图像反射去除已被广泛研究，但由于缺乏配对视频数据、时间相干去除模型和专用的评估基准，视频反射去除在很大程度上仍未得到充分探索。我们提出了一个闭环框架，将基于物理的反射模拟、基于扩散的视频反射和…"
+    },
+    "2608.11548": {
+      "update_time": "2026-08-12",
+      "title": "Boundary-Continuous Cross-Camera RGB Mapping via Hue-Split Model Trees",
+      "first_author": "Yuma Kinoshita",
+      "authors": "Yuma Kinoshita, Hitoshi Kiya",
+      "url": "http://arxiv.org/abs/2608.11548",
+      "pdf_url": "http://arxiv.org/pdf/2608.11548",
+      "code_url": "",
+      "category": "eess.IV",
+      "summary_en": "We propose a hue-split model-tree method for boundary-continuous cross-camera RGB mapping. Cross-camera RGB mapping aims to produce consistent color representations across cameras whose recorded RGB values differ due to sensor spectral sensitivities and image-signal processing pipelines. A common chart-based remedy is to estimate a single global affine color correction matrix (CCM), but such a global model cannot capture hue-specific discrepancies between cameras. To capture that behavior, we recursively partitions the source-camera color space along a scalar hue coordinate and builds an model tree that stores an affine CCM at every node. For fitting the node CCMs, we utilize a log-domain error objective. To prevent false contours that arise from hard hue splits, we further introduce a boundary-continuous formulation in which the prediction is obtained by blending the log-domain outputs of all node CCMs along the root-to-leaf path. The path-wise blending weights are optimized under a simplex constraint using both a chart-pair fitting loss and an explicit continuity regularizer defined on deterministic boundary prototype pairs placed just on either side of each learned hue threshold. We conducted an experiment on a Canon EOS-1Ds Mark II to Canon EOS 20D mapping using the Middlebury Registered Color Checker dataset. The results show that hue splitting substantially reduces log-RMSE over a single global affine CCM and that the proposed path blending with boundary prototype regularization simultaneously improves accuracy and suppresses chromaticity gaps at the learned hue thresholds across two illuminants and multiple exposure conditions.",
+      "summary_zh": "我们提出了一种用于边界连续交叉相机RGB映射的色调分割模型树方法。跨相机RGB映射旨在在由于传感器光谱灵敏度和图像信号处理管道而记录的RGB值不同的相机之间产生一致的颜色表示。一种常见的基于图表的补救措施是估计单个全局仿射颜色校正矩阵（ CCM ） ，但这种全局模型无法捕获摄像机之间特定色调的差异。为了捕捉这种行为，我们……"
+    },
+    "2608.11537": {
+      "update_time": "2026-08-12",
+      "title": "Generative Semantic Segmentation via an Observable Semantic-Image Interface and Hierarchical Generator Evidence Alignment",
+      "first_author": "Weize Cai",
+      "authors": "Weize Cai, Yongqi Dong, Zhida Shao, Zixin Fu",
+      "url": "http://arxiv.org/abs/2608.11537",
+      "pdf_url": "http://arxiv.org/pdf/2608.11537",
+      "code_url": "",
+      "category": "cs.CV",
+      "summary_en": "Generative semantic segmentation exposes structured predictions as images, but direct color decoding is susceptible to color drift and boundary mixing, whereas latent-feature decoders that predict a separate output distribution may relegate the rendered image to an intermediate visualization. We present Semantic Prism, a conditional semantic-image generation-and-refinement framework with deterministic inference. A diffusion-distilled one-step generator renders a semantic RGB image; per-pixel distances from the rendered colors to a fixed class-color codebook define an explicit probabilistic interface. Hierarchical Generator Evidence Alignment spatially aligns multi-level generator features and uses a zero-initialized output projection to predict an additive residual in the interface logit space, retaining the image-defined interface as the reference for the final distribution. The interface and refined distributions further enable Contextual Interface--Hierarchy Disagreement (C-IHD), a fixed readout for ranking remaining pixel errors without an auxiliary predictor or additional forward pass. On the 500-image Cityscapes validation set, Semantic Prism achieves 72.07% mean intersection over union, 11.39 mIoU points above direct-interface decoding, with 0.41% expected calibration error. Matched-capacity ablations over three seeds support the benefit of jointly aligned multi-level evidence. A separately trained model attains 62.22% mIoU on BDD100K, while the Cityscapes-trained model reaches 46.89\\% mIoU under source-frozen transfer to the Adverse Conditions Dataset with Correspondences, without target-domain adaptation. Across all three datasets, C-IHD consistently improves the area under the precision--recall curve for pixel-error ranking over maximum softmax probability on the same segmentation predictions; on ACDC, it raises AUPR from 0.6580 to 0.7557.",
+      "summary_zh": "生成语义分割将结构化预测暴露为图像，但直接颜色解码易受颜色漂移和边界混合的影响，而预测单独输出分布的潜在特征解码器可能会将渲染图像降级为中间可视化。我们提出了语义棱镜，这是一个带有确定性推理的条件语义图像生成和细化框架。扩散蒸馏一步生成器渲染语义RGB图像；每像素…"
+    },
     "2608.10741": {
       "update_time": "2026-08-11",
       "title": "Media-over-Multipath-QUIC for Realtime Video Applications",
@@ -12,6 +108,30 @@
       "summary_en": "Multipath transports place a client's WiFi, cellular, and satellite networks under one connection, yet real-time video gains little from them. The scheduler that assigns packets to paths sees only bytes, so it cannot tell a keyframe that anchors a second of video from an enhancement frame whose loss costs one image. We show that the limiting factor is not a shortage of path diversity but the absence of a channel through which the application can name what the transport cannot see. Media over QUIC Transport (MoQT), already deployed on production CDNs, carries media as named Objects, and relays forward each Object's metadata without interpreting it. The knowledge the scheduler lacks therefore already flows through the subscriber's relay. We present MoMQ, a MoQT extension that turns this metadata into path decisions. Applications and relay operators install declarative rules at the edge relay that match Object metadata and express delivery preferences against labeled paths. The relay evaluates the rules mechanically, so it acts on video semantics while containing no video logic. On a live testbed spanning Starlink and WiFi, four rules cut P99.9 frame completion time from 384.7 ms under the best transport-only scheduler to 114.1 ms and reduce the required playback buffer by 61.5%. MoMQ is the only configuration that meets the 150 ms interactive latency target. Across relays in two countries and subscribers on two continents, the same rules apply unchanged and retain their advantage wherever the paths remain disjoint.",
       "summary_zh": "多路径传输将客户的WiFi、蜂窝和卫星网络置于一个连接下，但实时视频从中获益甚微。将数据包分配给路径的调度器只能看到字节，因此它不能告诉从增强帧锚定一秒视频的关键帧，该增强帧的丢失会导致一张图像。我们表明，限制因素不是缺乏路径多样性，而是缺乏一个通道，应用程序可以通过该通道命名传输无法看到的内容。媒体…"
     },
+    "2608.11273": {
+      "update_time": "2026-08-11",
+      "title": "Geometry-Based Compression of Plenoptic Point Clouds",
+      "first_author": "Davi R. Freitas",
+      "authors": "Davi R. Freitas, Gustavo L. Sandri, Ricardo L. de Queiroz",
+      "url": "http://arxiv.org/abs/2608.11273",
+      "pdf_url": "http://arxiv.org/pdf/2608.11273",
+      "code_url": "",
+      "category": "eess.IV",
+      "summary_en": "Plenoptic point clouds (PPC) are novel data structures that represent the light from different viewing directions in order to provide a higher degree of realism to regular point clouds. This is achieved by associating each point to multiple colors instead of a single one. Here, we present a method to efficiently compress the attributes of a PPC, consisting of a Karhunen-Loève transform over the color attributes followed by multiple attribute coders with intra prediction capability. This compression scheme can be incorporated within the MPEG's geometry-based PCC (G-PCC) standard, using any of G-PCC's existing solutions for attribute coding. Compression performance assessment using PPCs of different spatial resolutions reveals competitive results in comparison to existing methods, such as RAHT-based or video-based PCC solutions. We believe our coder to be the new state of the art.",
+      "summary_zh": "全光点云（ PPC ）是一种新颖的数据结构，表示来自不同观看方向的光，以便为常规点云提供更高程度的真实感。这是通过将每个点关联到多个颜色而不是单个颜色来实现的。在这里，我们提出了一种有效压缩PPC属性的方法，该方法包括对颜色属性进行Karhunen-Loève变换，然后是具有帧内预测能力的多个属性编码器。这…"
+    },
+    "2608.11271": {
+      "update_time": "2026-08-11",
+      "title": "Hardware-Aware Deployment of Joint SAR Compression and Despeckling on FPGA",
+      "first_author": "Cédric Léonard",
+      "authors": "Cédric Léonard, Francescopaolo Sica, Martin Schulz",
+      "url": "http://arxiv.org/abs/2608.11271",
+      "pdf_url": "http://arxiv.org/pdf/2608.11271",
+      "code_url": "https://github.com/CedricLeon/SAR_DDC_FPGA",
+      "category": "eess.IV",
+      "summary_en": "Next-generation Synthetic Aperture Radar (SAR) missions will generate data far faster than they can downlink, making onboard data reduction essential for near-real-time Earth observation. Learned Image Compression (LIC) offers better rate-distortion performance than handcrafted codecs used operationally today, and recent work shows that simultaneously despeckling and compressing SAR imagery enables better representation capacity while unlocking higher compression rates. These methods, however, have yet to be confronted with the strict power, compute, and operational constraints of spaceborne systems. In this work, we bridge this gap by deploying a joint SAR Despeckling and Data Compression (DDC) framework on an embedded ZCU102 FPGA-based platform, introducing model adaptations that respect the accelerator's fixed-point arithmetic and limited set of supported operations. We evaluate four model topologies across precision levels and across CPU, GPU, and FPGA platforms, revealing several findings with direct design implications. We find that replacing conventional GDN activation functions with plain ReLU improves quality on SAR, suggesting that design principles established for compression of natural images do not necessarily transfer to SAR imagery. In addition, we demonstrate that residual blocks offer little representational benefit for ten times the compute, and show that the FPGA is the most energy-efficient of the platforms tested. Together, these results set a functioning edge deployment workflow and an evidence-based starting point for onboard SAR compression. The code is available at https://github.com/CedricLeon/SAR_DDC_FPGA.",
+      "summary_zh": "Next-generation Synthetic Aperture Radar (SAR) missions will generate data far faster than they can downlink, making onboard data reduction essential for near-real-time Earth observation. Learned Image Compression (LIC) offers better rate-distortion performance than handcrafted codecs used operationally today, and recent work shows that simultaneously despeckling and compressing SAR imagery enables better representation capacity while unlocking higher compression rates. These methods, however, have yet to be confronted with the strict power, compute, and operational constraints of spaceborne systems. In this work, we bridge this gap by deploying a joint SAR Despeckling and Data Compression (DDC) framework on an embedded ZCU102 FPGA-based platform, introducing model adaptations that respect the accelerator's fixed-point arithmetic and limited set of supported operations. We evaluate four model topologies across precision levels and across CPU, GPU, and FPGA platforms, revealing several findings with direct design implications. We find that replacing conventional GDN activation functions with plain ReLU improves quality on SAR, suggesting that design principles established for compression of natural images do not necessarily transfer to SAR imagery. In addition, we demonstrate that residual blocks offer little representational benefit for ten times the compute, and show that the FPGA is the most energy-efficient of the platforms tested. Together, these results set a functioning edge deployment workflow and an evidence-based starting point for onboard SAR compression. The code is available at https://github.com/CedricLeon/SAR_DDC_FPGA."
+    },
     "2608.10401": {
       "update_time": "2026-08-11",
       "title": "Automatic Field-of-View Adjustment for a View-Expansive Microscope via LSTM-Based Gaze and Pipette Motion Interpretation",
@@ -22,31 +142,7 @@
       "code_url": "",
       "category": "cs.HC",
       "summary_en": "Intracytoplasmic sperm injection (ICSI) operators frequently adjust the field-of-view (FOV) during procedures, which interrupts workflow and increases procedure time. Conventional microscopes require manual objective lens switching and illumination adjustments to achieve different FOV sizes. We propose an AI-based automatic FOV adjustment method integrated with a view-expansive microscope. This microscope enables the simultaneous acquisition of a large FOV and high-resolution images using a single objective lens through multiview imaging with galvanometer mirrors and high-speed vision, thereby eliminating the need for physical lens exchanges. Our method utilizes a long short-term memory (LSTM) model to predict the appropriate FOV size based on real-time analysis of the pipette's position and velocity, combined with the operator's gaze position. The AI model is trained using ICSI procedure data from an expert with over five years of micromanipulation experience. Experimental evaluation with novice operators reveals that the proposed automatic FOV adjustment system significantly improves the ICSI procedure speed, reducing the average task completion time from 60.5 to 48.0 s (p < 0.001). The experiments also demonstrate that this improvement enables novice operators to achieve ICSI working speeds equivalent to those of expert operators.",
-      "summary_zh": "卵胞浆内精子注射（ ICSI ）操作员在手术过程中经常调整视野（ FOV ） ，这会中断工作流程并增加手术时间。传统显微镜需要手动物镜切换和照明调整，以实现不同的视场尺寸。我们提出了一种基于AI的自动视场调整方法，该方法与视野扩展显微镜集成在一起。这款显微镜可以使用……同时采集大视场和高分辨率图像"
-    },
-    "2608.09923": {
-      "update_time": "2026-08-10",
-      "title": "Unrolling a Graph-Laplacian Denoiser Realizes Only Compositions of Polynomial Graph Filters",
-      "first_author": "Seyed Alireza Hosseini",
-      "authors": "Seyed Alireza Hosseini",
-      "url": "http://arxiv.org/abs/2608.09923",
-      "pdf_url": "http://arxiv.org/pdf/2608.09923",
-      "code_url": "",
-      "category": "eess.SP",
-      "summary_en": "A recent construction of unrolled networks for graph-based image restoration forms a system matrix from a graph-Laplacian denoiser through a truncated Taylor expansion, then inverts it with a fixed number of conjugate-gradient steps, with the coefficients of both stages learned. This paper shows the resulting map is a polynomial in the denoising operator, of degree at most the product of the two truncation orders, for every setting of those coefficients and therefore at every point of training: the learned steps select an element of a Krylov subspace they cannot enlarge. At the orders used in practice the reachable set is moreover a measure-zero subset of the polynomial class of the network's own degree budget, so the composition constrains the hypothesis space rather than enlarging it. At the standard initialization the realized spectral response is obtained in closed form, exceeding the intended response throughout the interior of the spectrum and approaching a nonzero floor. A lower bound on the operator's condition number, internal to the graph construction rather than to image content, then places the order required for a prescribed accuracy well above the order used in practice. The confining class is precisely the spectral graph filters for which a direct, convex parameterization has long been available.",
-      "summary_zh": "最近用于基于图的图像恢复的展开网络的构造通过截断的泰勒展开从图-拉普拉斯去噪器形成系统矩阵，然后用固定数量的共轭梯度步骤将其反转，并学习两个阶段的系数。本文显示，对于这些系数的每个设置，因此在每个训练点，生成的映射是去噪运算符中的多项式，最多是两个截断阶数的乘积： …"
-    },
-    "2608.09360": {
-      "update_time": "2026-08-10",
-      "title": "Deep Learning based Detection of Fishing Vessels and Fishing Monitoring using Nightlight Images",
-      "first_author": "Shantakar Mohanty",
-      "authors": "Shantakar Mohanty, Prasun Kumar Gupta, Raian Vargas Maretto",
-      "url": "http://arxiv.org/abs/2608.09360",
-      "pdf_url": "http://arxiv.org/pdf/2608.09360",
-      "code_url": "",
-      "category": "cs.CV",
-      "summary_en": "The demand for maritime surveillance has given rise to the need for monitoring fishing vessel activities, particularly in addressing the challenge of \"dark vessels\" that operate without Automatic Identification System (AIS) transmission. This study presents a novel approach for detecting small-scale fishing vessels using nighttime light (NTL) imagery from the SDGSAT-1 satellite, combined with deep learning techniques to enhance fishing monitoring awareness along the western coast of India. A dual-branch YOLO11 architecture was developed to exploit both the 10-meter panchromatic and 40-meter RGB imagery from SDGSAT-1. The custom model architecture was specifically optimized for small object detection in NTL imagery, featuring parallel convolutional backbones that process both modalities before concatenation for enhanced feature extraction. The dual-branch YOLO11 model demonstrated optimal performance with a precision of 0.99, recall of 0.93, F1-score of 0.96, and mAP@50 of 0.96, significantly outperforming single-branch implementations of YOLOv5s, YOLOv8s, and standard YOLO11s architectures. When applied to the western coast of India, the model detected 31525 vessel instances across the temporal dataset spanning 2022-23. Cross-matching analysis with AIS data revealed that only 7146 (22.7%) of detected vessels had corresponding AIS transmissions, while 24379 (77.3%) were identified as potential dark vessels. Spatio-temporal analysis showed peak fishing activity during January-April, with a primary activity corridor parallel to the coastline within 50-100 km, corresponding to productive continental shelf areas. This research contributes to maritime surveillance capabilities by highlighting the effectiveness of nighttime lights satellite imagery for fishing vessel detection and provides valuable insights into fishing patterns and potential regulatory compliance issues in Indian waters.",
-      "summary_zh": "对海上监控的需求引发了对渔船活动的监控需求，特别是在应对没有自动识别系统（ AIS ）传输的“暗船”的挑战方面。本研究提出了一种利用SDGSAT-1卫星夜间照明（ NTL ）图像检测小型渔船的新方法，结合深度学习技术，以提高印度西海岸的渔业监测意识。"
+      "summary_zh": "Intracytoplasmic sperm injection (ICSI) operators frequently adjust the field-of-view (FOV) during procedures, which interrupts workflow and increases procedure time. Conventional microscopes require manual objective lens switching and illumination adjustments to achieve different FOV sizes. We propose an AI-based automatic FOV adjustment method integrated with a view-expansive microscope. This microscope enables the simultaneous acquisition of a large FOV and high-resolution images using a single objective lens through multiview imaging with galvanometer mirrors and high-speed vision, thereby eliminating the need for physical lens exchanges. Our method utilizes a long short-term memory (LSTM) model to predict the appropriate FOV size based on real-time analysis of the pipette's position and velocity, combined with the operator's gaze position. The AI model is trained using ICSI procedure data from an expert with over five years of micromanipulation experience. Experimental evaluation with novice operators reveals that the proposed automatic FOV adjustment system significantly improves the ICSI procedure speed, reducing the average task completion time from 60.5 to 48.0 s (p < 0.001). The experiments also demonstrate that this improvement enables novice operators to achieve ICSI working speeds equivalent to those of expert operators."
     }
   }
 }
