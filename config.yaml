@@ -79,6 +79,5 @@ email:
   sender: "13261281092@163.com"
   recipients:
     - "13261281092@163.com"
-    - "duanchenhui.zoro@jd.com"
   subject_prefix: "[eess.IV Daily]"
   include_english_summary: True

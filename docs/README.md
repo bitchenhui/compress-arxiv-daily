@@ -53,8 +53,7 @@ following **Repository Secrets** (Settings → Secrets and variables → Actions
 | `SMTP_PORT` | `465` | 隐式 SSL 端口 |
 | `SMTP_USER` | `13261281092@163.com` | 163 邮箱地址 |
 | `SMTP_PASS` | `<16 位授权码>` | **授权码**，不是登录密码。在 163 邮箱设置 → POP3/SMTP/IMAP 中开启并生成 |
-| `MAIL_TO_1` | `13261281092@163.com` | 第一个收件人 |
-| `MAIL_TO_2` | `duanchenhui.zoro@jd.com` | 第二个收件人（163 会代为转发） |
+| `MAIL_TO_1` | `13261281092@163.com` | 收件人 |
 | `FEISHU_WEBHOOK` | `https://open.feishu.cn/...` | （可选）飞书机器人 webhook |
 
 ### 163 授权码获取

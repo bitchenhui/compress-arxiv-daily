@@ -2,7 +2,7 @@
 # - 每天 UTC 01:00 (= 北京时间 09:00) 触发
 # - 拉取 arXiv eess.IV 类目当天新增（Asia/Shanghai 时区），过滤医学论文，翻译中文摘要
 # - 更新 README.md 与 docs/
-# - 通过 163 SMTP 把当日结果邮件发送给两位订阅人
+# - 通过 163 SMTP 把当日结果邮件发送给订阅人
 # - 可选：飞书 webhook 推送
 
 name: Run eess.IV Daily
@@ -77,7 +77,7 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           MAIL_FROM: ${{ secrets.SMTP_USER }}
-          MAIL_TO: ${{ secrets.MAIL_TO_1 }},${{ secrets.MAIL_TO_2 }}
+          MAIL_TO: ${{ secrets.MAIL_TO_1 }}
           MAIL_SUBJECT: "[eess.IV Daily] ${{ steps.date.outputs.target }}"
           HTML_PATH: docs/email-body.html
         run: |
@@ -91,7 +91,7 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           MAIL_FROM: ${{ secrets.SMTP_USER }}
-          MAIL_TO: ${{ secrets.MAIL_TO_1 }},${{ secrets.MAIL_TO_2 }}
+          MAIL_TO: ${{ secrets.MAIL_TO_1 }}
           MAIL_SUBJECT: "[eess.IV Daily] ${{ steps.date.outputs.target }}"
           HTML_PATH: docs/email-body.html
         run: |
