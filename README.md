@@ -1,14 +1,14 @@
-## Updated on 2026.08.20
+## Updated on 2026.08.21
 
 > 来源：arXiv **eess.IV** (Image and Video Processing) · 每日 09:00 北京时间自动更新
 > 邮件订阅：见 [使用说明](./docs/README.md#邮件订阅)
 
 |Publish Date|Title|Authors|Code|中文摘要|
 |---|---|---|---|---|
-|**2026-08-18**|[QuARC-GS: Quantized Anchored Residual Coding for Compact Dynamic Scene Streaming with Gaussian Splatting](http://arxiv.org/abs/2608.18285)|Vu Trung Nghia Nguyen et.al.|—|<details><summary>展开中文摘要 (134 字)</summary>神经辐射场（ NeRF ）和高斯溅射等3D场景表示技术在新视图合成方面取得了实质性进展，实现了任意视角的高质量渲染。最近，此类技术已扩展到动态3D场景；然而，实现可持续的在线自由视点视频（ FVV ）流仍然具有挑战性，特别是对于较长的视频，因为对详细场景表示和高...</details>|
-|**2026-08-18**|[Iterative Grasp Pose Refinement: A Deep Reinforcement Learning Approach for 2D Vision](http://arxiv.org/abs/2608.17628)|Amir Arsalan Nematollahi et.al.|—|<details><summary>展开中文摘要 (142 字)</summary>开发能够理解和操纵物体的机器人需要紧凑、可解释和可概括的表示。这项工作提出了一种基于强化学习的机器人抓取细化框架，将基于关键点的对象表示与深度Q网络（ DQN ）集成在一起。使用在模拟环境中捕获的2D开销图像，基于几何的算法生成初始抓取候选，这些候选通过提出的框架进行迭代细化， ……</details>|
+|**2026-08-20**|[Flow Matching-Based PET Image Reconstruction](http://arxiv.org/abs/2608.20112)|Fumio Hashimoto et.al.|—|<details><summary>展开中文摘要 (139 字)</summary>生成模型已显示出正电子发射断层扫描（ PET ）图像重建的强大潜力。尽管基于扩散模型的重建方法表现出良好的性能，但它们通常需要许多反向采样步骤，并将数据一致性更新纳入采样过程。流匹配提供了一个有吸引力的替代方案，因为它可以直接从中间状态估计干净的图像，从而允许数据一致性细化与…</details>|
+|**2026-08-20**|[Loss-Resilient Semantic Communication over Packet-Loss Networks at Extreme-Low Bandwidth](http://arxiv.org/abs/2608.19590)|Shengshi Yao et.al.|—|<details><summary>展开中文摘要 (144 字)</summary>在极低带宽的网络场景中，生成语义编解码器已成为降低可视化通信带宽成本的有前途的解决方案。然而，这些学习的编解码器通常仅针对压缩效率进行优化，因此对传输错误不具有鲁棒性。由于这些高度紧凑的生成潜在表示中的数据包丢失而导致的损坏通常会导致更严重的保真度和真实性退化，而严重的错误传播则会加剧…</details>|
 
-<p align=right>(<a href=#updated-on-20260820>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260821>back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/bitchenhui/compress-arxiv-daily.svg?style=for-the-badge
 [contributors-url]: https://github.com/bitchenhui/compress-arxiv-daily/graphs/contributors

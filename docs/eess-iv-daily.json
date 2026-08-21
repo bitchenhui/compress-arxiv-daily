@@ -1,28 +1,28 @@
 {
   "eess.IV": {
-    "2608.18285": {
-      "update_time": "2026-08-18",
-      "title": "QuARC-GS: Quantized Anchored Residual Coding for Compact Dynamic Scene Streaming with Gaussian Splatting",
-      "first_author": "Vu Trung Nghia Nguyen",
-      "authors": "Vu Trung Nghia Nguyen, Yuchen Wang, Kyung Chul Lee, Kevin C. Zhou",
-      "url": "http://arxiv.org/abs/2608.18285",
-      "pdf_url": "http://arxiv.org/pdf/2608.18285",
+    "2608.20112": {
+      "update_time": "2026-08-20",
+      "title": "Flow Matching-Based PET Image Reconstruction",
+      "first_author": "Fumio Hashimoto",
+      "authors": "Fumio Hashimoto, Ziqian Huang, Tatsuya Yokota, Kuang Gong",
+      "url": "http://arxiv.org/abs/2608.20112",
+      "pdf_url": "http://arxiv.org/pdf/2608.20112",
       "code_url": "",
       "category": "eess.IV",
-      "summary_en": "3D scene representation techniques such as neural radiance fields (NeRFs) and Gaussian splatting have made substantial progress in novel view synthesis, achieving high-quality renderings from arbitrary view angles. More recently, such techniques have been extended to dynamic 3D scenes; however, achieving sustainable online free-viewpoint video (FVV) streaming remains challenging, especially for longer videos, due to significant storage demands of detailed scene representations and high reconstruction/rendering speed needs. To address these challenges, we propose Quantized Anchored Residual Coding Gaussian Streaming (QuARC-GS), a quantization-aware 4D scene optimization framework for online dynamic scene reconstruction that achieves ultra-high compression while maintaining reconstruction speed and quality. QuARC-GS represents a scene using a single canonical frame and highly compressed per-frame residuals. Specifically, we compress each residual through two complementary strategies targeting motion, appearance, and densification. We introduce quantization-aware anchor deformation, which suppresses insignificant motion updates while preserving meaningful deformations, maintaining reconstruction quality under low-storage streaming. Furthermore, we design a change-gated densification strategy that allocates new Gaussians only in regions exhibiting genuine temporal changes, effectively eliminating redundant appearance updates and reducing storage overhead. Extensive experiments on widely used datasets demonstrate that QuARC-GS enables competitive reconstruction quality and training speed while cutting per-frame storage by up to 11$\\times$ compared to the state-of-the-art.",
-      "summary_zh": "神经辐射场（ NeRF ）和高斯溅射等3D场景表示技术在新视图合成方面取得了实质性进展，实现了任意视角的高质量渲染。最近，此类技术已扩展到动态3D场景；然而，实现可持续的在线自由视点视频（ FVV ）流仍然具有挑战性，特别是对于较长的视频，因为对详细场景表示和高..."
+      "summary_en": "Generative models have shown strong potential for positron emission tomography (PET) image reconstruction. Although diffusion model-based reconstruction methods have demonstrated promising performance, they often require many reverse sampling steps with data-consistency updates incorporated into the sampling process. Flow matching offers an attractive alternative because it can directly estimate clean images from intermediate states, allowing data-consistency refinement to be separated from flow propagation. In this work, we proposed flow matching-based PET image reconstruction methods. We first established PET-FlowDPS by incorporating Poisson likelihood guidance with an expectation-maximization (EM)-based preconditioner into the FlowDPS framework. We then proposed a model-based PET reconstruction method that used a pretrained flow matching model as a prior, in which the flow-based prior, PET data refinement, and stochastic propagation were interpreted within an approximate Bayesian framework. Experimental results using [$^{\\text{18}}\\text{F}$]FDG brain PET datasets showed that the proposed method achieved better bias-variance trade-offs across different dose levels compared with other reference methods. These results demonstrated the potential of flow matching as a generative prior for quantitative PET image reconstruction.",
+      "summary_zh": "生成模型已显示出正电子发射断层扫描（ PET ）图像重建的强大潜力。尽管基于扩散模型的重建方法表现出良好的性能，但它们通常需要许多反向采样步骤，并将数据一致性更新纳入采样过程。流匹配提供了一个有吸引力的替代方案，因为它可以直接从中间状态估计干净的图像，从而允许数据一致性细化与…"
     },
-    "2608.17628": {
-      "update_time": "2026-08-18",
-      "title": "Iterative Grasp Pose Refinement: A Deep Reinforcement Learning Approach for 2D Vision",
-      "first_author": "Amir Arsalan Nematollahi",
-      "authors": "Amir Arsalan Nematollahi, Shayan Ahmadi, Mehdi Tale Masouleh, Ahmad Kalhor",
-      "url": "http://arxiv.org/abs/2608.17628",
-      "pdf_url": "http://arxiv.org/pdf/2608.17628",
+    "2608.19590": {
+      "update_time": "2026-08-20",
+      "title": "Loss-Resilient Semantic Communication over Packet-Loss Networks at Extreme-Low Bandwidth",
+      "first_author": "Shengshi Yao",
+      "authors": "Shengshi Yao, Jincheng Dai, Sixian Wang, Guo Lu, Kai Niu, Wenjun Xu, Wenjun Zhang, Ping Zhang",
+      "url": "http://arxiv.org/abs/2608.19590",
+      "pdf_url": "http://arxiv.org/pdf/2608.19590",
       "code_url": "",
-      "category": "cs.RO",
-      "summary_en": "Developing robots capable of understanding and manipulating objects requires compact, interpretable, and generalizable representations. This work proposes a reinforcement learning-based framework for robotic grasp refinement, integrating keypoint-based object representations with a Deep Q-Network (DQN). Using 2D overhead images captured in a simulated environment, a geometric-based algorithm generates initial grasp candidates, which are iteratively refined by the proposed framework, transforming failed grasps into successful ones. Experiments conducted on 300 objects from the Dex-Net dataset using a UR5 manipulator demonstrate the framework's effectiveness, achieving a 100% success rate on objects previously deemed ungraspable by geometrical methods. The framework's sim-to-real transferability is further validated through physical experiments on a Delta parallel robot, where a refined grasp successfully manipulates an object that was previously ungraspable. The findings underscore the effectiveness of reinforcement learning in addressing challenges in robotic grasping, offering a scalable and adaptable solution for contact-rich manipulation tasks.",
-      "summary_zh": "开发能够理解和操纵物体的机器人需要紧凑、可解释和可概括的表示。这项工作提出了一种基于强化学习的机器人抓取细化框架，将基于关键点的对象表示与深度Q网络（ DQN ）集成在一起。使用在模拟环境中捕获的2D开销图像，基于几何的算法生成初始抓取候选，这些候选通过提出的框架进行迭代细化， ……"
+      "category": "eess.IV",
+      "summary_en": "In extreme-low bandwidth network scenarios, generative semantic codecs have emerged as promising solutions to reduce bandwidth cost for visual communications. However, these learned codecs are usually optimized solely for compression efficiency and thus not robust against transmission errors. Corruptions due to packet-loss among these highly compact generative latent representations often cause more critical degradation in fidelity and realism, intensified by the severe error propagation across the latent contexts and multi-step decoding process. In this paper, we propose ResiGLC, a novel loss-resilient generative latent coding framework designed for robust semantic communication over extreme-low bandwidth packet-loss networks. Motivated by the inherent goal-consistency between generation and compression, we sufficiently exploit the impressive in-context predictive capabilities of language models. Integrated with the masked learning strategy, our model supports arbitrary context modeling of latent codes, which could mitigate the error propagation and handle unpredictable packet loss patterns. At the receiver, a progressive resilient decoding pipeline is presented, which leverages both the contextual relationship of the latent codes and the multi-modal semantic prior in the generative latent space, separately. By jointly optimizing toward both compression efficiency and packet-loss resilience, our proposed progressive decoding mechanism offers graceful performance when dealing with dynamic packet losses. Through extensive experimental evaluations, we establish that under packet-loss network conditions, ResiGLC can effectively improve the loss-resilience in terms of perceptual fidelity and realism qualities with extreme-low bandwidth cost.",
+      "summary_zh": "在极低带宽的网络场景中，生成语义编解码器已成为降低可视化通信带宽成本的有前途的解决方案。然而，这些学习的编解码器通常仅针对压缩效率进行优化，因此对传输错误不具有鲁棒性。由于这些高度紧凑的生成潜在表示中的数据包丢失而导致的损坏通常会导致更严重的保真度和真实性退化，而严重的错误传播则会加剧…"
     }
   }
 }
