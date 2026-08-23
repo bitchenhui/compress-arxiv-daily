@@ -1,28 +1,3 @@
 {
-  "eess.IV": {
-    "2608.20112": {
-      "update_time": "2026-08-20",
-      "title": "Flow Matching-Based PET Image Reconstruction",
-      "first_author": "Fumio Hashimoto",
-      "authors": "Fumio Hashimoto, Ziqian Huang, Tatsuya Yokota, Kuang Gong",
-      "url": "http://arxiv.org/abs/2608.20112",
-      "pdf_url": "http://arxiv.org/pdf/2608.20112",
-      "code_url": "",
-      "category": "eess.IV",
-      "summary_en": "Generative models have shown strong potential for positron emission tomography (PET) image reconstruction. Although diffusion model-based reconstruction methods have demonstrated promising performance, they often require many reverse sampling steps with data-consistency updates incorporated into the sampling process. Flow matching offers an attractive alternative because it can directly estimate clean images from intermediate states, allowing data-consistency refinement to be separated from flow propagation. In this work, we proposed flow matching-based PET image reconstruction methods. We first established PET-FlowDPS by incorporating Poisson likelihood guidance with an expectation-maximization (EM)-based preconditioner into the FlowDPS framework. We then proposed a model-based PET reconstruction method that used a pretrained flow matching model as a prior, in which the flow-based prior, PET data refinement, and stochastic propagation were interpreted within an approximate Bayesian framework. Experimental results using [$^{\\text{18}}\\text{F}$]FDG brain PET datasets showed that the proposed method achieved better bias-variance trade-offs across different dose levels compared with other reference methods. These results demonstrated the potential of flow matching as a generative prior for quantitative PET image reconstruction.",
-      "summary_zh": "生成模型已显示出正电子发射断层扫描（ PET ）图像重建的强大潜力。尽管基于扩散模型的重建方法表现出良好的性能，但它们通常需要许多反向采样步骤，并将数据一致性更新纳入采样过程。流匹配提供了一个有吸引力的替代方案，因为它可以直接从中间状态估计干净的图像，从而允许数据一致性细化与…"
-    },
-    "2608.19590": {
-      "update_time": "2026-08-20",
-      "title": "Loss-Resilient Semantic Communication over Packet-Loss Networks at Extreme-Low Bandwidth",
-      "first_author": "Shengshi Yao",
-      "authors": "Shengshi Yao, Jincheng Dai, Sixian Wang, Guo Lu, Kai Niu, Wenjun Xu, Wenjun Zhang, Ping Zhang",
-      "url": "http://arxiv.org/abs/2608.19590",
-      "pdf_url": "http://arxiv.org/pdf/2608.19590",
-      "code_url": "",
-      "category": "eess.IV",
-      "summary_en": "In extreme-low bandwidth network scenarios, generative semantic codecs have emerged as promising solutions to reduce bandwidth cost for visual communications. However, these learned codecs are usually optimized solely for compression efficiency and thus not robust against transmission errors. Corruptions due to packet-loss among these highly compact generative latent representations often cause more critical degradation in fidelity and realism, intensified by the severe error propagation across the latent contexts and multi-step decoding process. In this paper, we propose ResiGLC, a novel loss-resilient generative latent coding framework designed for robust semantic communication over extreme-low bandwidth packet-loss networks. Motivated by the inherent goal-consistency between generation and compression, we sufficiently exploit the impressive in-context predictive capabilities of language models. Integrated with the masked learning strategy, our model supports arbitrary context modeling of latent codes, which could mitigate the error propagation and handle unpredictable packet loss patterns. At the receiver, a progressive resilient decoding pipeline is presented, which leverages both the contextual relationship of the latent codes and the multi-modal semantic prior in the generative latent space, separately. By jointly optimizing toward both compression efficiency and packet-loss resilience, our proposed progressive decoding mechanism offers graceful performance when dealing with dynamic packet losses. Through extensive experimental evaluations, we establish that under packet-loss network conditions, ResiGLC can effectively improve the loss-resilience in terms of perceptual fidelity and realism qualities with extreme-low bandwidth cost.",
-      "summary_zh": "在极低带宽的网络场景中，生成语义编解码器已成为降低可视化通信带宽成本的有前途的解决方案。然而，这些学习的编解码器通常仅针对压缩效率进行优化，因此对传输错误不具有鲁棒性。由于这些高度紧凑的生成潜在表示中的数据包丢失而导致的损坏通常会导致更严重的保真度和真实性退化，而严重的错误传播则会加剧…"
-    }
-  }
+  "eess.IV": {}
 }
