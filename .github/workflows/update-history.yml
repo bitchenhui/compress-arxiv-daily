@@ -2,21 +2,8 @@
 
 name: Update History Papers
 
-on:
-  workflow_dispatch:
-    inputs:
-      history_date_from:
-        description: 'Start date (YYYYMMDD)'
-        required: true
-        default: '20250101'
-      history_date_to:
-        description: 'End date (YYYYMMDD)'
-        required: true
-        default: '20250701'
-      min_citations:
-        description: 'Minimum citations'
-        required: true
-        default: '200'
+# 已停用：不响应任何触发事件
+on: []
 
 env:
   GITHUB_USER_NAME: bitchenhui

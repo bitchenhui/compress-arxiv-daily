@@ -7,12 +7,8 @@
 
 name: Run eess.IV Daily
 
-on:
-  workflow_dispatch:
-  schedule:
-    # Beijing time 09:00 = UTC 01:00 (GitHub Actions cron always UTC)
-    - cron: "0 1 * * *"
-
+# 已停用：不响应任何触发事件
+on: []
 env:
   GITHUB_USER_NAME: bitchenhui
   GITHUB_USER_EMAIL: 13261281092@163.com
